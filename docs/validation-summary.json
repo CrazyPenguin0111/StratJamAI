@@ -1,0 +1,343 @@
+{
+  "hardware": {
+    "gpu": "NVIDIA GeForce RTX 5080 (16 GB)",
+    "cpu": "Intel Core i9-14900KF"
+  },
+  "sdk": "10.0.112",
+  "torchSharp": "0.107.0",
+  "libTorch": "2.10.0",
+  "cudaRuntime": "12.8",
+  "testCount": 30,
+  "training": {
+    "status": "completed",
+    "game": "tic-tac-toe",
+    "device": "cuda",
+    "elapsedSeconds": 277.120034,
+    "budgetSeconds": 300,
+    "decisions": 7785344,
+    "updates": 950,
+    "workers": 8,
+    "selectedBot": "policy",
+    "selectedScore": 0.7447916666666666,
+    "bestPolicyScore": 0.7447916666666666,
+    "initialPolicy": {
+      "bot": "policy",
+      "complete": true,
+      "games": 96,
+      "meanScore": 0.11458333333333333,
+      "lower95": 0.057291666666666664,
+      "upper95": 0.1875,
+      "meanMoveMilliseconds": 0.1180260061919505,
+      "p95MoveMilliseconds": 0.1962,
+      "elapsedSeconds": 0.4048418,
+      "opponents": [
+        {
+          "opponent": "random",
+          "games": 32,
+          "meanScore": 0.34375
+        },
+        {
+          "opponent": "tactical",
+          "games": 32,
+          "meanScore": 0
+        },
+        {
+          "opponent": "minimax",
+          "games": 32,
+          "meanScore": 0
+        }
+      ]
+    },
+    "finalEvaluations": [
+      {
+        "bot": "tactical",
+        "complete": true,
+        "games": 96,
+        "meanScore": 0.6510416666666666,
+        "lower95": 0.59375,
+        "upper95": 0.7135416666666666,
+        "meanMoveMilliseconds": 0.0014614213197969557,
+        "p95MoveMilliseconds": 0.0035,
+        "elapsedSeconds": 0.2375438,
+        "opponents": [
+          {
+            "opponent": "random",
+            "games": 32,
+            "meanScore": 0.953125
+          },
+          {
+            "opponent": "tactical",
+            "games": 32,
+            "meanScore": 0.5
+          },
+          {
+            "opponent": "minimax",
+            "games": 32,
+            "meanScore": 0.5
+          }
+        ]
+      },
+      {
+        "bot": "policy",
+        "complete": true,
+        "games": 96,
+        "meanScore": 0.7447916666666666,
+        "lower95": 0.6927083333333334,
+        "upper95": 0.8020833333333334,
+        "meanMoveMilliseconds": 0.016888000000000004,
+        "p95MoveMilliseconds": 0.0322,
+        "elapsedSeconds": 0.2497618,
+        "opponents": [
+          {
+            "opponent": "random",
+            "games": 32,
+            "meanScore": 0.984375
+          },
+          {
+            "opponent": "tactical",
+            "games": 32,
+            "meanScore": 0.75
+          },
+          {
+            "opponent": "minimax",
+            "games": 32,
+            "meanScore": 0.5
+          }
+        ]
+      },
+      {
+        "bot": "policy",
+        "complete": true,
+        "games": 96,
+        "meanScore": 0.734375,
+        "lower95": 0.6822916666666666,
+        "upper95": 0.7864583333333334,
+        "meanMoveMilliseconds": 0.01759604221635884,
+        "p95MoveMilliseconds": 0.0367,
+        "elapsedSeconds": 0.265121,
+        "opponents": [
+          {
+            "opponent": "random",
+            "games": 32,
+            "meanScore": 0.953125
+          },
+          {
+            "opponent": "tactical",
+            "games": 32,
+            "meanScore": 0.75
+          },
+          {
+            "opponent": "minimax",
+            "games": 32,
+            "meanScore": 0.5
+          }
+        ]
+      },
+      {
+        "bot": "random",
+        "complete": true,
+        "games": 96,
+        "meanScore": 0.21354166666666666,
+        "lower95": 0.13541666666666666,
+        "upper95": 0.3072916666666667,
+        "meanMoveMilliseconds": 0.00025049504950495015,
+        "p95MoveMilliseconds": 0.0009,
+        "elapsedSeconds": 0.2459378,
+        "opponents": [
+          {
+            "opponent": "random",
+            "games": 32,
+            "meanScore": 0.59375
+          },
+          {
+            "opponent": "tactical",
+            "games": 32,
+            "meanScore": 0.03125
+          },
+          {
+            "opponent": "minimax",
+            "games": 32,
+            "meanScore": 0.015625
+          }
+        ]
+      },
+      {
+        "bot": "search",
+        "complete": true,
+        "games": 96,
+        "meanScore": 0.625,
+        "lower95": 0.5520833333333334,
+        "upper95": 0.703125,
+        "meanMoveMilliseconds": 0.8233423684210529,
+        "p95MoveMilliseconds": 1.6442,
+        "elapsedSeconds": 0.5420156,
+        "opponents": [
+          {
+            "opponent": "random",
+            "games": 32,
+            "meanScore": 0.984375
+          },
+          {
+            "opponent": "tactical",
+            "games": 32,
+            "meanScore": 0.5
+          },
+          {
+            "opponent": "minimax",
+            "games": 32,
+            "meanScore": 0.390625
+          }
+        ]
+      },
+      {
+        "bot": "search-policy",
+        "complete": true,
+        "games": 96,
+        "meanScore": 0.7395833333333334,
+        "lower95": 0.6875,
+        "upper95": 0.796875,
+        "meanMoveMilliseconds": 0.5838493333333333,
+        "p95MoveMilliseconds": 1.2517,
+        "elapsedSeconds": 0.4480319,
+        "opponents": [
+          {
+            "opponent": "random",
+            "games": 32,
+            "meanScore": 0.96875
+          },
+          {
+            "opponent": "tactical",
+            "games": 32,
+            "meanScore": 0.75
+          },
+          {
+            "opponent": "minimax",
+            "games": 32,
+            "meanScore": 0.5
+          }
+        ]
+      }
+    ],
+    "trainingDecisionsPerSecond": 28533.45585599106,
+    "observations": "Numeric player-visible features; game-specific scaling belongs to the versioned adapter.",
+    "limitation": "Demonstration-game results do not establish playing strength in the unreleased event game."
+  },
+  "supervisor": {
+    "status": "completed",
+    "consumedSeconds": 277.2794817,
+    "budgetSeconds": 300
+  },
+  "doctor": {
+    "device": "cuda",
+    "forwardBackwardPassed": true,
+    "exportMaxError": 2.3841858e-07,
+    "torchSharp": "0.107.0.0",
+    "elapsedSeconds": 0.6243625
+  },
+  "processMemoryMiB": {
+    "min": 1601.80078125,
+    "max": 1625.921875
+  },
+  "portableAudit": {
+    "coreOnlyHost": true,
+    "referencedAssemblies": [
+      "System.Runtime",
+      "StratJamAI.Core",
+      "System.Collections",
+      "System.Linq",
+      "System.Text.Json",
+      "System.Console"
+    ],
+    "seed": 43000019,
+    "gamesPerCandidate": 1536,
+    "initialPolicy": {
+      "bot": "policy",
+      "complete": true,
+      "games": 1536,
+      "meanScore": 0.15364583333333334,
+      "lower95": 0.1328125,
+      "upper95": 0.17317708333333334,
+      "meanMoveMilliseconds": 0.05130217264791463,
+      "p95MoveMilliseconds": 0.0966,
+      "elapsedSeconds": 3.6709399,
+      "opponents": [
+        {
+          "opponent": "random",
+          "games": 512,
+          "meanScore": 0.4609375
+        },
+        {
+          "opponent": "tactical",
+          "games": 512,
+          "meanScore": 0
+        },
+        {
+          "opponent": "minimax",
+          "games": 512,
+          "meanScore": 0
+        }
+      ]
+    },
+    "trainedPolicy": {
+      "bot": "policy",
+      "complete": true,
+      "games": 1536,
+      "meanScore": 0.7180989583333334,
+      "lower95": 0.7014973958333334,
+      "upper95": 0.7347005208333334,
+      "meanMoveMilliseconds": 0.014115555927662313,
+      "p95MoveMilliseconds": 0.0224,
+      "elapsedSeconds": 3.2768029,
+      "opponents": [
+        {
+          "opponent": "random",
+          "games": 512,
+          "meanScore": 0.974609375
+        },
+        {
+          "opponent": "tactical",
+          "games": 512,
+          "meanScore": 0.75
+        },
+        {
+          "opponent": "minimax",
+          "games": 512,
+          "meanScore": 0.4296875
+        }
+      ]
+    },
+    "tacticalBaseline": {
+      "bot": "tactical",
+      "complete": true,
+      "games": 1536,
+      "meanScore": 0.6337890625,
+      "lower95": 0.6171875,
+      "upper95": 0.6516927083333334,
+      "meanMoveMilliseconds": 0.001604543273076306,
+      "p95MoveMilliseconds": 0.0036,
+      "elapsedSeconds": 3.2080411,
+      "opponents": [
+        {
+          "opponent": "random",
+          "games": 512,
+          "meanScore": 0.953125
+        },
+        {
+          "opponent": "tactical",
+          "games": 512,
+          "meanScore": 0.5
+        },
+        {
+          "opponent": "minimax",
+          "games": 512,
+          "meanScore": 0.4482421875
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Training selection used a deterministic minimax tie-break. The later portable audit randomizes all optimal oracle choices and isolates player RNG streams.",
+    "Scores are win=1, draw=0.5, loss=0; they are not win rates.",
+    "The portable audit uses only StratJamAI.Core and .NET, without TorchSharp."
+  ]
+}

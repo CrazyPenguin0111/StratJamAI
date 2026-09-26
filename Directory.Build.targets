@@ -1,0 +1,6 @@
+<Project>
+  <!-- The SDK runtime identifier is populated after Directory.Build.props is imported. -->
+  <PropertyGroup Condition="'$(NETCoreSdkRuntimeIdentifier)' == 'arch-x64'">
+    <AllowMissingPrunePackageData>true</AllowMissingPrunePackageData>
+  </PropertyGroup>
+</Project>
