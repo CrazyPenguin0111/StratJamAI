@@ -13,8 +13,12 @@ public sealed class TicTacToeDefinition : IGameDefinition
 public static class GameRegistry
 {
     // Add the event's definition here once its simulator and protocol are available.
-    public static IGameDefinition Get(string id) => id == "tic-tac-toe" ? new TicTacToeDefinition() :
-        throw new ArgumentException($"Unknown game '{id}'. Available: tic-tac-toe. Implement IGameDefinition to add a game.");
+    public static IGameDefinition Get(string id) => id switch
+    {
+        "tic-tac-toe" => new TicTacToeDefinition(),
+        "enclosure" => new EnclosureDefinition(),
+        _ => throw new ArgumentException($"Unknown game '{id}'. Available: tic-tac-toe, enclosure.")
+    };
 }
 
 public sealed class TicTacToe : ISearchableGame

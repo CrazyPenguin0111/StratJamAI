@@ -1,3 +1,4 @@
+using System.Buffers;
 using System.Numerics;
 using StratJamAI.Core.Games;
 
@@ -74,49 +75,139 @@ public sealed class CpuNetwork : IPolicyEvaluator
         Spec = spec;
         Weights = weights;
     }
+    // Scratch is private to each invocation: the same exported network can serve concurrent games.
+    private const int StackFloats = 1024;
+    private int ScratchSize => checked(Weights.Encoder1.Output + Weights.HiddenSize + 2 * Weights.ActionHiddenSize);
+
     public PolicyOutput Evaluate(DecisionRequest decision)
     {
         decision.Validate(Spec);
-        var h1 = new float[Weights.Encoder1.Output];
-        var h2 = new float[Weights.Encoder2.Output];
-        Weights.Encoder1.Forward(decision.Observation, h1, true);
-        Weights.Encoder2.Forward(h1, h2, true);
-        Span<float> value = stackalloc float[1];
-        Weights.Value.Forward(h2, value);
-        var joined = new float[Weights.Policy1.Input];
-        h2.CopyTo(joined, 0);
-        var actionHidden = new float[Weights.Policy1.Output];
-        var logits = new float[decision.Actions.Length];
-        for (var i = 0; i < decision.Actions.Length; i++)
+        var size = ScratchSize;
+        float[]? rented = null;
+        Span<float> scratch = size <= StackFloats ? stackalloc float[size] : (rented = ArrayPool<float>.Shared.Rent(size));
+        try
         {
-            decision.Actions[i].Features.CopyTo(joined, h2.Length);
-            Weights.Policy1.Forward(joined, actionHidden, true);
-            Weights.Policy2.Forward(actionHidden, logits.AsSpan(i, 1));
+            EncodePolicy(decision.Observation, scratch);
+            var hidden = scratch.Slice(Weights.Encoder1.Output, Weights.HiddenSize);
+            Span<float> value = stackalloc float[1];
+            Weights.Value.Forward(hidden, value);
+            var shared = scratch.Slice(Weights.Encoder1.Output + Weights.HiddenSize, Weights.ActionHiddenSize);
+            var actionHidden = scratch.Slice(Weights.Encoder1.Output + Weights.HiddenSize + Weights.ActionHiddenSize,
+                Weights.ActionHiddenSize);
+            var logits = new float[decision.Actions.Length];
+            for (var i = 0; i < decision.Actions.Length; i++)
+                logits[i] = ActionLogit(decision.Actions[i].Features, shared, actionHidden);
+            var (probabilities, logs) = Softmax(logits);
+            if (!float.IsFinite(value[0])) throw new InvalidDataException("Non-finite value prediction.");
+            return new(probabilities, value[0], logs);
         }
-        var (probabilities, logs) = Softmax(logits);
-        if (!float.IsFinite(value[0])) throw new InvalidDataException("Non-finite value prediction.");
-        return new(probabilities, value[0], logs);
+        finally { if (rented is not null) ArrayPool<float>.Shared.Return(rented); }
     }
+
+    // Returns an opaque action ID, with stable first-action tie breaking and a legal deadline fallback.
+    // No value head, logits array, log probabilities, or softmax is needed for deterministic play.
+    public int ArgMaxAction(DecisionRequest decision, Deadline deadline)
+    {
+        if (decision.Actions.Length == 0) throw new InvalidDataException("An action is required for policy inference.");
+        var bestId = decision.Actions[0].Id;
+        if (deadline.Expired) return bestId;
+        decision.Validate(Spec);
+        if (deadline.Expired) return bestId;
+        var size = ScratchSize;
+        float[]? rented = null;
+        Span<float> scratch = size <= StackFloats ? stackalloc float[size] : (rented = ArrayPool<float>.Shared.Rent(size));
+        try
+        {
+            EncodePolicy(decision.Observation, scratch);
+            var shared = scratch.Slice(Weights.Encoder1.Output + Weights.HiddenSize, Weights.ActionHiddenSize);
+            var actionHidden = scratch.Slice(Weights.Encoder1.Output + Weights.HiddenSize + Weights.ActionHiddenSize,
+                Weights.ActionHiddenSize);
+            var bestLogit = float.NegativeInfinity;
+            foreach (var action in decision.Actions)
+            {
+                if (deadline.Expired) break;
+                var logit = ActionLogit(action.Features, shared, actionHidden);
+                if (!float.IsFinite(logit)) throw new InvalidDataException("Non-finite policy logit.");
+                if (logit > bestLogit) { bestLogit = logit; bestId = action.Id; }
+            }
+            return bestId;
+        }
+        finally { if (rented is not null) ArrayPool<float>.Shared.Return(rented); }
+    }
+
+    private void EncodePolicy(ReadOnlySpan<float> observation, Span<float> scratch)
+    {
+        var first = scratch[..Weights.Encoder1.Output];
+        var hidden = scratch.Slice(first.Length, Weights.HiddenSize);
+        var shared = scratch.Slice(first.Length + hidden.Length, Weights.ActionHiddenSize);
+        Weights.Encoder1.Forward(observation, first, true);
+        Weights.Encoder2.Forward(first, hidden, true);
+        // Keep the original [hidden, action] parameter layout for portable/checkpoint compatibility.
+        for (var row = 0; row < shared.Length; row++)
+            shared[row] = AddDot(Weights.Policy1.Bias[row], hidden,
+                Weights.Policy1.Weight.AsSpan(row * Weights.Policy1.Input, hidden.Length));
+    }
+
+    private float ActionLogit(ReadOnlySpan<float> features, ReadOnlySpan<float> shared, Span<float> actionHidden)
+    {
+        for (var row = 0; row < shared.Length; row++)
+            actionHidden[row] = Math.Max(0, AddDot(shared[row], features,
+                Weights.Policy1.Weight.AsSpan(row * Weights.Policy1.Input + Weights.HiddenSize, features.Length)));
+        Span<float> logit = stackalloc float[1];
+        Weights.Policy2.Forward(actionHidden, logit);
+        return logit[0];
+    }
+
+    private static float AddDot(float sum, ReadOnlySpan<float> input, ReadOnlySpan<float> weights)
+    {
+        var i = 0;
+        for (; i <= input.Length - Vector<float>.Count; i += Vector<float>.Count)
+            sum += Vector.Dot(new Vector<float>(input[i..]), new Vector<float>(weights[i..]));
+        for (; i < input.Length; i++) sum += input[i] * weights[i];
+        return sum;
+    }
+
     public PolicyOutput[] Evaluate(IReadOnlyList<DecisionRequest> decisions) => decisions.Select(Evaluate).ToArray();
     public float[] Values(IReadOnlyList<float[]> observations) => observations.Select(Value).ToArray();
     private float Value(float[] observation)
     {
         if (observation.Length != Spec.ObservationSize || observation.Any(x => !float.IsFinite(x)))
             throw new InvalidDataException("Invalid value observation.");
-        var h1 = new float[Weights.Encoder1.Output];
-        var h2 = new float[Weights.Encoder2.Output];
-        Span<float> value = stackalloc float[1];
-        Weights.Encoder1.Forward(observation, h1, true);
-        Weights.Encoder2.Forward(h1, h2, true);
-        Weights.Value.Forward(h2, value);
-        return value[0];
+        var size = checked(Weights.Encoder1.Output + Weights.HiddenSize);
+        float[]? rented = null;
+        Span<float> scratch = size <= StackFloats ? stackalloc float[size] : (rented = ArrayPool<float>.Shared.Rent(size));
+        try
+        {
+            var first = scratch[..Weights.Encoder1.Output];
+            var hidden = scratch.Slice(first.Length, Weights.HiddenSize);
+            Span<float> value = stackalloc float[1];
+            Weights.Encoder1.Forward(observation, first, true);
+            Weights.Encoder2.Forward(first, hidden, true);
+            Weights.Value.Forward(hidden, value);
+            if (!float.IsFinite(value[0])) throw new InvalidDataException("Non-finite value prediction.");
+            return value[0];
+        }
+        finally { if (rented is not null) ArrayPool<float>.Shared.Return(rented); }
     }
     public static (float[] Probabilities, float[] Logs) Softmax(float[] logits)
     {
-        if (logits.Length == 0 || logits.Any(x => !float.IsFinite(x))) throw new InvalidDataException("Invalid logits.");
-        var max = logits.Max();
-        var logSum = max + Math.Log(logits.Sum(x => Math.Exp(x - max)));
-        var logs = logits.Select(x => (float)(x - logSum)).ToArray();
-        return (logs.Select(MathF.Exp).ToArray(), logs);
+        if (logits.Length == 0) throw new InvalidDataException("Invalid logits.");
+        var max = float.NegativeInfinity;
+        foreach (var logit in logits)
+        {
+            if (!float.IsFinite(logit)) throw new InvalidDataException("Invalid logits.");
+            max = Math.Max(max, logit);
+        }
+        double sum = 0;
+        foreach (var logit in logits) sum += Math.Exp(logit - max);
+        var logSum = max + Math.Log(sum);
+        var probabilities = new float[logits.Length];
+        var logs = new float[logits.Length];
+        for (var i = 0; i < logits.Length; i++)
+        {
+            logs[i] = (float)(logits[i] - logSum);
+            probabilities[i] = MathF.Exp(logs[i]);
+        }
+        return (probabilities, logs);
     }
 }

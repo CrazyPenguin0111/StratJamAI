@@ -2,9 +2,77 @@
 
 An all-C# framework for training and evaluating strategy-game bots under a wall-clock budget. Training uses TorchSharp on an NVIDIA GPU; the exported feed-forward network runs in plain .NET without a native ML runtime.
 
-The included game is **Tic-Tac-Toe**, used to verify the infrastructure. The Strategy Jam rules, game simulator, observation encoding, and event connection still need to be supplied. There is no claim that one hour of training solves an arbitrary game, or that the demo's weights transfer to the event.
+The main game is **Enclosure**, played on a 19×19 board using the current [official practice game rules](https://meaf.us/sst1/). It includes a local browser interface and a CPU alpha-beta opponent. Tic-Tac-Toe remains as a small training and regression demo. The event server's wire protocol is not implemented.
 
-## Run it
+## Play Enclosure
+
+With the .NET 10 SDK and ASP.NET Core 10 runtime installed:
+
+```sh
+dotnet run --project StratJamAI -c Release -- ui
+```
+
+This opens **http://127.0.0.1:5080**. Select one of your nodes, then a highlighted endpoint. Choose Blue or Red before starting a new game. The interface shows territory, protected lines, cumulative scores, move history, search depth, and the AI's planned continuation. Hint, Undo, and Save/Load are included. Arrow keys move the board cursor; Enter selects a point.
+
+Enable **Live suggestions** for automatic hints after each position changes. **Analyse game** lets you enter both players' moves while the AI coaches the side to move. To follow the original website automatically, use **Connect the original site** and its userscript; it opens a separate coaching session and follows the move history without submitting moves. See [live coaching setup and API](docs/live-coaching.md).
+
+The strategy evaluation now projects territory income through the remaining game, estimates unfinished enclosures, and gives a small bonus to boundaries backed by parallel walls. This addresses the old four-turn scoring horizon and its tendency to overlook large late enclosures. These are estimates, not a guarantee of beating the double-wall strategy; the game rules and legal captures are unchanged.
+
+The opponent uses **iterative-deepening alpha-beta search**, with a default budget of **one second per placement**. Two placements on an AI turn may take two seconds. Adjust the budget in the page, or launch with `ui --move-ms 250 --port 5081`. Use `--no-browser` to print the address without opening it. Playing needs neither a trained model nor CUDA; the web host references only the managed game core. You can also run it directly with `dotnet run --project StratJamAI.Web -c Release`.
+
+## Let other people play
+
+For an Internet link without router changes:
+
+```sh
+dotnet run --project StratJamAI -c Release -- ui --share --port 5081
+```
+
+Copy the printed **Public Enclosure link** and send it to other players. Keep the computer awake and the hosting command running. Ctrl+C closes its tunnel and any server it started. The sharing command uses [Cloudflare Quick Tunnels](https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/do-more-with-tunnels/trycloudflare/); its temporary HTTPS address changes when a new tunnel starts. `cloudflared` must be on PATH or in `~/.local/bin` ([official downloads](https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/downloads/)). It has been installed in `~/.local/bin` on the development machine. Quick Tunnels are for temporary sharing; a named tunnel with your own domain is appropriate for a stable address.
+
+Each browser gets its **own game**. Refreshing keeps it; different visitors cannot move, undo, import, or export one another's game. Tabs in the same browser share that browser's game. Sessions expire after two hours without API activity, and all unsaved games disappear when the server restarts. Save a game to keep it longer.
+
+The defaults allow 128 browser sessions and four simultaneous searches. Additional searches wait for a slot, then receive their full thinking budget. Use `--max-searches 2` to use less CPU or `--max-sessions 256` to allow more visitors. Requests have per-session rate limits and uploads are limited to 64 KiB.
+
+For direct LAN access or your own reverse proxy/router configuration:
+
+```sh
+dotnet run --project StratJamAI -c Release -- ui --public --port 5081 --no-browser
+```
+
+Visitors on your network use `http://YOUR-LAN-IP:5081`. `--public` binds all IPv4 interfaces; reaching it from outside your network additionally requires your router/firewall configuration or a reverse proxy. `--share` uses a loopback server and does not need `--public`. A local HTTPS reverse proxy should preserve the public `Host` and send `X-Forwarded-Proto: https`; forwarded scheme headers are trusted only from loopback.
+
+Port 5081 in these examples avoids the earlier local server on 5080. An older server must be stopped or a different port selected before sharing: the launcher refuses to expose the old single-game implementation. Repeat launches reuse a compatible server; its existing limits and thinking-time defaults remain in effect.
+
+Search considers every legal move and returns the last fully completed depth. It tries cached and previously successful moves first, orders the remaining candidates only as needed, and uses principal-variation search to reduce repeated work. Board counts, position hashes, and move classifications are cached or updated incrementally. It handles the same player taking consecutive placements. Large middle-game action lists limit depth; at very small budgets, it returns a legal ordered fallback. See [Enclosure rules and encoding](docs/enclosure-rules.md), [measured validation](docs/enclosure-validation.md), and the [before/after search benchmarks](docs/enclosure-search-performance.md).
+
+After updating the code, stop and restart the hosting command to use the new engine. Launching `ui` again while a compatible server is already running reuses that process; it does not reload its code.
+
+Terminal play and history-based move suggestions use the same engine:
+
+```sh
+dotnet run --project StratJamAI -c Release -- play --seat blue --save game.json
+dotnet run --project StratJamAI -c Release -- suggest --history game.json --move-ms 1000
+dotnet run --project StratJamAI -c Release -- evaluate --game enclosure --bot alpha-beta --move-ms 50 --pairs 4 --seconds 180
+dotnet run --project StratJamAI -c Release -- benchmark-enclosure --samples 5 --compare --pairs 2 --output benchmark.json
+```
+
+`play` accepts `--bot alpha-beta|mcts|tactical|random|policy` and optional `--model bot.json`. Histories store zero-based coordinate pairs and replay every move to reconstruct scores and protection. A minimal history is `{"formatVersion":1,"game":"enclosure","moves":[]}`. Browser saves and terminal histories are interchangeable; invalid histories leave the current browser game intact.
+
+## Train an Enclosure policy
+
+Training is optional and separate from the browser opponent:
+
+```sh
+dotnet run --project StratJamAI -c Release -- doctor --device cuda
+dotnet run --project StratJamAI -c Release -- train --config configs/enclosure.json --output runs/enclosure
+dotnet run --project StratJamAI -c Release -- export --run runs/enclosure --output enclosure.bot.json
+dotnet run --project StratJamAI -c Release -- play --model enclosure.bot.json
+```
+
+The Enclosure configuration uses smaller minibatches for its much larger legal-action lists. Pass `--device cpu` for CPU training, or `--minutes 5` for a shorter run. Final selection compares learned policies with tactical, random, alpha-beta, and MCTS candidates; the selected artifact may be a baseline. A short smoke run verifies the pipeline, not playing strength. Existing Tic-Tac-Toe artifacts remain compatible.
+
+## Train the Tic-Tac-Toe demo
 
 From the solution directory, with .NET 10 and the NVIDIA driver installed:
 
@@ -45,9 +113,11 @@ dotnet run --project StratJamAI -c Release --no-build -- play-demo --model runs/
 
 | Project | Responsibility |
 | --- | --- |
-| `StratJamAI.Core` | Game contracts, demo, managed inference, bots, PUCT search, evaluation, artifact format |
+| `StratJamAI.Core` | Enclosure and demo rules, managed inference, alpha-beta/PUCT search, evaluation, artifacts |
 | `StratJamAI` | CLI, TorchSharp model and PPO, parallel rollouts, training supervisor, checkpoints |
+| `StratJamAI.Web` | Local browser UI and cancellable game session, without TorchSharp |
 | `StratJamAI.Tests` | Algorithm, game-contract, export, checkpoint, and process-level budget tests |
+| `StratJamAI.Web.Tests` | UI session, cancellation, stale-result, undo, and history tests |
 
 ```mermaid
 flowchart LR
@@ -62,7 +132,7 @@ flowchart LR
     A --> C[Plain C# bot core]
 ```
 
-The network has two shared 128-unit ReLU layers. Each legal action is represented by a feature vector; a 64-unit action head scores the concatenation of that vector and the state embedding. A separate scalar head estimates the acting player's return. This allows a different number of legal actions in each state without a hard-coded action vocabulary. Dimensions and feature meanings remain fixed within a versioned game schema.
+The network has two shared 128-unit ReLU layers. Each legal action is represented by a feature vector; a 64-unit action head scores that vector with the state embedding. The state contribution is computed once and shared across actions, preserving the original concatenated-head weights and outputs while reducing work. A separate scalar head estimates the acting player's return. This allows a different number of legal actions in each state without a hard-coded action vocabulary. Dimensions and feature meanings remain fixed within a versioned game schema.
 
 Exported policies choose the highest-scoring action in sequential, fully observed games. They sample the learned distribution by default in simultaneous or partially observed games, where a predictable pure strategy can be exploitable. The artifact's optional `samplePolicy` setting overrides that default. Each evaluated player has an independent random stream, so one bot's search cannot change its opponent's randomness.
 
@@ -104,7 +174,7 @@ A checkpoint is committed only after its model/configuration data and Adam state
 
 `BufferMemoryMiB` bounds stored rollout data and rejects padded tensor batches whose estimated working storage exceeds that amount. It is not a cap on the CUDA context, native allocator, or total process RSS. Reduce `environments` or `minibatchSize` if a game's action lists are large. No legal actions are silently discarded to fit a buffer.
 
-## Add the event game later
+## Add another game
 
 1. Implement `IGameDefinition` and `IGameAdapter`, then register the definition in `GameRegistry.Get`. The registry is the only game-specific selection point in the CLI/trainer.
 2. Give the adapter a stable `GameSpec.Id` and a versioned `FeatureSchema`. Supply fixed-length, finite, normalized observation/action features. Version rules/reward changes in the game ID or schema, and change the schema whenever feature meanings, scaling, or action interpretation change.
@@ -118,7 +188,7 @@ A checkpoint is committed only after its model/configuration data and Adam state
 To use an artifact in a bot host, reference **only** `StratJamAI.Core`:
 
 ```csharp
-var game = GameRegistry.Get("tic-tac-toe"); // Replace with the event definition.
+var game = GameRegistry.Get("enclosure");
 var artifact = BotArtifact.Load("bot.json", game.Spec);
 IBot bot = artifact.CreateBot(game);
 
@@ -128,7 +198,7 @@ int actionId = bot.ChooseAction(request,
 
 The host must keep action IDs mapped to the current request and provide `searchableState` only where full-information search is supported. The artifact's selected tactical/search bot also requires that game's C# implementation. Native TorchSharp files are not needed by this host.
 
-Continuous-action games, pixel-only observations, learned recurrent memory, hidden-information search, and the event wire protocol are outside this first version. The current feed-forward model and adapter contracts deliberately leave those game-specific choices for the rules release.
+Continuous-action games, pixel-only observations, learned recurrent memory, hidden-information search, and the event wire protocol are outside this version.
 
 ## Validation
 
@@ -137,6 +207,12 @@ dotnet test StratJamAI.sln -c Release
 ```
 
 Tests include a contextual bandit learned by PPO without demonstrations or search; inference parity and padding masks; terminal/truncated GAE; rewards on opponent turns; simultaneous-player privacy; extra-turn search; checkpoint/Adam continuation and corruption recovery; and subprocess budget enforcement. The GPU `doctor` check is separate from the CPU test suite.
+
+Enclosure tests additionally compare 363 positions against the official JavaScript simulator, including exact legal-action sets, areas, scores, protection, and terminal results. They cover search deadlines, cancellation, consecutive placements, exhaustive shallow-search agreement, portable-network parity, and browser session state. The web tests require the ASP.NET Core 10 runtime. If it is installed separately under `~/.dotnet`, select that host explicitly:
+
+```sh
+dotnet test StratJamAI.sln -c Release -- RunConfiguration.DotNetHostPath="$HOME/.dotnet/dotnet"
+```
 
 See [validation results](docs/validation.md) for the measured local demonstration run.
 

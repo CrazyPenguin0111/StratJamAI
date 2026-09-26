@@ -35,6 +35,23 @@ public static class CommandLine
                     return 0;
                 case "train":
                     return await Train(options);
+                case "benchmark-enclosure":
+                    options.Known("samples", "compare", "pairs", "seed", "output");
+                    var enclosureBenchmark = EnclosureBenchmarks.Run(options.Integer("samples", 5), options.Has("compare"),
+                        options.Integer("pairs", 2), options.Unsigned("seed", 72891), Console.Error.WriteLine);
+                    Print(enclosureBenchmark);
+                    if (options.Has("output")) JsonFiles.WriteAtomic(options.Required("output"), enclosureBenchmark);
+                    return 0;
+                case "ui":
+                    options.Known("port", "move-ms", "no-browser", "public", "share", "max-searches", "max-sessions");
+                    return await UiLauncher.Run(options.Integer("port", 5080), options.Number("move-ms", 1000), options.Has("no-browser"),
+                        options.Has("public"), options.Has("share"), options.Integer("max-searches", 4), options.Integer("max-sessions", 128));
+                case "play":
+                    options.Known("game", "model", "bot", "seat", "load", "save", "move-ms");
+                    return EnclosureConsole.Play(options);
+                case "suggest":
+                    options.Known("history", "model", "bot", "move-ms");
+                    return EnclosureConsole.Suggest(options);
                 case "_worker":
                     options.Known("run", "start", "consumed", "continuation");
                     var run = options.Required("run");
@@ -43,13 +60,17 @@ public static class CommandLine
                         long.Parse(options.Required("start"), CultureInfo.InvariantCulture));
                     return Trainer.Run(config, run, budget, options.Has("continuation"));
                 case "evaluate":
-                    options.Known("model", "pairs", "seconds", "output", "seed");
-                    var artifact = JsonFiles.Read<BotArtifact>(options.Required("model"));
-                    var definition = GameRegistry.Get(artifact.Game.Id);
-                    artifact.Validate(definition.Spec);
-                    var evaluation = Evaluation.Run(definition, artifact.CreateBot(definition), Evaluation.FixedOpponents(definition),
+                    options.Known("model", "bot", "game", "move-ms", "pairs", "seconds", "output", "seed");
+                    var artifact = options.Has("model") ? JsonFiles.Read<BotArtifact>(options.Required("model")) : null;
+                    var definition = GameRegistry.Get(options.Get("game", artifact?.Game.Id ?? "enclosure"));
+                    artifact?.Validate(definition.Spec);
+                    var moveMilliseconds = options.Number("move-ms", artifact?.Search.MoveMilliseconds ?? 1000);
+                    if (!double.IsFinite(moveMilliseconds) || moveMilliseconds <= 0) throw new ArgumentException("--move-ms must be positive.");
+                    var evaluationBot = artifact is not null && !options.Has("bot") ? artifact.CreateBot(definition) :
+                        EnclosureConsole.CreateBot(options.Get("bot", "alpha-beta"), artifact, definition, moveMilliseconds);
+                    var evaluation = Evaluation.Run(definition, evaluationBot, Evaluation.FixedOpponents(definition),
                         options.Integer("pairs", 32), options.Unsigned("seed", 43000019),
-                        Deadline.After(TimeSpan.FromSeconds(options.Number("seconds", 60))), artifact.Search.MoveMilliseconds);
+                        Deadline.After(TimeSpan.FromSeconds(options.Number("seconds", 60))), moveMilliseconds);
                     Print(evaluation);
                     if (options.Has("output")) JsonFiles.WriteAtomic(options.Required("output"), evaluation);
                     return evaluation.Complete ? 0 : 2;
@@ -206,8 +227,15 @@ public static class CommandLine
     private static void Help() => Console.WriteLine("""
         StratJamAI — C# strategy-bot training and portable inference
 
+        ui         [--port 5080] [--move-ms 1000] [--no-browser]
+                   [--public] [--share] [--max-searches 4] [--max-sessions 128]
+        play       [--game enclosure] [--bot alpha-beta|mcts|tactical|random|policy]
+                   [--model bot.json] [--seat blue|red] [--load game.json] [--save game.json]
+                   [--move-ms 1000]
+        suggest    --history game.json [--bot alpha-beta] [--model bot.json] [--move-ms 1000]
         doctor     [--device cuda|cpu]
         benchmark  [--game tic-tac-toe] [--envs 64] [--seconds 10]
+        benchmark-enclosure [--samples 5] [--compare] [--pairs 2] [--seed 72891] [--output report.json]
         train      [--config configs/default.json] [--minutes 60] [--device cuda]
                    [--output runs/example] [--seed 1337] [--envs 64] [--workers 0]
                    [--rollout 8192] [--batch 512] [--epochs 4] [--no-warmup]
@@ -215,11 +243,15 @@ public static class CommandLine
         train      --resume runs/example [--minutes TOTAL_CUMULATIVE_MINUTES]
         evaluate   --model runs/example/best.bot.json [--pairs 32] [--seconds 60]
                    [--seed 43000019] [--output evaluation.json]
+        evaluate   --game enclosure --bot alpha-beta [--move-ms 1000] [--pairs 4] [--seconds 600]
         export     --run runs/example --output bot.json [--policy-only]
         play-demo  [--model bot.json] [--games 1] [--human]
 
         Dependencies/builds are prepared before the training clock starts.
-        Event rules and the event transport are not implemented yet.
+        Enclosure training: train --config configs/enclosure.json --output runs/enclosure
+        The UI runs locally; no model or GPU is required for depth-search play.
+        --public listens on all network interfaces; --share prints a temporary public link using cloudflared.
+        --share works with the default loopback server. Keep the command running to keep the link available.
         """);
 }
 
@@ -228,7 +260,7 @@ public sealed record SupervisorState(string Status, double ConsumedSeconds, doub
 internal sealed class Options
 {
     private readonly Dictionary<string, string> values = new(StringComparer.Ordinal);
-    private static readonly HashSet<string> Flags = ["no-warmup", "policy-only", "human", "continuation"];
+    private static readonly HashSet<string> Flags = ["no-warmup", "policy-only", "human", "continuation", "no-browser", "compare", "public", "share"];
     public Options(string[] args)
     {
         for (var i = 0; i < args.Length; i++)

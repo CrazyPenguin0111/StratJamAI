@@ -161,6 +161,8 @@ public static class Trainer
         candidates.Add(Artifact(bestPolicy, "random", "Random baseline."));
         if (definition.Spec.SupportsSearch && definition.Create() is ISearchableGame)
         {
+            if (definition.Spec.Id == "enclosure")
+                candidates.Add(Artifact(bestPolicy, "alpha-beta", "Iterative-deepening alpha-beta with geometric evaluation."));
             candidates.Add(Artifact(bestPolicy, "search", "PUCT with random rollouts."));
             candidates.Add(Artifact(bestPolicy, "search-policy", "PUCT with the learned policy and value."));
         }

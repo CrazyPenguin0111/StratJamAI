@@ -9,9 +9,23 @@
 
     <ItemGroup>
         <ProjectReference Include="../StratJamAI.Core/StratJamAI.Core.csproj" />
+        <ProjectReference Include="../StratJamAI.Web/StratJamAI.Web.csproj" ReferenceOutputAssembly="false" />
         <PackageReference Include="TorchSharp-cuda-linux" Version="0.107.0" Condition="$([MSBuild]::IsOSPlatform('Linux'))" />
         <PackageReference Include="TorchSharp-cuda-windows" Version="0.107.0" Condition="$([MSBuild]::IsOSPlatform('Windows'))" />
         <PackageReference Include="TorchSharp-cpu" Version="0.107.0" Condition="$([MSBuild]::IsOSPlatform('OSX'))" />
     </ItemGroup>
+
+    <Target Name="CopyLocalUi" AfterTargets="Build">
+        <ItemGroup>
+            <LocalUiFiles Include="../StratJamAI.Web/bin/$(Configuration)/$(TargetFramework)/**/*" />
+        </ItemGroup>
+        <Copy SourceFiles="@(LocalUiFiles)" DestinationFiles="@(LocalUiFiles->'$(OutDir)ui/%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+    </Target>
+    <Target Name="PublishLocalUi" AfterTargets="Publish">
+        <ItemGroup>
+            <PublishUiFiles Include="$(OutDir)ui/**/*" />
+        </ItemGroup>
+        <Copy SourceFiles="@(PublishUiFiles)" DestinationFiles="@(PublishUiFiles->'$(PublishDir)ui/%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+    </Target>
 
 </Project>

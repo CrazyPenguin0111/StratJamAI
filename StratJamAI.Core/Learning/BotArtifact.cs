@@ -15,8 +15,10 @@ public sealed record BotArtifact(int FormatVersion, GameSpec Game, NetworkWeight
             throw new InvalidDataException("Unsupported artifact version or mismatched game/feature schema.");
         Weights.Validate(Game);
         Search.Validate();
-        if (SelectedBot is not ("random" or "tactical" or "policy" or "search" or "search-policy"))
+        if (SelectedBot is not ("random" or "tactical" or "policy" or "search" or "search-policy" or "alpha-beta"))
             throw new InvalidDataException("Unknown bot kind in the artifact.");
+        if (SelectedBot == "alpha-beta" && Game.Id != "enclosure")
+            throw new InvalidDataException("The alpha-beta bot requires Enclosure.");
         if (SelectedBot.StartsWith("search", StringComparison.Ordinal) && !Game.SupportsSearch)
             throw new InvalidDataException("This game does not support PUCT search.");
     }
@@ -30,6 +32,7 @@ public sealed record BotArtifact(int FormatVersion, GameSpec Game, NetworkWeight
             "policy" => new PolicyBot(new CpuNetwork(Game, Weights), SamplePolicy ?? (!Game.Sequential || !Game.FullyObservable)),
             "search" => new MctsBot(Search),
             "search-policy" => new MctsBot(Search, new CpuNetwork(Game, Weights)),
+            "alpha-beta" => new EnclosureAlphaBetaBot(new(Search.MoveMilliseconds, Math.Min(120, Search.MaxDepth))),
             _ => throw new InvalidDataException("Unknown bot.")
         };
     }

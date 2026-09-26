@@ -24,8 +24,9 @@ public sealed class PolicyBot(CpuNetwork network, bool sample = false) : IBot
     public int ChooseAction(DecisionRequest decision, BotContext context)
     {
         if (context.Deadline.Expired) return decision.Actions[0].Id;
+        if (!sample) return network.ArgMaxAction(decision, context.Deadline);
         var probabilities = network.Evaluate(decision).Probabilities;
-        var index = sample ? context.Random.Sample(probabilities) : Array.IndexOf(probabilities, probabilities.Max());
+        var index = context.Random.Sample(probabilities);
         return decision.Actions[index].Id;
     }
 }
@@ -68,14 +69,14 @@ public sealed class MctsBot : IBot
     private sealed class Node
     {
         public int Visits;
-        public List<Edge>? Edges;
+        public Edge[]? Edges;
     }
     private sealed class Edge(int action, float prior, int player)
     {
         public readonly int Action = action;
         public readonly float Prior = prior;
         public readonly int Player = player;
-        public readonly Node Child = new();
+        public Node? Child;
         public int Visits;
         public double Value;
     }
@@ -92,11 +93,12 @@ public sealed class MctsBot : IBot
         var deadline = context.Deadline.Limit(TimeSpan.FromMilliseconds(options.MoveMilliseconds));
         if (deadline.Expired) return fallback;
         var root = new Node();
+        var path = new List<Edge>();
         for (var simulation = 0; simulation < options.Simulations && !deadline.Expired; simulation++)
         {
             var game = state.Fork();
             var node = root;
-            var path = new List<Edge>();
+            path.Clear();
             float[]? returns = null;
             var depth = 0;
             while (!deadline.Expired && depth++ < options.MaxDepth)
@@ -107,7 +109,7 @@ public sealed class MctsBot : IBot
                 {
                     var output = network?.Evaluate(request);
                     node.Edges = request.Actions.Select((a, i) => new Edge(a.Id,
-                        output?.Probabilities[i] ?? 1f / request.Actions.Length, request.Player)).ToList();
+                        output?.Probabilities[i] ?? 1f / request.Actions.Length, request.Player)).ToArray();
                     if (output is not null)
                     {
                         var value = Math.Clamp(output.Value, -1, 1);
@@ -116,11 +118,18 @@ public sealed class MctsBot : IBot
                     else returns = Rollout(game, context.Random, deadline, options.MaxDepth - depth);
                     break;
                 }
-                var edge = node.Edges.MaxBy(e => (e.Visits == 0 ? 0 : e.Value / e.Visits) +
-                    options.Exploration * e.Prior * Math.Sqrt(node.Visits + 1) / (1 + e.Visits))!;
+                var exploration = options.Exploration * Math.Sqrt(node.Visits + 1);
+                var edge = node.Edges[0];
+                var bestScore = double.NegativeInfinity;
+                foreach (var candidate in node.Edges)
+                {
+                    var score = (candidate.Visits == 0 ? 0 : candidate.Value / candidate.Visits) +
+                        exploration * candidate.Prior / (1 + candidate.Visits);
+                    if (score > bestScore) { bestScore = score; edge = candidate; }
+                }
                 path.Add(edge);
                 game.Step(new Dictionary<int, int> { [request.Player] = edge.Action });
-                node = edge.Child;
+                node = edge.Child ??= new();
             }
             if (deadline.Expired) break; // Never back up an unfinished rollout as a draw.
             returns ??= [0, 0]; // Explicit depth-limit evaluation for the search, not a game result.
@@ -129,11 +138,15 @@ public sealed class MctsBot : IBot
             {
                 edge.Visits++;
                 edge.Value += returns[edge.Player]; // Correct even if a player receives an extra turn.
-                edge.Child.Visits++;
+                edge.Child!.Visits++;
             }
         }
-        return root.Edges?.Where(e => e.Visits > 0).OrderByDescending(e => e.Visits)
-            .ThenByDescending(e => e.Value / e.Visits).FirstOrDefault()?.Action ?? fallback;
+        Edge? best = null;
+        if (root.Edges is not null)
+            foreach (var edge in root.Edges)
+                if (edge.Visits > 0 && (best is null || edge.Visits > best.Visits ||
+                    edge.Visits == best.Visits && edge.Value / edge.Visits > best.Value / best.Visits)) best = edge;
+        return best?.Action ?? fallback;
     }
     private static float[]? Rollout(ISearchableGame game, RandomSource random, Deadline deadline, int depth)
     {

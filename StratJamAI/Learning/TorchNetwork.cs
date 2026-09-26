@@ -40,9 +40,12 @@ public sealed class TorchNetwork : nn.Module, IPolicyEvaluator
     {
         using var scope = NewDisposeScope();
         var hidden = encoder2.forward(encoder1.forward(observations).relu()).relu();
-        var repeated = hidden.unsqueeze(1).expand(observations.shape[0], actions.shape[1], HiddenSize);
-        var joined = cat([repeated, actions], dim: 2);
-        var logits = policy2.forward(policy1.forward(joined).relu()).squeeze(-1)
+        // W[h,a] + b = Wh*h + b + Wa*a. Views preserve the original named parameter
+        // and optimizer state while avoiding a [batch, actions, hidden + features] allocation.
+        var shared = nn.functional.linear(hidden, policy1.weight.narrow(1, 0, HiddenSize), policy1.bias);
+        var candidates = nn.functional.linear(actions,
+            policy1.weight.narrow(1, HiddenSize, Spec.ActionFeatureSize));
+        var logits = policy2.forward((candidates + shared.unsqueeze(1)).relu()).squeeze(-1)
             .masked_fill(legalMask.logical_not(), -1e9);
         var values = value.forward(hidden).squeeze(-1);
         return (logits.MoveToOuterDisposeScope(), values.MoveToOuterDisposeScope());
@@ -86,8 +89,11 @@ public sealed class TorchNetwork : nn.Module, IPolicyEvaluator
         if (decisions.Count == 0) throw new ArgumentException("An empty tensor batch is not valid.");
         foreach (var decision in decisions) decision.Validate(Spec);
         var maxActions = decisions.Max(d => d.Actions.Length);
+        // Conservative forward/backward allowance including host staging, activations, gradients,
+        // logits/masks and loss workspaces. Hidden state is projected once per decision.
         var estimatedBytes = checked(24L * decisions.Count * maxActions *
-            (Spec.ActionFeatureSize + HiddenSize + ActionHiddenSize) + 4L * decisions.Count * Spec.ObservationSize);
+            (Spec.ActionFeatureSize + ActionHiddenSize + 4L) +
+            24L * decisions.Count * (Spec.ObservationSize + encoder1.weight.shape[0] + HiddenSize + ActionHiddenSize));
         if (estimatedBytes > MaxBatchBytes)
             throw new InvalidOperationException("The padded tensor batch exceeds BufferMemoryMiB. Reduce environments/minibatch size or increase the memory budget; actions are never silently discarded.");
         var observations = new float[checked(decisions.Count * Spec.ObservationSize)];

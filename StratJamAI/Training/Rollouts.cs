@@ -113,7 +113,7 @@ public sealed class RolloutCollector
                 if (deadline.Expired) return;
                 var end = slot.Game.Frame;
                 var boundary = end.Finished || slot.Steps >= config.MaxEpisodeSteps;
-                nextObservations[j] = slot.Game.Observe(slot.LearnerSeat);
+                if (!end.Terminated) nextObservations[j] = slot.Game.Observe(slot.LearnerSeat);
                 round[j] = new()
                 {
                     Decision = requests[j], Environment = indices[j], ActionIndex = actionIndex,
@@ -123,11 +123,13 @@ public sealed class RolloutCollector
                 if (boundary) Finish(slot, end.Terminated);
             });
             if (deadline.Expired) break; // Discard this incomplete round, never manufacture terminal transitions.
-            var nextValues = policy.Values(nextObservations);
+            var bootstrapObservations = nextObservations.Where(o => o is not null).ToArray();
+            var nextValues = bootstrapObservations.Length == 0 ? [] : policy.Values(bootstrapObservations);
+            var nextValueIndex = 0;
             for (var j = 0; j < round.Length; j++)
             {
                 var transition = round[j]!;
-                transition.NextValue = transition.Terminated ? 0 : nextValues[j];
+                transition.NextValue = transition.Terminated ? 0 : nextValues[nextValueIndex++];
                 samples.Add(transition);
             }
             bytes += roundBytes;
