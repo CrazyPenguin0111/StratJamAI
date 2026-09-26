@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Connect the Enclosure live coach</title><link rel="stylesheet" href="/styles.css?v=coach-20260926"><script src="/coach-setup.js" defer></script></head>
+<body><main class="app">
+  <header class="app-header"><div class="brand"><h1>Live coach<span class="brand-period">.</span></h1></div><a href="/">Back to the board</a></header>
+  <section class="card">
+    <h2>Follow a game on the original site</h2>
+    <ol>
+      <li>Keep this site available while you play. Visitors to a public site do not need to run their own server.</li>
+      <li>Install a browser userscript manager, then install <a href="/enclosure-coach.user.js">the Enclosure live coach script</a>.</li>
+      <li>Open or reload <a href="https://meaf.us/sst1/" target="_blank" rel="noopener">the original Enclosure site</a>. In its new “StratJamAI coach” panel, enter this server's address: <code id="coach-server-address">the address in this page's browser address bar</code>.</li>
+      <li>Click <strong>Connect coach</strong> and allow its popup. Keep the popup open. The panel will display a suggested line after each placement; the popup shows the reconstructed board and search.</li>
+    </ol>
+    <p>Play moves in the original tab. The coach observes both players and refreshes automatically, including practice undo, redo, and reset. It suggests moves; it does not submit them. Adjust thinking time in the popup.</p>
+    <p>The connection uses a separate game session, so your ordinary game here is preserved. Only game positions and moves are copied; account details and chat are not sent.</p>
+    <p>Practice games can be connected midway. Online games need a complete move history; connect before the first placement if the site does not supply one. If the replay differs from the site's position, suggestions stop instead of using an incorrect board. This adapter depends on the current site's React state layout and may need updating if the site changes.</p>
+  </section>
+</main></body>
+</html>

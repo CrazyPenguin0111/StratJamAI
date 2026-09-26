@@ -1,0 +1,108 @@
+{
+  "validatedUtcDate": "2026-09-26",
+  "platform": {
+    "cpu": "Intel Core i9-14900KF",
+    "gpu": "NVIDIA GeForce RTX 5080",
+    "sdk": "10.0.112",
+    "torchSharp": "0.107.0"
+  },
+  "officialReference": {
+    "positions": 363,
+    "completeGames": 3,
+    "checks": [
+      "legal action sets",
+      "nodes",
+      "segments and protection",
+      "areas",
+      "cumulative scores",
+      "turn order",
+      "termination"
+    ]
+  },
+  "browser": {
+    "engine": "Playwright Chromium",
+    "bothSeats": true,
+    "desktopAndMobile": true,
+    "hints": true,
+    "undo": true,
+    "saveAndLoad": true,
+    "invalidImportPreservesState": true,
+    "searchCancellation": true,
+    "finishedGameReplay": true,
+    "javascriptErrors": 0,
+    "mobileHorizontalOverflow": false
+  },
+  "portableHost": {
+    "references": [
+      "StratJamAI.Core"
+    ],
+    "exportedPolicyPlacements": 20,
+    "torchSharpLoaded": false
+  },
+  "training": [
+    {
+      "run": "enclosure-cpu-smoke",
+      "status": "completed",
+      "device": "cpu",
+      "budgetSeconds": 45,
+      "consumedSeconds": 44.4771722,
+      "decisions": 26492,
+      "updates": 413,
+      "workers": 1,
+      "selectedBot": "tactical",
+      "checkpointResumed": true,
+      "forwardBackwardPassed": true,
+      "exportMaxError": 3.5762787e-07
+    },
+    {
+      "run": "enclosure-cuda-smoke",
+      "status": "completed",
+      "device": "cuda",
+      "budgetSeconds": 90,
+      "consumedSeconds": 85.9375089,
+      "decisions": 90688,
+      "updates": 44,
+      "workers": 8,
+      "selectedBot": "tactical",
+      "checkpointResumed": false,
+      "forwardBackwardPassed": true,
+      "exportMaxError": 2.3841858e-07
+    }
+  ],
+  "geometryOptimization": {
+    "baseline": "per-call planar geometry allocation, with area cache enabled",
+    "optimized": "thread-local reusable planar geometry workspace, same area cache",
+    "positions": [
+      {
+        "position": "opening",
+        "budgetMilliseconds": 1000,
+        "beforeNodes": 1578665.8,
+        "afterNodes": 1731845.4,
+        "beforeAllocatedBytes": 513909486.4,
+        "afterAllocatedBytes": 14763547.2
+      },
+      {
+        "position": "middle",
+        "budgetMilliseconds": 1000,
+        "beforeNodes": 58602.2,
+        "afterNodes": 110845.4,
+        "beforeAllocatedBytes": 3564884971.2,
+        "afterAllocatedBytes": 3761123.2
+      },
+      {
+        "position": "late",
+        "budgetMilliseconds": 1000,
+        "beforeNodes": 25839.2,
+        "afterNodes": 45761.8,
+        "beforeAllocatedBytes": 2920953604.8,
+        "afterAllocatedBytes": 5668908.8
+      }
+    ]
+  },
+  "tests": {
+    "passed": 76,
+    "failed": 0,
+    "coreAndTraining": 61,
+    "web": 15
+  }
+}

@@ -1,0 +1,1417 @@
+{
+  "date": "2026-09-26",
+  "purpose": "Check space-seeking evaluation against preserved v2 before deployment.",
+  "context": {
+    "reportedProblem": "AI reinforces walls but does not claim enough space.",
+    "latestUserScreenshotFigures": {
+      "blueHuman": 220.64,
+      "redAI": 78.57
+    },
+    "screenshotReconstructed": false
+  },
+  "baseline": {
+    "label": "v2",
+    "sha256": "a1c487d12dc870163df5ef7f53b053dc7f28e4b9ec6f85c8306f7b517d8c1e2a"
+  },
+  "candidate": {
+    "label": "space coefficient 0.10 with endpoint-set distance cache",
+    "sha256": "c941b6983b3ce975185af95c7060b4afa921210b67f10f88b9886b5b89c9315c"
+  },
+  "method": {
+    "moveBudgetMs": 100,
+    "maxDepth": 120,
+    "games": 4,
+    "colorIndices": {
+      "0": "Blue",
+      "1": "Red"
+    },
+    "scoreAndAreaArrayOrder": [
+      "Blue",
+      "Red"
+    ],
+    "book0": "Standard initial position",
+    "book1": {
+      "description": "Three fixed legal opening placements, zero-based coordinates",
+      "segments": [
+        [
+          3,
+          9,
+          6,
+          12
+        ],
+        [
+          15,
+          9,
+          12,
+          6
+        ],
+        [
+          12,
+          6,
+          12,
+          9
+        ]
+      ]
+    },
+    "warmup": "Three 30 ms searches per engine before matches.",
+    "parity": "Each selected action replayed through both DLLs; exact cumulative scores and current areas checked after every action.",
+    "snapshotFrequencyMoves": 20,
+    "execution": "Sequential matches in one Core-only process, each DLL loaded in its own AssemblyLoadContext."
+  },
+  "summary": {
+    "candidateWins": 3,
+    "draws": 0,
+    "candidateLosses": 1,
+    "candidateFinalScoresSum": 1488.614285716,
+    "baselineFinalScoresSum": 1288.896553447,
+    "candidateFinalAreaMean": 7.89464285725,
+    "baselineFinalAreaMean": 10.14166666675
+  },
+  "matches": [
+    {
+      "kind": "head-to-head",
+      "book": 0,
+      "candidateSeat": 0,
+      "moveBudgetMs": 100,
+      "scores": [
+        134.6,
+        412.50347985400003
+      ],
+      "areas": [
+        4.300000000000001,
+        14.700000000000001
+      ],
+      "candidateResult": -1,
+      "beforeMeanDepth": 1.7,
+      "candidateMeanDepth": 1.5833333333333333,
+      "beforeNodes": 3412205,
+      "candidateNodes": 2323790,
+      "snapshots": [
+        {
+          "move": 20,
+          "areas": [
+            0,
+            0
+          ],
+          "scores": [
+            18,
+            112.5
+          ]
+        },
+        {
+          "move": 40,
+          "areas": [
+            13.75,
+            0
+          ],
+          "scores": [
+            18,
+            135
+          ]
+        },
+        {
+          "move": 60,
+          "areas": [
+            0,
+            5.307692308
+          ],
+          "scores": [
+            31.750000000000004,
+            226.615384615
+          ]
+        },
+        {
+          "move": 80,
+          "areas": [
+            0,
+            0
+          ],
+          "scores": [
+            43,
+            275.68681318700004
+          ]
+        },
+        {
+          "move": 100,
+          "areas": [
+            0,
+            0
+          ],
+          "scores": [
+            54.6,
+            309.68681318700004
+          ]
+        },
+        {
+          "move": 120,
+          "areas": [
+            4.300000000000001,
+            14.700000000000001
+          ],
+          "scores": [
+            134.6,
+            412.50347985400003
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "head-to-head",
+      "book": 0,
+      "candidateSeat": 1,
+      "moveBudgetMs": 100,
+      "scores": [
+        543.2597402580001,
+        844.2142857160001
+      ],
+      "areas": [
+        18,
+        10.428571429
+      ],
+      "candidateResult": 1,
+      "beforeMeanDepth": 1.7666666666666666,
+      "candidateMeanDepth": 1.6833333333333333,
+      "beforeNodes": 4219511,
+      "candidateNodes": 2722562,
+      "snapshots": [
+        {
+          "move": 20,
+          "areas": [
+            40.5,
+            22.5
+          ],
+          "scores": [
+            162,
+            144
+          ]
+        },
+        {
+          "move": 40,
+          "areas": [
+            0,
+            0
+          ],
+          "scores": [
+            257.5,
+            256.5
+          ]
+        },
+        {
+          "move": 60,
+          "areas": [
+            18,
+            0
+          ],
+          "scores": [
+            293.5,
+            301.5
+          ]
+        },
+        {
+          "move": 80,
+          "areas": [
+            0,
+            15.000000000000002
+          ],
+          "scores": [
+            347.5,
+            466.50000000000006
+          ]
+        },
+        {
+          "move": 100,
+          "areas": [
+            0,
+            4.5
+          ],
+          "scores": [
+            433,
+            712.5
+          ]
+        },
+        {
+          "move": 120,
+          "areas": [
+            18,
+            10.428571429
+          ],
+          "scores": [
+            543.2597402580001,
+            844.2142857160001
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "head-to-head",
+      "book": 1,
+      "candidateSeat": 0,
+      "moveBudgetMs": 100,
+      "scores": [
+        212.70000000000002,
+        156.8
+      ],
+      "areas": [
+        5.2,
+        0.7000000000000001
+      ],
+      "candidateResult": 1,
+      "beforeMeanDepth": 1.6724137931034482,
+      "candidateMeanDepth": 1.6779661016949152,
+      "beforeNodes": 4003939,
+      "candidateNodes": 2823030,
+      "snapshots": [
+        {
+          "move": 20,
+          "areas": [
+            0,
+            22.5
+          ],
+          "scores": [
+            54,
+            112.5
+          ]
+        },
+        {
+          "move": 40,
+          "areas": [
+            0,
+            0
+          ],
+          "scores": [
+            54,
+            112.5
+          ]
+        },
+        {
+          "move": 60,
+          "areas": [
+            1.2000000000000002,
+            0
+          ],
+          "scores": [
+            84,
+            112.5
+          ]
+        },
+        {
+          "move": 80,
+          "areas": [
+            1.2000000000000002,
+            4.5
+          ],
+          "scores": [
+            104.4,
+            138.10000000000002
+          ]
+        },
+        {
+          "move": 100,
+          "areas": [
+            0,
+            0
+          ],
+          "scores": [
+            154.3,
+            138.10000000000002
+          ]
+        },
+        {
+          "move": 120,
+          "areas": [
+            5.2,
+            0.7000000000000001
+          ],
+          "scores": [
+            212.70000000000002,
+            156.8
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "head-to-head",
+      "book": 1,
+      "candidateSeat": 1,
+      "moveBudgetMs": 100,
+      "scores": [
+        176.33333333500002,
+        297.1
+      ],
+      "areas": [
+        7.166666667,
+        11.65
+      ],
+      "candidateResult": 1,
+      "beforeMeanDepth": 1.694915254237288,
+      "candidateMeanDepth": 1.5862068965517242,
+      "beforeNodes": 4138243,
+      "candidateNodes": 2619829,
+      "snapshots": [
+        {
+          "move": 20,
+          "areas": [
+            0,
+            0
+          ],
+          "scores": [
+            67.5,
+            0
+          ]
+        },
+        {
+          "move": 40,
+          "areas": [
+            0,
+            0
+          ],
+          "scores": [
+            67.5,
+            31.500000000000004
+          ]
+        },
+        {
+          "move": 60,
+          "areas": [
+            0,
+            27
+          ],
+          "scores": [
+            82.5,
+            58.50000000000001
+          ]
+        },
+        {
+          "move": 80,
+          "areas": [
+            0,
+            9
+          ],
+          "scores": [
+            82.5,
+            148.5
+          ]
+        },
+        {
+          "move": 100,
+          "areas": [
+            0,
+            4.5
+          ],
+          "scores": [
+            116.50000000000001,
+            189
+          ]
+        },
+        {
+          "move": 120,
+          "areas": [
+            7.166666667,
+            11.65
+          ],
+          "scores": [
+            176.33333333500002,
+            297.1
+          ]
+        }
+      ]
+    }
+  ],
+  "rejectedCandidate": {
+    "label": "space coefficient 0.35",
+    "sha256": "2a35485cd1445a463533f0490a007e7f606f30b3b7c6e90d20232df68fb578e9",
+    "reason": "Lost all four matched games and deferred early scoring too strongly.",
+    "candidateWins": 0,
+    "candidateLosses": 4,
+    "matches": [
+      {
+        "kind": "head-to-head",
+        "book": 0,
+        "candidateSeat": 0,
+        "moveBudgetMs": 100,
+        "scores": [
+          159.375,
+          394.875
+        ],
+        "areas": [
+          8.5,
+          14
+        ],
+        "candidateResult": -1,
+        "beforeMeanDepth": 1.8333333333333333,
+        "candidateMeanDepth": 1.5833333333333333,
+        "beforeNodes": 4124491,
+        "candidateNodes": 2024451,
+        "snapshots": [
+          {
+            "move": 20,
+            "areas": [
+              0,
+              22.5
+            ],
+            "scores": [
+              0,
+              45
+            ]
+          },
+          {
+            "move": 40,
+            "areas": [
+              0,
+              0
+            ],
+            "scores": [
+              0,
+              85.5
+            ]
+          },
+          {
+            "move": 60,
+            "areas": [
+              0,
+              0
+            ],
+            "scores": [
+              28.875000000000004,
+              197.5
+            ]
+          },
+          {
+            "move": 80,
+            "areas": [
+              0,
+              0
+            ],
+            "scores": [
+              70.125,
+              254.50000000000003
+            ]
+          },
+          {
+            "move": 100,
+            "areas": [
+              0,
+              0
+            ],
+            "scores": [
+              92.875,
+              290.33333333300004
+            ]
+          },
+          {
+            "move": 120,
+            "areas": [
+              8.5,
+              14
+            ],
+            "scores": [
+              159.375,
+              394.875
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "head-to-head",
+        "book": 0,
+        "candidateSeat": 1,
+        "moveBudgetMs": 100,
+        "scores": [
+          265.375,
+          214.70769230800002
+        ],
+        "areas": [
+          0,
+          1
+        ],
+        "candidateResult": -1,
+        "beforeMeanDepth": 1.95,
+        "candidateMeanDepth": 1.6166666666666667,
+        "beforeNodes": 4611955,
+        "candidateNodes": 2181183,
+        "snapshots": [
+          {
+            "move": 20,
+            "areas": [
+              15.000000000000002,
+              0
+            ],
+            "scores": [
+              97.5,
+              0
+            ]
+          },
+          {
+            "move": 40,
+            "areas": [
+              0,
+              0
+            ],
+            "scores": [
+              170,
+              20.5
+            ]
+          },
+          {
+            "move": 60,
+            "areas": [
+              0,
+              0
+            ],
+            "scores": [
+              220,
+              41
+            ]
+          },
+          {
+            "move": 80,
+            "areas": [
+              0,
+              2.307692308
+            ],
+            "scores": [
+              248.50000000000003,
+              63.80769230800001
+            ]
+          },
+          {
+            "move": 100,
+            "areas": [
+              0,
+              3.95
+            ],
+            "scores": [
+              248.50000000000003,
+              143.95769230800002
+            ]
+          },
+          {
+            "move": 120,
+            "areas": [
+              0,
+              1
+            ],
+            "scores": [
+              265.375,
+              214.70769230800002
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "head-to-head",
+        "book": 1,
+        "candidateSeat": 0,
+        "moveBudgetMs": 100,
+        "scores": [
+          130.41666666700002,
+          723.126923076
+        ],
+        "areas": [
+          0,
+          6.892307692
+        ],
+        "candidateResult": -1,
+        "beforeMeanDepth": 1.7413793103448276,
+        "candidateMeanDepth": 1.5932203389830508,
+        "beforeNodes": 2918566,
+        "candidateNodes": 1570091,
+        "snapshots": [
+          {
+            "move": 20,
+            "areas": [
+              0,
+              20.75
+            ],
+            "scores": [
+              0,
+              84.75
+            ]
+          },
+          {
+            "move": 40,
+            "areas": [
+              0,
+              22.5
+            ],
+            "scores": [
+              9.25,
+              218.25
+            ]
+          },
+          {
+            "move": 60,
+            "areas": [
+              0,
+              4.95
+            ],
+            "scores": [
+              9.25,
+              326.1
+            ]
+          },
+          {
+            "move": 80,
+            "areas": [
+              10,
+              22
+            ],
+            "scores": [
+              38.416666667,
+              448.557692308
+            ]
+          },
+          {
+            "move": 100,
+            "areas": [
+              0,
+              24.200000000000003
+            ],
+            "scores": [
+              72.416666667,
+              588.2576923080001
+            ]
+          },
+          {
+            "move": 120,
+            "areas": [
+              0,
+              6.892307692
+            ],
+            "scores": [
+              130.41666666700002,
+              723.126923076
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "head-to-head",
+        "book": 1,
+        "candidateSeat": 1,
+        "moveBudgetMs": 100,
+        "scores": [
+          359.23484848600003,
+          125.11965812000001
+        ],
+        "areas": [
+          4.272727273,
+          7.972222222
+        ],
+        "candidateResult": -1,
+        "beforeMeanDepth": 1.9152542372881356,
+        "candidateMeanDepth": 1.5517241379310345,
+        "beforeNodes": 4241665,
+        "candidateNodes": 1912591,
+        "snapshots": [
+          {
+            "move": 20,
+            "areas": [
+              0,
+              0
+            ],
+            "scores": [
+              78,
+              0
+            ]
+          },
+          {
+            "move": 40,
+            "areas": [
+              0,
+              0
+            ],
+            "scores": [
+              177,
+              0
+            ]
+          },
+          {
+            "move": 60,
+            "areas": [
+              0,
+              0
+            ],
+            "scores": [
+              244.50000000000003,
+              33
+            ]
+          },
+          {
+            "move": 80,
+            "areas": [
+              1.125,
+              0
+            ],
+            "scores": [
+              276,
+              33
+            ]
+          },
+          {
+            "move": 100,
+            "areas": [
+              1.166666667,
+              0
+            ],
+            "scores": [
+              301.541666667,
+              63.00000000000001
+            ]
+          },
+          {
+            "move": 120,
+            "areas": [
+              4.272727273,
+              7.972222222
+            ],
+            "scores": [
+              359.23484848600003,
+              125.11965812000001
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "exploratoryPerimeterChallenge": {
+    "candidateTested": "Rejected 0.35 candidate only; not final 0.10 candidate.",
+    "method": "Script follows a mirrored outer-perimeter chain, repairs its first missing legal planned edge, then falls back to tactical teacher. AI receives 50 ms per move.",
+    "limitation": "Both v2 and rejected candidate won both colors. This weak scripted policy does not reproduce the human double-wall strategy or validate that it is solved.",
+    "matches": [
+      {
+        "kind": "perimeter-challenge",
+        "engine": "v2",
+        "scriptSeat": 0,
+        "moveBudgetMs": 50,
+        "scores": [
+          263.366666666,
+          3312
+        ],
+        "areas": [
+          11.333333333,
+          84
+        ],
+        "aiResult": 1,
+        "scriptedPlacements": 51,
+        "fallbackPlacements": 9,
+        "aiMeanDepth": 1.7,
+        "aiNodes": 2145847,
+        "snapshots": [
+          {
+            "move": 20,
+            "areas": [
+              0,
+              22.5
+            ],
+            "scores": [
+              0,
+              198
+            ]
+          },
+          {
+            "move": 40,
+            "areas": [
+              0,
+              40.5
+            ],
+            "scores": [
+              0,
+              625.5
+            ]
+          },
+          {
+            "move": 60,
+            "areas": [
+              0,
+              45
+            ],
+            "scores": [
+              0,
+              1183.5
+            ]
+          },
+          {
+            "move": 80,
+            "areas": [
+              0,
+              58.50000000000001
+            ],
+            "scores": [
+              0,
+              1588.5
+            ]
+          },
+          {
+            "move": 100,
+            "areas": [
+              18,
+              94.5
+            ],
+            "scores": [
+              79.2,
+              2317.5
+            ]
+          },
+          {
+            "move": 120,
+            "areas": [
+              11.333333333,
+              84
+            ],
+            "scores": [
+              263.366666666,
+              3312
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "perimeter-challenge",
+        "engine": "v2",
+        "scriptSeat": 1,
+        "moveBudgetMs": 50,
+        "scores": [
+          2778,
+          72
+        ],
+        "areas": [
+          0,
+          18
+        ],
+        "aiResult": 1,
+        "scriptedPlacements": 52,
+        "fallbackPlacements": 8,
+        "aiMeanDepth": 1.7166666666666666,
+        "aiNodes": 2148909,
+        "snapshots": [
+          {
+            "move": 20,
+            "areas": [
+              40.5,
+              0
+            ],
+            "scores": [
+              162,
+              0
+            ]
+          },
+          {
+            "move": 40,
+            "areas": [
+              40.5,
+              0
+            ],
+            "scores": [
+              567,
+              0
+            ]
+          },
+          {
+            "move": 60,
+            "areas": [
+              58.50000000000001,
+              0
+            ],
+            "scores": [
+              1071,
+              0
+            ]
+          },
+          {
+            "move": 80,
+            "areas": [
+              90,
+              0
+            ],
+            "scores": [
+              1534.5,
+              0
+            ]
+          },
+          {
+            "move": 100,
+            "areas": [
+              91.5,
+              0
+            ],
+            "scores": [
+              2161.5,
+              0
+            ]
+          },
+          {
+            "move": 120,
+            "areas": [
+              0,
+              18
+            ],
+            "scores": [
+              2778,
+              72
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "perimeter-challenge",
+        "engine": "candidate",
+        "scriptSeat": 0,
+        "moveBudgetMs": 50,
+        "scores": [
+          432.482489733,
+          3989.683333334
+        ],
+        "areas": [
+          18.29047619,
+          34.800000000000004
+        ],
+        "aiResult": 1,
+        "scriptedPlacements": 43,
+        "fallbackPlacements": 17,
+        "aiMeanDepth": 1.5666666666666667,
+        "aiNodes": 891175,
+        "snapshots": [
+          {
+            "move": 20,
+            "areas": [
+              0,
+              0
+            ],
+            "scores": [
+              0,
+              0
+            ]
+          },
+          {
+            "move": 40,
+            "areas": [
+              0,
+              87
+            ],
+            "scores": [
+              0,
+              891
+            ]
+          },
+          {
+            "move": 60,
+            "areas": [
+              0,
+              54
+            ],
+            "scores": [
+              0,
+              1735
+            ]
+          },
+          {
+            "move": 80,
+            "areas": [
+              10.5,
+              94
+            ],
+            "scores": [
+              46.90909091,
+              2565
+            ]
+          },
+          {
+            "move": 100,
+            "areas": [
+              19.271672772000002,
+              109.80000000000001
+            ],
+            "scores": [
+              206.504384506,
+              3218.6000000000004
+            ]
+          },
+          {
+            "move": 120,
+            "areas": [
+              18.29047619,
+              34.800000000000004
+            ],
+            "scores": [
+              432.482489733,
+              3989.683333334
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "perimeter-challenge",
+        "engine": "candidate",
+        "scriptSeat": 1,
+        "moveBudgetMs": 50,
+        "scores": [
+          3153.999999999,
+          1002.355613832
+        ],
+        "areas": [
+          65.333333333,
+          19.484722222000002
+        ],
+        "aiResult": 1,
+        "scriptedPlacements": 38,
+        "fallbackPlacements": 22,
+        "aiMeanDepth": 1.6166666666666667,
+        "aiNodes": 879029,
+        "snapshots": [
+          {
+            "move": 20,
+            "areas": [
+              0,
+              0
+            ],
+            "scores": [
+              0,
+              0
+            ]
+          },
+          {
+            "move": 40,
+            "areas": [
+              19.5,
+              13.5
+            ],
+            "scores": [
+              215,
+              76.5
+            ]
+          },
+          {
+            "move": 60,
+            "areas": [
+              95,
+              14.875000000000002
+            ],
+            "scores": [
+              690.5,
+              212.875
+            ]
+          },
+          {
+            "move": 80,
+            "areas": [
+              64.5,
+              21.572222222
+            ],
+            "scores": [
+              1415.5,
+              415.698504273
+            ]
+          },
+          {
+            "move": 100,
+            "areas": [
+              77,
+              30.856808469
+            ],
+            "scores": [
+              2284.5,
+              699.35251554
+            ]
+          },
+          {
+            "move": 120,
+            "areas": [
+              65.333333333,
+              19.484722222000002
+            ],
+            "scores": [
+              3153.999999999,
+              1002.355613832
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "limitations": [
+    "Four timing-dependent games from two openings are a small development check, not a general win-rate estimate.",
+    "Final territory was mixed: candidate mean final area was lower despite winning three games; cumulative scores determine the winner.",
+    "The actual screenshot position and complete human move history were unavailable, so it was not replayed.",
+    "Results at 100 ms do not establish playing strength at the public UI default budget.",
+    "Node counts and completed depths are diagnostics from different resulting positions, not an isolated throughput benchmark."
+  ],
+  "performance": {
+    "method": "Three samples per DLL on the same opening and deterministic move-60 fixture; independent from the full-game runs.",
+    "baselineSamples": [
+      {
+        "position": "opening",
+        "kind": "depth1",
+        "sample": 0,
+        "elapsed": 0.2196,
+        "bytes": 323920,
+        "Action": 128,
+        "CompletedDepth": 1,
+        "Nodes": 76,
+        "Value": 0.3831325956116548
+      },
+      {
+        "position": "opening",
+        "kind": "depth1",
+        "sample": 1,
+        "elapsed": 0.1195,
+        "bytes": 323920,
+        "Action": 128,
+        "CompletedDepth": 1,
+        "Nodes": 76,
+        "Value": 0.3831325956116548
+      },
+      {
+        "position": "opening",
+        "kind": "depth1",
+        "sample": 2,
+        "elapsed": 0.0838,
+        "bytes": 323920,
+        "Action": 128,
+        "CompletedDepth": 1,
+        "Nodes": 76,
+        "Value": 0.3831325956116548
+      },
+      {
+        "position": "opening",
+        "kind": "100ms",
+        "sample": 0,
+        "elapsed": 100.0263,
+        "bytes": 396592,
+        "Action": 1457,
+        "CompletedDepth": 4,
+        "Nodes": 195423,
+        "Value": -0.0356234309623431
+      },
+      {
+        "position": "opening",
+        "kind": "100ms",
+        "sample": 1,
+        "elapsed": 100.022,
+        "bytes": 396592,
+        "Action": 1457,
+        "CompletedDepth": 4,
+        "Nodes": 204659,
+        "Value": -0.0356234309623431
+      },
+      {
+        "position": "opening",
+        "kind": "100ms",
+        "sample": 2,
+        "elapsed": 100.0172,
+        "bytes": 396592,
+        "Action": 1457,
+        "CompletedDepth": 4,
+        "Nodes": 205182,
+        "Value": -0.0356234309623431
+      },
+      {
+        "position": "middle",
+        "kind": "depth1",
+        "sample": 0,
+        "elapsed": 7.7218,
+        "bytes": 323920,
+        "Action": 971,
+        "CompletedDepth": 1,
+        "Nodes": 932,
+        "Value": 0.32530142475307583
+      },
+      {
+        "position": "middle",
+        "kind": "depth1",
+        "sample": 1,
+        "elapsed": 6.297,
+        "bytes": 323920,
+        "Action": 971,
+        "CompletedDepth": 1,
+        "Nodes": 932,
+        "Value": 0.32530142475307583
+      },
+      {
+        "position": "middle",
+        "kind": "depth1",
+        "sample": 2,
+        "elapsed": 6.2493,
+        "bytes": 323920,
+        "Action": 971,
+        "CompletedDepth": 1,
+        "Nodes": 932,
+        "Value": 0.32530142475307583
+      },
+      {
+        "position": "middle",
+        "kind": "100ms",
+        "sample": 0,
+        "elapsed": 100.0327,
+        "bytes": 346192,
+        "Action": 971,
+        "CompletedDepth": 2,
+        "Nodes": 9484,
+        "Value": -0.12079850552639584
+      },
+      {
+        "position": "middle",
+        "kind": "100ms",
+        "sample": 1,
+        "elapsed": 100.0281,
+        "bytes": 346192,
+        "Action": 971,
+        "CompletedDepth": 2,
+        "Nodes": 9351,
+        "Value": -0.12079850552639584
+      },
+      {
+        "position": "middle",
+        "kind": "100ms",
+        "sample": 2,
+        "elapsed": 100.032,
+        "bytes": 346192,
+        "Action": 971,
+        "CompletedDepth": 2,
+        "Nodes": 9284,
+        "Value": -0.12079850552639584
+      }
+    ],
+    "candidateSamples": [
+      {
+        "position": "opening",
+        "kind": "depth1",
+        "sample": 0,
+        "elapsed": 0.2865,
+        "bytes": 323920,
+        "Action": 1457,
+        "CompletedDepth": 1,
+        "Nodes": 70,
+        "Value": 0.5851725117137583
+      },
+      {
+        "position": "opening",
+        "kind": "depth1",
+        "sample": 1,
+        "elapsed": 0.1345,
+        "bytes": 323920,
+        "Action": 1457,
+        "CompletedDepth": 1,
+        "Nodes": 70,
+        "Value": 0.5851725117137583
+      },
+      {
+        "position": "opening",
+        "kind": "depth1",
+        "sample": 2,
+        "elapsed": 0.0995,
+        "bytes": 323920,
+        "Action": 1457,
+        "CompletedDepth": 1,
+        "Nodes": 70,
+        "Value": 0.5851725117137583
+      },
+      {
+        "position": "opening",
+        "kind": "100ms",
+        "sample": 0,
+        "elapsed": 100.0357,
+        "bytes": 396592,
+        "Action": 1457,
+        "CompletedDepth": 4,
+        "Nodes": 100917,
+        "Value": -0.03322147651006647
+      },
+      {
+        "position": "opening",
+        "kind": "100ms",
+        "sample": 1,
+        "elapsed": 100.031,
+        "bytes": 396592,
+        "Action": 1457,
+        "CompletedDepth": 4,
+        "Nodes": 100089,
+        "Value": -0.03322147651006647
+      },
+      {
+        "position": "opening",
+        "kind": "100ms",
+        "sample": 2,
+        "elapsed": 100.0288,
+        "bytes": 396592,
+        "Action": 1457,
+        "CompletedDepth": 4,
+        "Nodes": 100404,
+        "Value": -0.03322147651006647
+      },
+      {
+        "position": "middle",
+        "kind": "depth1",
+        "sample": 0,
+        "elapsed": 8.0834,
+        "bytes": 323920,
+        "Action": 971,
+        "CompletedDepth": 1,
+        "Nodes": 932,
+        "Value": 0.34129991690119127
+      },
+      {
+        "position": "middle",
+        "kind": "depth1",
+        "sample": 1,
+        "elapsed": 6.4231,
+        "bytes": 323920,
+        "Action": 971,
+        "CompletedDepth": 1,
+        "Nodes": 932,
+        "Value": 0.34129991690119127
+      },
+      {
+        "position": "middle",
+        "kind": "depth1",
+        "sample": 2,
+        "elapsed": 6.5243,
+        "bytes": 323920,
+        "Action": 971,
+        "CompletedDepth": 1,
+        "Nodes": 932,
+        "Value": 0.34129991690119127
+      },
+      {
+        "position": "middle",
+        "kind": "100ms",
+        "sample": 0,
+        "elapsed": 100.037,
+        "bytes": 346312,
+        "Action": 971,
+        "CompletedDepth": 2,
+        "Nodes": 9114,
+        "Value": -0.08217924930078785
+      },
+      {
+        "position": "middle",
+        "kind": "100ms",
+        "sample": 1,
+        "elapsed": 100.0329,
+        "bytes": 346192,
+        "Action": 971,
+        "CompletedDepth": 2,
+        "Nodes": 8981,
+        "Value": -0.08217924930078785
+      },
+      {
+        "position": "middle",
+        "kind": "100ms",
+        "sample": 2,
+        "elapsed": 100.0279,
+        "bytes": 346192,
+        "Action": 971,
+        "CompletedDepth": 2,
+        "Nodes": 8989,
+        "Value": -0.08217924930078785
+      }
+    ],
+    "limitation": "Richer evaluation lowers node throughput; equal completed depths and nearly unchanged allocations do not imply a speedup."
+  },
+  "correctnessChecks": {
+    "coreAndCli": 92,
+    "web": 55,
+    "javascript": 9,
+    "totalPassed": 156
+  }
+}

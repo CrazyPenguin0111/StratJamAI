@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f3ed">
+  <meta name="description" content="Play Enclosure against a friend or find an opponent. Private rooms, shared clocks, and a board for two.">
+  <title>Enclosure · Play together</title>
+  <link rel="stylesheet" href="/styles.css?v=coach-20260926">
+  <link rel="stylesheet" href="/pvp.css?v=pvp-20260926">
+  <script src="/pvp.js?v=pvp-20260926" defer></script>
+</head>
+<body class="pvp-page">
+  <main class="app">
+    <header class="app-header">
+      <a class="brand pvp-brand" href="/" aria-label="Enclosure home">
+        <svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true"><path d="M8 32V11L29 8" fill="none" stroke="#2865bf" stroke-width="4" stroke-linecap="round"/><path d="M15 36L36 31V12" fill="none" stroke="#c65347" stroke-width="4" stroke-linecap="round"/><circle cx="8" cy="32" r="3.5" fill="#2865bf"/><circle cx="36" cy="12" r="3.5" fill="#c65347"/></svg>
+        <div><h1>Enclosure<span class="brand-period">.</span></h1><p>A game of lines, territory, and timing.</p></div>
+      </a>
+      <nav class="pvp-nav" aria-label="Game modes"><a href="/">Play AI</a><a href="/pvp.html" aria-current="page">Play together</a></nav>
+    </header>
+
+    <section id="welcome" class="pvp-welcome">
+      <div><p class="pvp-eyebrow">A REAL OPPONENT. A SHARED BOARD.</p><h2>A board for two.</h2><p>Find an opponent or invite a friend. Build your territory and keep an eye on the clock.</p></div>
+      <div class="pvp-welcome-mark" aria-hidden="true"><span class="pvp-outline blue-outline"></span><span class="pvp-outline red-outline"></span><span class="pvp-mark-label">19 × 19<br>room to play</span></div>
+    </section>
+    <div id="error" class="error-banner" role="alert" hidden></div>
+    <div id="connection-notice" class="coach-notice" role="status" hidden>Reconnecting to your game… Your clock continues on the server.</div>
+
+    <div class="layout">
+      <section class="board-panel" aria-label="Multiplayer Enclosure board">
+        <div class="board-toolbar">
+          <div class="turn-info"><span id="turn-dot" class="turn-dot blue"></span><div><strong id="turn-title">Choose your match.</strong><p id="turn-description">Quick play or a private room.</p></div></div>
+          <span id="move-counter" class="move-counter">0 <span>/ 120</span></span>
+        </div>
+        <div class="board-wrap pvp-board-wrap">
+          <svg id="board" viewBox="0 0 680 680" role="application" tabindex="0" aria-label="19 by 19 Enclosure board. Arrow keys choose an intersection, Enter selects it, and Escape clears the selection.">
+            <title>Enclosure multiplayer board</title><desc>On your turn, choose one of your nodes and then a highlighted legal endpoint.</desc>
+            <rect width="680" height="680" rx="14" fill="#fbf9f1"/>
+            <g id="grid" aria-hidden="true"></g><g id="territories" aria-hidden="true"></g><g id="lines" aria-hidden="true"></g><g id="nodes" aria-hidden="true"></g><g id="legal-markers" aria-hidden="true"></g><g id="preview" aria-hidden="true"></g><g id="keyboard-marker" aria-hidden="true"></g><g id="hit-targets" aria-hidden="true"></g>
+          </svg>
+          <div id="board-placeholder" class="pvp-board-placeholder"><span class="pvp-small-mark" aria-hidden="true">↗</span><strong id="placeholder-title">Your next game starts here.</strong><p id="placeholder-description">Choose a clock and find an opponent, or send a friend your private room link.</p></div>
+        </div>
+        <div class="board-footer"><span id="selection-label">Choose a match to begin.</span><div class="board-legend"><span><i class="legend-fill"></i> Enclosed area</span><span><i class="legend-protected"></i> Protected line</span></div></div>
+        <div class="board-actions">
+          <button id="pass" class="button primary" hidden>Pass — no legal lines</button>
+          <button id="resign" class="button secondary pvp-danger" hidden>Resign</button>
+          <button id="save" class="button secondary" hidden>↓ Save game</button>
+          <a id="review" class="button primary" href="#" hidden>Review with AI ↗</a>
+        </div>
+        <div id="resign-confirm" class="pvp-confirm" hidden><p>Resign this game? Your opponent will win.</p><button id="resign-yes" class="button primary">Yes, resign</button><button id="resign-no" class="button secondary">Keep playing</button></div>
+        <p id="result-note" class="pvp-result-note" hidden></p>
+      </section>
+
+      <aside class="sidebar">
+        <section id="setup-card" class="card pvp-setup" aria-labelledby="setup-heading">
+          <div class="section-heading"><h2 id="setup-heading">Set your game</h2><span class="quiet-label">No account needed</span></div>
+          <label class="field-label" for="display-name">Your name <span class="pvp-optional">optional</span></label>
+          <input id="display-name" class="pvp-input" type="text" maxlength="20" autocomplete="nickname" placeholder="Player">
+          <label class="field-label" for="color-preference">Your color</label>
+          <select id="color-preference"><option value="random">Either color · random</option><option value="blue">Blue · first to move</option><option value="red">Red · second to move</option></select>
+          <div class="pvp-clock-settings"><div><label class="field-label" for="initial-seconds">Starting clock</label><input id="initial-seconds" class="pvp-input" type="number" min="10" max="3600" step="1" value="120" inputmode="numeric"><small>seconds per player</small></div><div><label class="field-label" for="increment-seconds">Turn increment</label><input id="increment-seconds" class="pvp-input" type="number" min="0" max="120" step="1" value="15" inputmode="numeric"><small>seconds after a turn</small></div></div>
+          <p class="pvp-form-note">Your clock runs through both placements. The increment arrives when you finish your turn.</p>
+          <div id="find-actions"><button id="quick-play" class="button primary pvp-wide">Find an opponent <span aria-hidden="true">→</span></button><p class="pvp-action-note">Matches your clock and color preference.</p><div class="pvp-divider"><span>or invite a friend</span></div><button id="create-room" class="button secondary pvp-wide">Create a private room</button>
+            <form id="join-form" class="pvp-join-form"><label class="field-label" for="join-code">Already have a room code?</label><div><input id="join-code" class="pvp-input pvp-code-input" type="text" maxlength="16" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="ROOM CODE"><button id="join-room" class="button secondary" type="submit">Join</button></div></form>
+          </div>
+        </section>
+
+        <section id="room-card" class="card pvp-room" aria-labelledby="room-heading" hidden>
+          <div class="section-heading"><h2 id="room-heading">Your room</h2><span id="room-status" class="pvp-pill">Waiting</span></div>
+          <div id="room-share"><span class="field-label">Invite with this code</span><div class="pvp-room-code-row"><strong id="room-code"></strong><button id="copy-link" class="button secondary" type="button">Copy link</button></div><input id="share-url" class="pvp-input pvp-share-url" type="text" readonly aria-label="Shareable room link"><p id="copy-status" class="pvp-action-note" aria-live="polite"></p></div>
+          <ul id="room-players" class="pvp-room-players" aria-label="Players in this room"></ul>
+          <p id="room-clock" class="pvp-clock-summary"></p>
+          <div id="room-player-settings" hidden><label class="field-label" for="room-color">Your color preference</label><select id="room-color"><option value="random">Either color · random</option><option value="blue">Blue · first to move</option><option value="red">Red · second to move</option></select><p class="pvp-action-note">Changing your preference asks both players to ready up again.</p></div>
+          <div id="room-edit" hidden><div class="pvp-clock-settings"><div><label class="field-label" for="room-initial">Starting seconds</label><input id="room-initial" class="pvp-input" type="number" min="10" max="3600" step="1" value="120"></div><div><label class="field-label" for="room-increment">Increment seconds</label><input id="room-increment" class="pvp-input" type="number" min="0" max="120" step="1" value="15"></div></div><button id="update-settings" class="button secondary pvp-wide">Update clock</button><p class="pvp-action-note">Changing the clock asks both players to ready up again.</p></div>
+          <p id="room-message" class="pvp-form-note"></p>
+          <button id="ready" class="button primary pvp-wide" hidden>I'm ready</button>
+          <button id="leave" class="button text-button pvp-wide">Leave room</button>
+        </section>
+
+        <section id="score-card" class="scoreboard card" aria-label="Clocks and scores" hidden>
+          <div class="section-heading"><h2>The match</h2><span id="clock-rule" class="quiet-label">2:00 + 15 s</span></div>
+          <div id="blue-card" class="player-card blue-player"><div class="player-name"><span class="player-dot blue"></span><strong id="blue-name">Blue</strong><span id="blue-role" class="role"></span></div><div id="blue-clock" class="pvp-clock" aria-label="Blue clock">2:00</div><div class="pvp-score-details"><span>Score <strong id="blue-score">0</strong></span><span>Area <strong id="blue-area">0</strong></span></div></div>
+          <div id="red-card" class="player-card red-player"><div class="player-name"><span class="player-dot red"></span><strong id="red-name">Red</strong><span id="red-role" class="role"></span></div><div id="red-clock" class="pvp-clock" aria-label="Red clock">2:00</div><div class="pvp-score-details"><span>Score <strong id="red-score">0</strong></span><span>Area <strong id="red-area">0</strong></span></div></div>
+          <p class="score-note">The server keeps the official clock. Highest score wins after 120 placements, unless a player runs out of time or resigns.</p>
+        </section>
+
+        <section id="history-card" class="history card" aria-labelledby="history-heading" hidden><div class="section-heading"><h2 id="history-heading">Move history</h2><span id="history-count" class="quiet-label">0 placements</span></div><ol id="history-list" aria-label="Recorded moves"></ol></section>
+      </aside>
+    </div>
+    <footer class="app-footer"><details><summary>How to play together</summary><p>Quick play finds someone with the same starting clock and increment, and a compatible color preference. For a private game, create a room, send the link to a friend, and both choose Ready. Blue starts with one placement; subsequent turns allow two. Your increment is added after your whole turn.</p><p>Choose one of your nodes, then a highlighted legal endpoint. Close shapes to earn territory points each turn. The server checks every move. Your clock continues if you disconnect; reopening this page in the same browser reconnects to your game.</p><p>After the match, save the history or choose Review with AI. AI suggestions are available during the review.</p></details><a href="/">Play against AI ↗</a></footer>
+    <div id="announcement" class="sr-only" role="status" aria-live="polite"></div>
+  </main>
+</body>
+</html>

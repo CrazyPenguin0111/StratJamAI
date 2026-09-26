@@ -1,0 +1,27 @@
+[Unit]
+Description=Enclosed AI game server
+Wants=network-online.target
+After=network-online.target
+StartLimitIntervalSec=60
+StartLimitBurst=5
+
+[Service]
+Type=simple
+User=enclosed-ai
+Group=enclosed-ai
+WorkingDirectory=/opt/enclosed-ai/current
+ExecStart=/usr/bin/dotnet /opt/enclosed-ai/current/StratJamAI.Web.dll --port 5081 --no-browser --move-ms 1000 --max-searches 2 --max-sessions 128
+Environment=ASPNETCORE_ENVIRONMENT=Production
+Restart=on-failure
+RestartSec=5
+KillSignal=SIGINT
+TimeoutStopSec=30
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+UMask=0027
+SyslogIdentifier=enclosed-ai
+
+[Install]
+WantedBy=multi-user.target

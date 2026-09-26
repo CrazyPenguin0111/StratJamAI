@@ -1,0 +1,78 @@
+{
+  "publicUrl": "https://brain-utilities-font-origin.trycloudflare.com",
+  "info": {
+    "application": "StratJamAI.Enclosure",
+    "protocolVersion": 2,
+    "publicAccess": false,
+    "maxSearches": 4,
+    "maxSessions": 128,
+    "engine": "alpha-beta-defense-v4",
+    "turnThinking": true,
+    "maxThinkingMilliseconds": 20000,
+    "hostingVersion": "pvp-v1",
+    "features": [
+      "live-coach",
+      "analysis",
+      "history-sync",
+      "whole-turn-search",
+      "pvp",
+      "quick-play",
+      "lobby-codes",
+      "pvp-clocks",
+      "post-game-review"
+    ]
+  },
+  "publishedDirectory": "/home/eugene/.local/share/stratjamai/public-20260926-pvp-v1",
+  "pid": 194006,
+  "assetsMatchPublishedFiles": true,
+  "staticCacheControl": {
+    "index.html": "no-cache",
+    "pvp.html": "no-cache",
+    "pvp.js": "no-cache",
+    "pvp.css": "no-cache",
+    "review.html": "no-cache",
+    "review.js": "no-cache",
+    "review.css": "no-cache"
+  },
+  "coreSha256": "991dae460b01107888adb7741ee570e6fa8de3cec45397ce333260180c7e5602",
+  "webSha256": "a33b9fd99e2484113e2ddfb6197dd1bf7ec3f0f31cd749c7c903ec2772f10997",
+  "validation": {
+    "webTestsPassed": 95,
+    "coachingJavascriptTestsPassed": 9,
+    "newPvpTests": 17,
+    "newReviewTests": 10,
+    "independentHttpChecksPassed": 29,
+    "stagingHttpScript": "tools/test-pvp-http.py",
+    "publicPvpBrowser": {
+      "script": "tools/test-pvp-browser.cjs",
+      "privateLobby": true,
+      "quickPlay": true,
+      "clockAndColorSettings": true,
+      "completedTurnIncrement": true,
+      "reconnect": true,
+      "resignAndExport": true,
+      "previousRoomLink": true,
+      "mobileNoOverflow": true,
+      "javascriptErrors": []
+    },
+    "publicReviewBrowser": {
+      "placements": 12,
+      "historicalFrames": 13,
+      "progress": true,
+      "cancelAndRestart": true,
+      "navigation": true,
+      "sharedParticipantResults": true,
+      "mobileWidth": 390,
+      "javascriptErrors": []
+    },
+    "publicAiAndCoachBrowser": {
+      "aiReplies": 2,
+      "liveHints": true,
+      "analysisMode": true,
+      "separateVisitors": true,
+      "setupPublicAddress": true,
+      "userscriptAvailable": true,
+      "javascriptErrors": []
+    }
+  }
+}

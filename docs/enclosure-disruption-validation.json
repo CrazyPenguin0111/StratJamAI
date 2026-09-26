@@ -1,0 +1,5158 @@
+{
+  "description": "Development checks for exposed-territory repairs. Capture-pair minima exclude quiet setup moves. Wall-clock matches are a small sample, not a human win-rate estimate.",
+  "targetedPressureCandidate": [
+    {
+      "label": "pressure-cap-first",
+      "history": "EnclosureDisruption1.json",
+      "actionCount": 120,
+      "coreSha256": "9a9c29501a73d13106b4b1e2b59b29e3cea48e3a6c0aed15b22221692ac1fd22",
+      "historySha256": "edcb7813c79f95af69b504453ae674d4bbe720b3950d85bfdc03efa624b374a1",
+      "final": {
+        "MoveNumber": 120,
+        "Turn": 1,
+        "ActionsRemaining": 0,
+        "Finished": true,
+        "scores": [
+          4271.942857146,
+          3174.9125000000004
+        ],
+        "areas": [
+          107.10000000000001,
+          2.7
+        ]
+      },
+      "results": [
+        {
+          "prefix": 102,
+          "decisionMove": 103,
+          "player": 1,
+          "budgetMilliseconds": 100,
+          "before": {
+            "MoveNumber": 102,
+            "Turn": 1,
+            "ActionsRemaining": 1,
+            "Finished": false,
+            "scores": [
+              3200.9428571460003,
+              2855.2000000000003
+            ],
+            "areas": [
+              107.485714286,
+              53.333333333000006
+            ]
+          },
+          "recorded": {
+            "action": {
+              "Id": 5327,
+              "Label": "M16\u2013P13",
+              "From": {
+                "X": 12,
+                "Y": 15
+              },
+              "To": {
+                "X": 15,
+                "Y": 12
+              }
+            },
+            "actions": [
+              {
+                "Id": 5327,
+                "Label": "M16\u2013P13",
+                "From": {
+                  "X": 12,
+                  "Y": 15
+                },
+                "To": {
+                  "X": 15,
+                  "Y": 12
+                }
+              }
+            ],
+            "afterMove": {
+              "MoveNumber": 103,
+              "Turn": 0,
+              "ActionsRemaining": 2,
+              "Finished": false,
+              "scores": [
+                3308.042857146,
+                2908.533333333
+              ],
+              "areas": [
+                107.10000000000001,
+                53.333333333000006
+              ]
+            },
+            "legalCaptureReplies": 139,
+            "worstSingleCapture": {
+              "Id": 1455,
+              "Label": "D10\u2013F12",
+              "From": {
+                "X": 3,
+                "Y": 9
+              },
+              "To": {
+                "X": 5,
+                "Y": 11
+              }
+            },
+            "worstSingleCapturePosition": {
+              "MoveNumber": 104,
+              "Turn": 0,
+              "ActionsRemaining": 1,
+              "Finished": false,
+              "scores": [
+                3308.042857146,
+                2908.533333333
+              ],
+              "areas": [
+                107.10000000000001,
+                2.6666666670000003
+              ]
+            },
+            "retainedAreaAfterWorstSingleCapture": 2.6666666670000003,
+            "capturePairAudit": {
+              "legalCapturePairCount": 18462,
+              "worstActions": [
+                {
+                  "Id": 221,
+                  "Label": "A10\u2013D13",
+                  "From": {
+                    "X": 0,
+                    "Y": 9
+                  },
+                  "To": {
+                    "X": 3,
+                    "Y": 12
+                  }
+                },
+                {
+                  "Id": 1150,
+                  "Label": "C15\u2013D13",
+                  "From": {
+                    "X": 2,
+                    "Y": 14
+                  },
+                  "To": {
+                    "X": 3,
+                    "Y": 12
+                  }
+                }
+              ],
+              "retainedArea": 0,
+              "position": {
+                "MoveNumber": 105,
+                "Turn": 1,
+                "ActionsRemaining": 2,
+                "Finished": false,
+                "scores": [
+                  3415.142857146,
+                  2908.533333333
+                ],
+                "areas": [
+                  107.10000000000001,
+                  0
+                ]
+              },
+              "defendedForecast": {
+                "CurrentArea": 0,
+                "PotentialArea": 63.684210526315795,
+                "CompletionMoves": 3,
+                "RemainingScoringEvents": 8,
+                "ProtectedEdges": 0,
+                "ReinforcedBoundary": 0,
+                "ProjectedScore": 3045.0267543856316,
+                "ControlledSpace": 146,
+                "ExpansionScore": 9.125
+              },
+              "opponentForecast": {
+                "CurrentArea": 107.10000000000001,
+                "PotentialArea": 13.352941176470585,
+                "CompletionMoves": 8,
+                "RemainingScoringEvents": 8,
+                "ProtectedEdges": 2,
+                "ReinforcedBoundary": 0,
+                "ProjectedScore": 4296.420798322471,
+                "ControlledSpace": 177.99999999999997,
+                "ExpansionScore": 11.124999999999998
+              },
+              "defendedEvaluation": -0.7863937966920104
+            },
+            "actualFollowingTurn": {
+              "appliedReplies": [
+                {
+                  "Id": 2301,
+                  "Label": "F11\u2013G14",
+                  "From": {
+                    "X": 5,
+                    "Y": 10
+                  },
+                  "To": {
+                    "X": 6,
+                    "Y": 13
+                  }
+                },
+                {
+                  "Id": 3868,
+                  "Label": "J7\u2013L10",
+                  "From": {
+                    "X": 9,
+                    "Y": 6
+                  },
+                  "To": {
+                    "X": 11,
+                    "Y": 9
+                  }
+                }
+              ],
+              "blockedMove": null,
+              "position": {
+                "MoveNumber": 105,
+                "Turn": 1,
+                "ActionsRemaining": 2,
+                "Finished": false,
+                "scores": [
+                  3415.142857146,
+                  2911.2000000000003
+                ],
+                "areas": [
+                  107.10000000000001,
+                  2.6666666670000003
+                ]
+              }
+            },
+            "captureAndProtectionChecksPassed": true
+          },
+          "chosen": {
+            "action": {
+              "Id": 4289,
+              "Label": "K7\u2013N10",
+              "From": {
+                "X": 10,
+                "Y": 6
+              },
+              "To": {
+                "X": 13,
+                "Y": 9
+              }
+            },
+            "actions": [
+              {
+                "Id": 4289,
+                "Label": "K7\u2013N10",
+                "From": {
+                  "X": 10,
+                  "Y": 6
+                },
+                "To": {
+                  "X": 13,
+                  "Y": 9
+                }
+              }
+            ],
+            "afterMove": {
+              "MoveNumber": 103,
+              "Turn": 0,
+              "ActionsRemaining": 2,
+              "Finished": false,
+              "scores": [
+                3308.4285714320004,
+                2928.033333333
+              ],
+              "areas": [
+                107.485714286,
+                72.833333333
+              ]
+            },
+            "legalCaptureReplies": 110,
+            "worstSingleCapture": {
+              "Id": 1455,
+              "Label": "D10\u2013F12",
+              "From": {
+                "X": 3,
+                "Y": 9
+              },
+              "To": {
+                "X": 5,
+                "Y": 11
+              }
+            },
+            "worstSingleCapturePosition": {
+              "MoveNumber": 104,
+              "Turn": 0,
+              "ActionsRemaining": 1,
+              "Finished": false,
+              "scores": [
+                3308.4285714320004,
+                2928.033333333
+              ],
+              "areas": [
+                107.485714286,
+                22.166666667
+              ]
+            },
+            "retainedAreaAfterWorstSingleCapture": 22.166666667,
+            "capturePairAudit": {
+              "legalCapturePairCount": 11262,
+              "worstActions": [
+                {
+                  "Id": 1455,
+                  "Label": "D10\u2013F12",
+                  "From": {
+                    "X": 3,
+                    "Y": 9
+                  },
+                  "To": {
+                    "X": 5,
+                    "Y": 11
+                  }
+                },
+                {
+                  "Id": 5112,
+                  "Label": "M7\u2013P5",
+                  "From": {
+                    "X": 12,
+                    "Y": 6
+                  },
+                  "To": {
+                    "X": 15,
+                    "Y": 4
+                  }
+                }
+              ],
+              "retainedArea": 3.866666667,
+              "position": {
+                "MoveNumber": 105,
+                "Turn": 1,
+                "ActionsRemaining": 2,
+                "Finished": false,
+                "scores": [
+                  3415.9142857180004,
+                  2931.9
+                ],
+                "areas": [
+                  107.485714286,
+                  3.866666667
+                ]
+              },
+              "defendedForecast": {
+                "CurrentArea": 3.866666667,
+                "PotentialArea": 26.649122806842108,
+                "CompletionMoves": 3,
+                "RemainingScoringEvents": 8,
+                "ProtectedEdges": 0,
+                "ReinforcedBoundary": 0,
+                "ProjectedScore": 3025.839912283018,
+                "ControlledSpace": 155.33333333333331,
+                "ExpansionScore": 9.708333333333332
+              },
+              "opponentForecast": {
+                "CurrentArea": 107.485714286,
+                "PotentialArea": 9.198156681935483,
+                "CompletionMoves": 7,
+                "RemainingScoringEvents": 8,
+                "ProtectedEdges": 2,
+                "ReinforcedBoundary": 0,
+                "ProjectedScore": 4295.539823354603,
+                "ControlledSpace": 168.66666666666663,
+                "ExpansionScore": 10.541666666666664
+              },
+              "defendedEvaluation": -0.7887324980244714
+            },
+            "actualFollowingTurn": {
+              "appliedReplies": [
+                {
+                  "Id": 2301,
+                  "Label": "F11\u2013G14",
+                  "From": {
+                    "X": 5,
+                    "Y": 10
+                  },
+                  "To": {
+                    "X": 6,
+                    "Y": 13
+                  }
+                },
+                {
+                  "Id": 3868,
+                  "Label": "J7\u2013L10",
+                  "From": {
+                    "X": 9,
+                    "Y": 6
+                  },
+                  "To": {
+                    "X": 11,
+                    "Y": 9
+                  }
+                }
+              ],
+              "blockedMove": null,
+              "position": {
+                "MoveNumber": 105,
+                "Turn": 1,
+                "ActionsRemaining": 2,
+                "Finished": false,
+                "scores": [
+                  3415.9142857180004,
+                  2950.2000000000003
+                ],
+                "areas": [
+                  107.485714286,
+                  22.166666667
+                ]
+              }
+            },
+            "captureAndProtectionChecksPassed": true
+          },
+          "searches": [
+            {
+              "Action": {
+                "Id": 4289,
+                "Label": "K7\u2013N10",
+                "From": {
+                  "X": 10,
+                  "Y": 6
+                },
+                "To": {
+                  "X": 13,
+                  "Y": 9
+                }
+              },
+              "CompletedDepth": 1,
+              "Nodes": 2076,
+              "ElapsedMilliseconds": 100.0689,
+              "SearchMilliseconds": 100.0232,
+              "Value": -0.6755072416430912,
+              "PrincipalVariation": [
+                {
+                  "Id": 4289,
+                  "Label": "K7\u2013N10",
+                  "From": {
+                    "X": 10,
+                    "Y": 6
+                  },
+                  "To": {
+                    "X": 13,
+                    "Y": 9
+                  }
+                }
+              ],
+              "CaptureQuiescencePlies": 0
+            }
+          ],
+          "CompletedDepth": 1,
+          "Nodes": 2076,
+          "CaptureQuiescencePlies": 0,
+          "elapsedMilliseconds": 100.0689,
+          "searchMilliseconds": 100.0232,
+          "Value": -0.6755072416430912,
+          "principalVariation": [
+            {
+              "Id": 4289,
+              "Label": "K7\u2013N10",
+              "From": {
+                "X": 10,
+                "Y": 6
+              },
+              "To": {
+                "X": 13,
+                "Y": 9
+              }
+            }
+          ]
+        },
+        {
+          "prefix": 102,
+          "decisionMove": 103,
+          "player": 1,
+          "budgetMilliseconds": 1000,
+          "before": {
+            "MoveNumber": 102,
+            "Turn": 1,
+            "ActionsRemaining": 1,
+            "Finished": false,
+            "scores": [
+              3200.9428571460003,
+              2855.2000000000003
+            ],
+            "areas": [
+              107.485714286,
+              53.333333333000006
+            ]
+          },
+          "recorded": {
+            "action": {
+              "Id": 5327,
+              "Label": "M16\u2013P13",
+              "From": {
+                "X": 12,
+                "Y": 15
+              },
+              "To": {
+                "X": 15,
+                "Y": 12
+              }
+            },
+            "actions": [
+              {
+                "Id": 5327,
+                "Label": "M16\u2013P13",
+                "From": {
+                  "X": 12,
+                  "Y": 15
+                },
+                "To": {
+                  "X": 15,
+                  "Y": 12
+                }
+              }
+            ],
+            "afterMove": {
+              "MoveNumber": 103,
+              "Turn": 0,
+              "ActionsRemaining": 2,
+              "Finished": false,
+              "scores": [
+                3308.042857146,
+                2908.533333333
+              ],
+              "areas": [
+                107.10000000000001,
+                53.333333333000006
+              ]
+            },
+            "legalCaptureReplies": 139,
+            "worstSingleCapture": {
+              "Id": 1455,
+              "Label": "D10\u2013F12",
+              "From": {
+                "X": 3,
+                "Y": 9
+              },
+              "To": {
+                "X": 5,
+                "Y": 11
+              }
+            },
+            "worstSingleCapturePosition": {
+              "MoveNumber": 104,
+              "Turn": 0,
+              "ActionsRemaining": 1,
+              "Finished": false,
+              "scores": [
+                3308.042857146,
+                2908.533333333
+              ],
+              "areas": [
+                107.10000000000001,
+                2.6666666670000003
+              ]
+            },
+            "retainedAreaAfterWorstSingleCapture": 2.6666666670000003,
+            "capturePairAudit": {
+              "legalCapturePairCount": 18462,
+              "worstActions": [
+                {
+                  "Id": 221,
+                  "Label": "A10\u2013D13",
+                  "From": {
+                    "X": 0,
+                    "Y": 9
+                  },
+                  "To": {
+                    "X": 3,
+                    "Y": 12
+                  }
+                },
+                {
+                  "Id": 1150,
+                  "Label": "C15\u2013D13",
+                  "From": {
+                    "X": 2,
+                    "Y": 14
+                  },
+                  "To": {
+                    "X": 3,
+                    "Y": 12
+                  }
+                }
+              ],
+              "retainedArea": 0,
+              "position": {
+                "MoveNumber": 105,
+                "Turn": 1,
+                "ActionsRemaining": 2,
+                "Finished": false,
+                "scores": [
+                  3415.142857146,
+                  2908.533333333
+                ],
+                "areas": [
+                  107.10000000000001,
+                  0
+                ]
+              },
+              "defendedForecast": {
+                "CurrentArea": 0,
+                "PotentialArea": 63.684210526315795,
+                "CompletionMoves": 3,
+                "RemainingScoringEvents": 8,
+                "ProtectedEdges": 0,
+                "ReinforcedBoundary": 0,
+                "ProjectedScore": 3045.0267543856316,
+                "ControlledSpace": 146,
+                "ExpansionScore": 9.125
+              },
+              "opponentForecast": {
+                "CurrentArea": 107.10000000000001,
+                "PotentialArea": 13.352941176470585,
+                "CompletionMoves": 8,
+                "RemainingScoringEvents": 8,
+                "ProtectedEdges": 2,
+                "ReinforcedBoundary": 0,
+                "ProjectedScore": 4296.420798322471,
+                "ControlledSpace": 177.99999999999997,
+                "ExpansionScore": 11.124999999999998
+              },
+              "defendedEvaluation": -0.7863937966920104
+            },
+            "actualFollowingTurn": {
+              "appliedReplies": [
+                {
+                  "Id": 2301,
+                  "Label": "F11\u2013G14",
+                  "From": {
+                    "X": 5,
+                    "Y": 10
+                  },
+                  "To": {
+                    "X": 6,
+                    "Y": 13
+                  }
+                },
+                {
+                  "Id": 3868,
+                  "Label": "J7\u2013L10",
+                  "From": {
+                    "X": 9,
+                    "Y": 6
+                  },
+                  "To": {
+                    "X": 11,
+                    "Y": 9
+                  }
+                }
+              ],
+              "blockedMove": null,
+              "position": {
+                "MoveNumber": 105,
+                "Turn": 1,
+                "ActionsRemaining": 2,
+                "Finished": false,
+                "scores": [
+                  3415.142857146,
+                  2911.2000000000003
+                ],
+                "areas": [
+                  107.10000000000001,
+                  2.6666666670000003
+                ]
+              }
+            },
+            "captureAndProtectionChecksPassed": true
+          },
+          "chosen": {
+            "action": {
+              "Id": 1639,
+              "Label": "D18\u2013G15",
+              "From": {
+                "X": 3,
+                "Y": 17
+              },
+              "To": {
+                "X": 6,
+                "Y": 14
+              }
+            },
+            "actions": [
+              {
+                "Id": 1639,
+                "Label": "D18\u2013G15",
+                "From": {
+                  "X": 3,
+                  "Y": 17
+                },
+                "To": {
+                  "X": 6,
+                  "Y": 14
+                }
+              }
+            ],
+            "afterMove": {
+              "MoveNumber": 103,
+              "Turn": 0,
+              "ActionsRemaining": 2,
+              "Finished": false,
+              "scores": [
+                3308.4285714320004,
+                2908.533333333
+              ],
+              "areas": [
+                107.485714286,
+                53.333333333000006
+              ]
+            },
+            "legalCaptureReplies": 139,
+            "worstSingleCapture": {
+              "Id": 1455,
+              "Label": "D10\u2013F12",
+              "From": {
+                "X": 3,
+                "Y": 9
+              },
+              "To": {
+                "X": 5,
+                "Y": 11
+              }
+            },
+            "worstSingleCapturePosition": {
+              "MoveNumber": 104,
+              "Turn": 0,
+              "ActionsRemaining": 1,
+              "Finished": false,
+              "scores": [
+                3308.4285714320004,
+                2908.533333333
+              ],
+              "areas": [
+                107.485714286,
+                12.666666667000001
+              ]
+            },
+            "retainedAreaAfterWorstSingleCapture": 12.666666667000001,
+            "capturePairAudit": {
+              "legalCapturePairCount": 18458,
+              "worstActions": [
+                {
+                  "Id": 221,
+                  "Label": "A10\u2013D13",
+                  "From": {
+                    "X": 0,
+                    "Y": 9
+                  },
+                  "To": {
+                    "X": 3,
+                    "Y": 12
+                  }
+                },
+                {
+                  "Id": 1449,
+                  "Label": "D10\u2013E13",
+                  "From": {
+                    "X": 3,
+                    "Y": 9
+                  },
+                  "To": {
+                    "X": 4,
+                    "Y": 12
+                  }
+                }
+              ],
+              "retainedArea": 10,
+              "position": {
+                "MoveNumber": 105,
+                "Turn": 1,
+                "ActionsRemaining": 2,
+                "Finished": false,
+                "scores": [
+                  3415.9142857180004,
+                  2918.533333333
+                ],
+                "areas": [
+                  107.485714286,
+                  10
+                ]
+              },
+              "defendedForecast": {
+                "CurrentArea": 10,
+                "PotentialArea": 19.545454545454543,
+                "CompletionMoves": 4,
+                "RemainingScoringEvents": 8,
+                "ProtectedEdges": 0,
+                "ReinforcedBoundary": 0,
+                "ProjectedScore": 3046.999242423909,
+                "ControlledSpace": 149.99999999999997,
+                "ExpansionScore": 9.374999999999998
+              },
+              "opponentForecast": {
+                "CurrentArea": 107.485714286,
+                "PotentialArea": 11.29493087548387,
+                "CompletionMoves": 7,
+                "RemainingScoringEvents": 8,
+                "ProtectedEdges": 2,
+                "ReinforcedBoundary": 0,
+                "ProjectedScore": 4297.969930881484,
+                "ControlledSpace": 173.99999999999994,
+                "ExpansionScore": 10.874999999999996
+              },
+              "defendedEvaluation": -0.7863390669104251
+            },
+            "actualFollowingTurn": {
+              "appliedReplies": [
+                {
+                  "Id": 2301,
+                  "Label": "F11\u2013G14",
+                  "From": {
+                    "X": 5,
+                    "Y": 10
+                  },
+                  "To": {
+                    "X": 6,
+                    "Y": 13
+                  }
+                },
+                {
+                  "Id": 3868,
+                  "Label": "J7\u2013L10",
+                  "From": {
+                    "X": 9,
+                    "Y": 6
+                  },
+                  "To": {
+                    "X": 11,
+                    "Y": 9
+                  }
+                }
+              ],
+              "blockedMove": null,
+              "position": {
+                "MoveNumber": 105,
+                "Turn": 1,
+                "ActionsRemaining": 2,
+                "Finished": false,
+                "scores": [
+                  3415.9142857180004,
+                  2921.2000000000003
+                ],
+                "areas": [
+                  107.485714286,
+                  12.666666667000001
+                ]
+              }
+            },
+            "captureAndProtectionChecksPassed": true
+          },
+          "searches": [
+            {
+              "Action": {
+                "Id": 1639,
+                "Label": "D18\u2013G15",
+                "From": {
+                  "X": 3,
+                  "Y": 17
+                },
+                "To": {
+                  "X": 6,
+                  "Y": 14
+                }
+              },
+              "CompletedDepth": 2,
+              "Nodes": 68403,
+              "ElapsedMilliseconds": 1000.0467,
+              "SearchMilliseconds": 1000.025,
+              "Value": -0.7891216399495953,
+              "PrincipalVariation": [
+                {
+                  "Id": 1639,
+                  "Label": "D18\u2013G15",
+                  "From": {
+                    "X": 3,
+                    "Y": 17
+                  },
+                  "To": {
+                    "X": 6,
+                    "Y": 14
+                  }
+                },
+                {
+                  "Id": 244,
+                  "Label": "A11\u2013D13",
+                  "From": {
+                    "X": 0,
+                    "Y": 10
+                  },
+                  "To": {
+                    "X": 3,
+                    "Y": 12
+                  }
+                },
+                {
+                  "Id": 1531,
+                  "Label": "D13\u2013G12",
+                  "From": {
+                    "X": 3,
+                    "Y": 12
+                  },
+                  "To": {
+                    "X": 6,
+                    "Y": 11
+                  }
+                }
+              ],
+              "CaptureQuiescencePlies": 2
+            }
+          ],
+          "CompletedDepth": 2,
+          "Nodes": 68403,
+          "CaptureQuiescencePlies": 2,
+          "elapsedMilliseconds": 1000.0467,
+          "searchMilliseconds": 1000.025,
+          "Value": -0.7891216399495953,
+          "principalVariation": [
+            {
+              "Id": 1639,
+              "Label": "D18\u2013G15",
+              "From": {
+                "X": 3,
+                "Y": 17
+              },
+              "To": {
+                "X": 6,
+                "Y": 14
+              }
+            },
+            {
+              "Id": 244,
+              "Label": "A11\u2013D13",
+              "From": {
+                "X": 0,
+                "Y": 10
+              },
+              "To": {
+                "X": 3,
+                "Y": 12
+              }
+            },
+            {
+              "Id": 1531,
+              "Label": "D13\u2013G12",
+              "From": {
+                "X": 3,
+                "Y": 12
+              },
+              "To": {
+                "X": 6,
+                "Y": 11
+              }
+            }
+          ]
+        },
+        {
+          "prefix": 105,
+          "decisionMove": 106,
+          "player": 1,
+          "budgetMilliseconds": 100,
+          "before": {
+            "MoveNumber": 105,
+            "Turn": 1,
+            "ActionsRemaining": 2,
+            "Finished": false,
+            "scores": [
+              3415.142857146,
+              2911.2000000000003
+            ],
+            "areas": [
+              107.10000000000001,
+              2.6666666670000003
+            ]
+          },
+          "recorded": {
+            "action": {
+              "Id": 2805,
+              "Label": "G15\u2013H12",
+              "From": {
+                "X": 6,
+                "Y": 14
+              },
+              "To": {
+                "X": 7,
+                "Y": 11
+              }
+            },
+            "actions": [
+              {
+                "Id": 2805,
+                "Label": "G15\u2013H12",
+                "From": {
+                  "X": 6,
+                  "Y": 14
+                },
+                "To": {
+                  "X": 7,
+                  "Y": 11
+                }
+              },
+              {
+                "Id": 4289,
+                "Label": "K7\u2013N10",
+                "From": {
+                  "X": 10,
+                  "Y": 6
+                },
+                "To": {
+                  "X": 13,
+                  "Y": 9
+                }
+              }
+            ],
+            "afterMove": {
+              "MoveNumber": 107,
+              "Turn": 0,
+              "ActionsRemaining": 2,
+              "Finished": false,
+              "scores": [
+                3522.242857146,
+                2974.2000000000003
+              ],
+              "areas": [
+                107.10000000000001,
+                63.00000000000001
+              ]
+            },
+            "legalCaptureReplies": 125,
+            "worstSingleCapture": {
+              "Id": 2393,
+              "Label": "F15\u2013G14",
+              "From": {
+                "X": 5,
+                "Y": 14
+              },
+              "To": {
+                "X": 6,
+                "Y": 13
+              }
+            },
+            "worstSingleCapturePosition": {
+              "MoveNumber": 108,
+              "Turn": 0,
+              "ActionsRemaining": 1,
+              "Finished": false,
+              "scores": [
+                3522.242857146,
+                2974.2000000000003
+              ],
+              "areas": [
+                107.10000000000001,
+                21
+              ]
+            },
+            "retainedAreaAfterWorstSingleCapture": 21,
+            "capturePairAudit": {
+              "legalCapturePairCount": 16302,
+              "worstActions": [
+                {
+                  "Id": 2393,
+                  "Label": "F15\u2013G14",
+                  "From": {
+                    "X": 5,
+                    "Y": 14
+                  },
+                  "To": {
+                    "X": 6,
+                    "Y": 13
+                  }
+                },
+                {
+                  "Id": 5112,
+                  "Label": "M7\u2013P5",
+                  "From": {
+                    "X": 12,
+                    "Y": 6
+                  },
+                  "To": {
+                    "X": 15,
+                    "Y": 4
+                  }
+                }
+              ],
+              "retainedArea": 2.7,
+              "position": {
+                "MoveNumber": 109,
+                "Turn": 1,
+                "ActionsRemaining": 2,
+                "Finished": false,
+                "scores": [
+                  3629.3428571460004,
+                  2976.9
+                ],
+                "areas": [
+                  107.10000000000001,
+                  2.7
+                ]
+              },
+              "defendedForecast": {
+                "CurrentArea": 2.7,
+                "PotentialArea": 53.090909090909086,
+                "CompletionMoves": 4,
+                "RemainingScoringEvents": 6,
+                "ProtectedEdges": 0,
+                "ReinforcedBoundary": 0,
+                "ProjectedScore": 3099.281818181818,
+                "ControlledSpace": 146.66666666666666,
+                "ExpansionScore": 0
+              },
+              "opponentForecast": {
+                "CurrentArea": 107.10000000000001,
+                "PotentialArea": 0,
+                "CompletionMoves": 7,
+                "RemainingScoringEvents": 6,
+                "ProtectedEdges": 2,
+                "ReinforcedBoundary": 0,
+                "ProjectedScore": 4271.942857146,
+                "ControlledSpace": 177.33333333333334,
+                "ExpansionScore": 0
+              },
+              "defendedEvaluation": -0.7756829357821773
+            },
+            "actualFollowingTurn": {
+              "appliedReplies": [
+                {
+                  "Id": 2393,
+                  "Label": "F15\u2013G14",
+                  "From": {
+                    "X": 5,
+                    "Y": 14
+                  },
+                  "To": {
+                    "X": 6,
+                    "Y": 13
+                  }
+                },
+                {
+                  "Id": 2410,
+                  "Label": "F15\u2013I17",
+                  "From": {
+                    "X": 5,
+                    "Y": 14
+                  },
+                  "To": {
+                    "X": 8,
+                    "Y": 16
+                  }
+                }
+              ],
+              "blockedMove": null,
+              "position": {
+                "MoveNumber": 109,
+                "Turn": 1,
+                "ActionsRemaining": 2,
+                "Finished": false,
+                "scores": [
+                  3629.3428571460004,
+                  2995.2000000000003
+                ],
+                "areas": [
+                  107.10000000000001,
+                  21
+                ]
+              }
+            },
+            "captureAndProtectionChecksPassed": true
+          },
+          "chosen": {
+            "action": {
+              "Id": 2819,
+              "Label": "G15\u2013J12",
+              "From": {
+                "X": 6,
+                "Y": 14
+              },
+              "To": {
+                "X": 9,
+                "Y": 11
+              }
+            },
+            "actions": [
+              {
+                "Id": 2819,
+                "Label": "G15\u2013J12",
+                "From": {
+                  "X": 6,
+                  "Y": 14
+                },
+                "To": {
+                  "X": 9,
+                  "Y": 11
+                }
+              },
+              {
+                "Id": 1639,
+                "Label": "D18\u2013G15",
+                "From": {
+                  "X": 3,
+                  "Y": 17
+                },
+                "To": {
+                  "X": 6,
+                  "Y": 14
+                }
+              }
+            ],
+            "afterMove": {
+              "MoveNumber": 107,
+              "Turn": 0,
+              "ActionsRemaining": 2,
+              "Finished": false,
+              "scores": [
+                3522.242857146,
+                2952.0666666670004
+              ],
+              "areas": [
+                107.10000000000001,
+                40.866666667000004
+              ]
+            },
+            "legalCaptureReplies": 165,
+            "worstSingleCapture": {
+              "Id": 221,
+              "Label": "A10\u2013D13",
+              "From": {
+                "X": 0,
+                "Y": 9
+              },
+              "To": {
+                "X": 3,
+                "Y": 12
+              }
+            },
+            "worstSingleCapturePosition": {
+              "MoveNumber": 108,
+              "Turn": 0,
+              "ActionsRemaining": 1,
+              "Finished": false,
+              "scores": [
+                3522.242857146,
+                2952.0666666670004
+              ],
+              "areas": [
+                107.10000000000001,
+                38.2
+              ]
+            },
+            "retainedAreaAfterWorstSingleCapture": 38.2,
+            "capturePairAudit": {
+              "legalCapturePairCount": 27686,
+              "worstActions": [
+                {
+                  "Id": 1461,
+                  "Label": "D10\u2013G11",
+                  "From": {
+                    "X": 3,
+                    "Y": 9
+                  },
+                  "To": {
+                    "X": 6,
+                    "Y": 10
+                  }
+                },
+                {
+                  "Id": 1463,
+                  "Label": "D10\u2013G13",
+                  "From": {
+                    "X": 3,
+                    "Y": 9
+                  },
+                  "To": {
+                    "X": 6,
+                    "Y": 12
+                  }
+                }
+              ],
+              "retainedArea": 12.666666667000001,
+              "position": {
+                "MoveNumber": 109,
+                "Turn": 1,
+                "ActionsRemaining": 2,
+                "Finished": false,
+                "scores": [
+                  3630.981746035,
+                  2964.7333333340002
+                ],
+                "areas": [
+                  108.73888888900001,
+                  12.666666667000001
+                ]
+              },
+              "defendedForecast": {
+                "CurrentArea": 12.666666667000001,
+                "PotentialArea": 56.22807017526316,
+                "CompletionMoves": 3,
+                "RemainingScoringEvents": 6,
+                "ProtectedEdges": 0,
+                "ReinforcedBoundary": 0,
+                "ProjectedScore": 3153.1894736865265,
+                "ControlledSpace": 151.33333333333334,
+                "ExpansionScore": 0
+              },
+              "opponentForecast": {
+                "CurrentArea": 108.73888888900001,
+                "PotentialArea": 0,
+                "CompletionMoves": 7,
+                "RemainingScoringEvents": 6,
+                "ProtectedEdges": 2,
+                "ReinforcedBoundary": 0,
+                "ProjectedScore": 4283.4150793690005,
+                "ControlledSpace": 172.66666666666666,
+                "ExpansionScore": 0
+              },
+              "defendedEvaluation": -0.7694289972982108
+            },
+            "actualFollowingTurn": {
+              "appliedReplies": [
+                {
+                  "Id": 2393,
+                  "Label": "F15\u2013G14",
+                  "From": {
+                    "X": 5,
+                    "Y": 14
+                  },
+                  "To": {
+                    "X": 6,
+                    "Y": 13
+                  }
+                }
+              ],
+              "blockedMove": 109,
+              "position": {
+                "MoveNumber": 108,
+                "Turn": 0,
+                "ActionsRemaining": 1,
+                "Finished": false,
+                "scores": [
+                  3522.242857146,
+                  2952.0666666670004
+                ],
+                "areas": [
+                  107.10000000000001,
+                  39.7
+                ]
+              }
+            },
+            "captureAndProtectionChecksPassed": true
+          },
+          "searches": [
+            {
+              "Action": {
+                "Id": 2819,
+                "Label": "G15\u2013J12",
+                "From": {
+                  "X": 6,
+                  "Y": 14
+                },
+                "To": {
+                  "X": 9,
+                  "Y": 11
+                }
+              },
+              "CompletedDepth": 1,
+              "Nodes": 7886,
+              "ElapsedMilliseconds": 100.0452,
+              "SearchMilliseconds": 100.024,
+              "Value": -0.7096588297137744,
+              "PrincipalVariation": [
+                {
+                  "Id": 2819,
+                  "Label": "G15\u2013J12",
+                  "From": {
+                    "X": 6,
+                    "Y": 14
+                  },
+                  "To": {
+                    "X": 9,
+                    "Y": 11
+                  }
+                },
+                {
+                  "Id": 3990,
+                  "Label": "J12\u2013M10",
+                  "From": {
+                    "X": 9,
+                    "Y": 11
+                  },
+                  "To": {
+                    "X": 12,
+                    "Y": 9
+                  }
+                }
+              ],
+              "CaptureQuiescencePlies": 2
+            },
+            {
+              "Action": {
+                "Id": 1639,
+                "Label": "D18\u2013G15",
+                "From": {
+                  "X": 3,
+                  "Y": 17
+                },
+                "To": {
+                  "X": 6,
+                  "Y": 14
+                }
+              },
+              "CompletedDepth": 1,
+              "Nodes": 4068,
+              "ElapsedMilliseconds": 100.0444,
+              "SearchMilliseconds": 100.0271,
+              "Value": -0.7757547156764846,
+              "PrincipalVariation": [
+                {
+                  "Id": 1639,
+                  "Label": "D18\u2013G15",
+                  "From": {
+                    "X": 3,
+                    "Y": 17
+                  },
+                  "To": {
+                    "X": 6,
+                    "Y": 14
+                  }
+                },
+                {
+                  "Id": 2359,
+                  "Label": "F13\u2013I12",
+                  "From": {
+                    "X": 5,
+                    "Y": 12
+                  },
+                  "To": {
+                    "X": 8,
+                    "Y": 11
+                  }
+                },
+                {
+                  "Id": 2382,
+                  "Label": "F14\u2013I12",
+                  "From": {
+                    "X": 5,
+                    "Y": 13
+                  },
+                  "To": {
+                    "X": 8,
+                    "Y": 11
+                  }
+                }
+              ],
+              "CaptureQuiescencePlies": 2
+            }
+          ],
+          "CompletedDepth": 1,
+          "Nodes": 7886,
+          "CaptureQuiescencePlies": 2,
+          "elapsedMilliseconds": 100.0452,
+          "searchMilliseconds": 100.024,
+          "Value": -0.7096588297137744,
+          "principalVariation": [
+            {
+              "Id": 2819,
+              "Label": "G15\u2013J12",
+              "From": {
+                "X": 6,
+                "Y": 14
+              },
+              "To": {
+                "X": 9,
+                "Y": 11
+              }
+            },
+            {
+              "Id": 3990,
+              "Label": "J12\u2013M10",
+              "From": {
+                "X": 9,
+                "Y": 11
+              },
+              "To": {
+                "X": 12,
+                "Y": 9
+              }
+            }
+          ]
+        },
+        {
+          "prefix": 105,
+          "decisionMove": 106,
+          "player": 1,
+          "budgetMilliseconds": 1000,
+          "before": {
+            "MoveNumber": 105,
+            "Turn": 1,
+            "ActionsRemaining": 2,
+            "Finished": false,
+            "scores": [
+              3415.142857146,
+              2911.2000000000003
+            ],
+            "areas": [
+              107.10000000000001,
+              2.6666666670000003
+            ]
+          },
+          "recorded": {
+            "action": {
+              "Id": 2805,
+              "Label": "G15\u2013H12",
+              "From": {
+                "X": 6,
+                "Y": 14
+              },
+              "To": {
+                "X": 7,
+                "Y": 11
+              }
+            },
+            "actions": [
+              {
+                "Id": 2805,
+                "Label": "G15\u2013H12",
+                "From": {
+                  "X": 6,
+                  "Y": 14
+                },
+                "To": {
+                  "X": 7,
+                  "Y": 11
+                }
+              },
+              {
+                "Id": 4289,
+                "Label": "K7\u2013N10",
+                "From": {
+                  "X": 10,
+                  "Y": 6
+                },
+                "To": {
+                  "X": 13,
+                  "Y": 9
+                }
+              }
+            ],
+            "afterMove": {
+              "MoveNumber": 107,
+              "Turn": 0,
+              "ActionsRemaining": 2,
+              "Finished": false,
+              "scores": [
+                3522.242857146,
+                2974.2000000000003
+              ],
+              "areas": [
+                107.10000000000001,
+                63.00000000000001
+              ]
+            },
+            "legalCaptureReplies": 125,
+            "worstSingleCapture": {
+              "Id": 2393,
+              "Label": "F15\u2013G14",
+              "From": {
+                "X": 5,
+                "Y": 14
+              },
+              "To": {
+                "X": 6,
+                "Y": 13
+              }
+            },
+            "worstSingleCapturePosition": {
+              "MoveNumber": 108,
+              "Turn": 0,
+              "ActionsRemaining": 1,
+              "Finished": false,
+              "scores": [
+                3522.242857146,
+                2974.2000000000003
+              ],
+              "areas": [
+                107.10000000000001,
+                21
+              ]
+            },
+            "retainedAreaAfterWorstSingleCapture": 21,
+            "capturePairAudit": {
+              "legalCapturePairCount": 16302,
+              "worstActions": [
+                {
+                  "Id": 2393,
+                  "Label": "F15\u2013G14",
+                  "From": {
+                    "X": 5,
+                    "Y": 14
+                  },
+                  "To": {
+                    "X": 6,
+                    "Y": 13
+                  }
+                },
+                {
+                  "Id": 5112,
+                  "Label": "M7\u2013P5",
+                  "From": {
+                    "X": 12,
+                    "Y": 6
+                  },
+                  "To": {
+                    "X": 15,
+                    "Y": 4
+                  }
+                }
+              ],
+              "retainedArea": 2.7,
+              "position": {
+                "MoveNumber": 109,
+                "Turn": 1,
+                "ActionsRemaining": 2,
+                "Finished": false,
+                "scores": [
+                  3629.3428571460004,
+                  2976.9
+                ],
+                "areas": [
+                  107.10000000000001,
+                  2.7
+                ]
+              },
+              "defendedForecast": {
+                "CurrentArea": 2.7,
+                "PotentialArea": 53.090909090909086,
+                "CompletionMoves": 4,
+                "RemainingScoringEvents": 6,
+                "ProtectedEdges": 0,
+                "ReinforcedBoundary": 0,
+                "ProjectedScore": 3099.281818181818,
+                "ControlledSpace": 146.66666666666666,
+                "ExpansionScore": 0
+              },
+              "opponentForecast": {
+                "CurrentArea": 107.10000000000001,
+                "PotentialArea": 0,
+                "CompletionMoves": 7,
+                "RemainingScoringEvents": 6,
+                "ProtectedEdges": 2,
+                "ReinforcedBoundary": 0,
+                "ProjectedScore": 4271.942857146,
+                "ControlledSpace": 177.33333333333334,
+                "ExpansionScore": 0
+              },
+              "defendedEvaluation": -0.7756829357821773
+            },
+            "actualFollowingTurn": {
+              "appliedReplies": [
+                {
+                  "Id": 2393,
+                  "Label": "F15\u2013G14",
+                  "From": {
+                    "X": 5,
+                    "Y": 14
+                  },
+                  "To": {
+                    "X": 6,
+                    "Y": 13
+                  }
+                },
+                {
+                  "Id": 2410,
+                  "Label": "F15\u2013I17",
+                  "From": {
+                    "X": 5,
+                    "Y": 14
+                  },
+                  "To": {
+                    "X": 8,
+                    "Y": 16
+                  }
+                }
+              ],
+              "blockedMove": null,
+              "position": {
+                "MoveNumber": 109,
+                "Turn": 1,
+                "ActionsRemaining": 2,
+                "Finished": false,
+                "scores": [
+                  3629.3428571460004,
+                  2995.2000000000003
+                ],
+                "areas": [
+                  107.10000000000001,
+                  21
+                ]
+              }
+            },
+            "captureAndProtectionChecksPassed": true
+          },
+          "chosen": {
+            "action": {
+              "Id": 2819,
+              "Label": "G15\u2013J12",
+              "From": {
+                "X": 6,
+                "Y": 14
+              },
+              "To": {
+                "X": 9,
+                "Y": 11
+              }
+            },
+            "actions": [
+              {
+                "Id": 2819,
+                "Label": "G15\u2013J12",
+                "From": {
+                  "X": 6,
+                  "Y": 14
+                },
+                "To": {
+                  "X": 9,
+                  "Y": 11
+                }
+              },
+              {
+                "Id": 1639,
+                "Label": "D18\u2013G15",
+                "From": {
+                  "X": 3,
+                  "Y": 17
+                },
+                "To": {
+                  "X": 6,
+                  "Y": 14
+                }
+              }
+            ],
+            "afterMove": {
+              "MoveNumber": 107,
+              "Turn": 0,
+              "ActionsRemaining": 2,
+              "Finished": false,
+              "scores": [
+                3522.242857146,
+                2952.0666666670004
+              ],
+              "areas": [
+                107.10000000000001,
+                40.866666667000004
+              ]
+            },
+            "legalCaptureReplies": 165,
+            "worstSingleCapture": {
+              "Id": 221,
+              "Label": "A10\u2013D13",
+              "From": {
+                "X": 0,
+                "Y": 9
+              },
+              "To": {
+                "X": 3,
+                "Y": 12
+              }
+            },
+            "worstSingleCapturePosition": {
+              "MoveNumber": 108,
+              "Turn": 0,
+              "ActionsRemaining": 1,
+              "Finished": false,
+              "scores": [
+                3522.242857146,
+                2952.0666666670004
+              ],
+              "areas": [
+                107.10000000000001,
+                38.2
+              ]
+            },
+            "retainedAreaAfterWorstSingleCapture": 38.2,
+            "capturePairAudit": {
+              "legalCapturePairCount": 27686,
+              "worstActions": [
+                {
+                  "Id": 1461,
+                  "Label": "D10\u2013G11",
+                  "From": {
+                    "X": 3,
+                    "Y": 9
+                  },
+                  "To": {
+                    "X": 6,
+                    "Y": 10
+                  }
+                },
+                {
+                  "Id": 1463,
+                  "Label": "D10\u2013G13",
+                  "From": {
+                    "X": 3,
+                    "Y": 9
+                  },
+                  "To": {
+                    "X": 6,
+                    "Y": 12
+                  }
+                }
+              ],
+              "retainedArea": 12.666666667000001,
+              "position": {
+                "MoveNumber": 109,
+                "Turn": 1,
+                "ActionsRemaining": 2,
+                "Finished": false,
+                "scores": [
+                  3630.981746035,
+                  2964.7333333340002
+                ],
+                "areas": [
+                  108.73888888900001,
+                  12.666666667000001
+                ]
+              },
+              "defendedForecast": {
+                "CurrentArea": 12.666666667000001,
+                "PotentialArea": 56.22807017526316,
+                "CompletionMoves": 3,
+                "RemainingScoringEvents": 6,
+                "ProtectedEdges": 0,
+                "ReinforcedBoundary": 0,
+                "ProjectedScore": 3153.1894736865265,
+                "ControlledSpace": 151.33333333333334,
+                "ExpansionScore": 0
+              },
+              "opponentForecast": {
+                "CurrentArea": 108.73888888900001,
+                "PotentialArea": 0,
+                "CompletionMoves": 7,
+                "RemainingScoringEvents": 6,
+                "ProtectedEdges": 2,
+                "ReinforcedBoundary": 0,
+                "ProjectedScore": 4283.4150793690005,
+                "ControlledSpace": 172.66666666666666,
+                "ExpansionScore": 0
+              },
+              "defendedEvaluation": -0.7694289972982108
+            },
+            "actualFollowingTurn": {
+              "appliedReplies": [
+                {
+                  "Id": 2393,
+                  "Label": "F15\u2013G14",
+                  "From": {
+                    "X": 5,
+                    "Y": 14
+                  },
+                  "To": {
+                    "X": 6,
+                    "Y": 13
+                  }
+                }
+              ],
+              "blockedMove": 109,
+              "position": {
+                "MoveNumber": 108,
+                "Turn": 0,
+                "ActionsRemaining": 1,
+                "Finished": false,
+                "scores": [
+                  3522.242857146,
+                  2952.0666666670004
+                ],
+                "areas": [
+                  107.10000000000001,
+                  39.7
+                ]
+              }
+            },
+            "captureAndProtectionChecksPassed": true
+          },
+          "searches": [
+            {
+              "Action": {
+                "Id": 2819,
+                "Label": "G15\u2013J12",
+                "From": {
+                  "X": 6,
+                  "Y": 14
+                },
+                "To": {
+                  "X": 9,
+                  "Y": 11
+                }
+              },
+              "CompletedDepth": 1,
+              "Nodes": 83165,
+              "ElapsedMilliseconds": 1000.0449,
+              "SearchMilliseconds": 1000.0224,
+              "Value": -0.7096588297137744,
+              "PrincipalVariation": [
+                {
+                  "Id": 2819,
+                  "Label": "G15\u2013J12",
+                  "From": {
+                    "X": 6,
+                    "Y": 14
+                  },
+                  "To": {
+                    "X": 9,
+                    "Y": 11
+                  }
+                },
+                {
+                  "Id": 3990,
+                  "Label": "J12\u2013M10",
+                  "From": {
+                    "X": 9,
+                    "Y": 11
+                  },
+                  "To": {
+                    "X": 12,
+                    "Y": 9
+                  }
+                }
+              ],
+              "CaptureQuiescencePlies": 2
+            },
+            {
+              "Action": {
+                "Id": 1639,
+                "Label": "D18\u2013G15",
+                "From": {
+                  "X": 3,
+                  "Y": 17
+                },
+                "To": {
+                  "X": 6,
+                  "Y": 14
+                }
+              },
+              "CompletedDepth": 2,
+              "Nodes": 75884,
+              "ElapsedMilliseconds": 1000.0479,
+              "SearchMilliseconds": 1000.0212,
+              "Value": -0.7776966717096314,
+              "PrincipalVariation": [
+                {
+                  "Id": 1639,
+                  "Label": "D18\u2013G15",
+                  "From": {
+                    "X": 3,
+                    "Y": 17
+                  },
+                  "To": {
+                    "X": 6,
+                    "Y": 14
+                  }
+                },
+                {
+                  "Id": 6176,
+                  "Label": "O17\u2013R14",
+                  "From": {
+                    "X": 14,
+                    "Y": 16
+                  },
+                  "To": {
+                    "X": 17,
+                    "Y": 13
+                  }
+                },
+                {
+                  "Id": 4917,
+                  "Label": "L16\u2013O17",
+                  "From": {
+                    "X": 11,
+                    "Y": 15
+                  },
+                  "To": {
+                    "X": 14,
+                    "Y": 16
+                  }
+                }
+              ],
+              "CaptureQuiescencePlies": 2
+            }
+          ],
+          "CompletedDepth": 1,
+          "Nodes": 83165,
+          "CaptureQuiescencePlies": 2,
+          "elapsedMilliseconds": 1000.0449,
+          "searchMilliseconds": 1000.0224,
+          "Value": -0.7096588297137744,
+          "principalVariation": [
+            {
+              "Id": 2819,
+              "Label": "G15\u2013J12",
+              "From": {
+                "X": 6,
+                "Y": 14
+              },
+              "To": {
+                "X": 9,
+                "Y": 11
+              }
+            },
+            {
+              "Id": 3990,
+              "Label": "J12\u2013M10",
+              "From": {
+                "X": 9,
+                "Y": 11
+              },
+              "To": {
+                "X": 12,
+                "Y": 9
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "pressure-cap-second",
+      "history": "EnclosureDisruption2.json",
+      "actionCount": 120,
+      "coreSha256": "9a9c29501a73d13106b4b1e2b59b29e3cea48e3a6c0aed15b22221692ac1fd22",
+      "historySha256": "51002ad720bc50497bfd920eb2c1381080e3facb80cbfe6923b18a1f098fe962",
+      "final": {
+        "MoveNumber": 120,
+        "Turn": 1,
+        "ActionsRemaining": 0,
+        "Finished": true,
+        "scores": [
+          1229.0677655690001,
+          622.085256412
+        ],
+        "areas": [
+          75.5,
+          1
+        ]
+      },
+      "results": [
+        {
+          "prefix": 10,
+          "decisionMove": 11,
+          "player": 1,
+          "budgetMilliseconds": 100,
+          "before": {
+            "MoveNumber": 10,
+            "Turn": 1,
+            "ActionsRemaining": 1,
+            "Finished": false,
+            "scores": [
+              5,
+              0
+            ],
+            "areas": [
+              2.5,
+              0
+            ]
+          },
+          "recorded": {
+            "action": {
+              "Id": 2561,
+              "Label": "G4\u2013J7",
+              "From": {
+                "X": 6,
+                "Y": 3
+              },
+              "To": {
+                "X": 9,
+                "Y": 6
+              }
+            },
+            "actions": [
+              {
+                "Id": 2561,
+                "Label": "G4\u2013J7",
+                "From": {
+                  "X": 6,
+                  "Y": 3
+                },
+                "To": {
+                  "X": 9,
+                  "Y": 6
+                }
+              }
+            ],
+            "afterMove": {
+              "MoveNumber": 11,
+              "Turn": 0,
+              "ActionsRemaining": 2,
+              "Finished": false,
+              "scores": [
+                7.500000000000001,
+                0
+              ],
+              "areas": [
+                2.5,
+                0
+              ]
+            },
+            "legalCaptureReplies": 0,
+            "worstSingleCapture": null,
+            "worstSingleCapturePosition": {
+              "MoveNumber": 11,
+              "Turn": 0,
+              "ActionsRemaining": 2,
+              "Finished": false,
+              "scores": [
+                7.500000000000001,
+                0
+              ],
+              "areas": [
+                2.5,
+                0
+              ]
+            },
+            "retainedAreaAfterWorstSingleCapture": 0,
+            "capturePairAudit": null,
+            "actualFollowingTurn": {
+              "appliedReplies": [
+                {
+                  "Id": 183,
+                  "Label": "A9\u2013B12",
+                  "From": {
+                    "X": 0,
+                    "Y": 8
+                  },
+                  "To": {
+                    "X": 1,
+                    "Y": 11
+                  }
+                },
+                {
+                  "Id": 676,
+                  "Label": "B12\u2013D15",
+                  "From": {
+                    "X": 1,
+                    "Y": 11
+                  },
+                  "To": {
+                    "X": 3,
+                    "Y": 14
+                  }
+                }
+              ],
+              "blockedMove": null,
+              "position": {
+                "MoveNumber": 13,
+                "Turn": 1,
+                "ActionsRemaining": 2,
+                "Finished": false,
+                "scores": [
+                  25.25,
+                  0
+                ],
+                "areas": [
+                  17.75,
+                  0
+                ]
+              }
+            },
+            "captureAndProtectionChecksPassed": true
+          },
+          "chosen": {
+            "action": {
+              "Id": 1992,
+              "Label": "E15\u2013H13",
+              "From": {
+                "X": 4,
+                "Y": 14
+              },
+              "To": {
+                "X": 7,
+                "Y": 12
+              }
+            },
+            "actions": [
+              {
+                "Id": 1992,
+                "Label": "E15\u2013H13",
+                "From": {
+                  "X": 4,
+                  "Y": 14
+                },
+                "To": {
+                  "X": 7,
+                  "Y": 12
+                }
+              }
+            ],
+            "afterMove": {
+              "MoveNumber": 11,
+              "Turn": 0,
+              "ActionsRemaining": 2,
+              "Finished": false,
+              "scores": [
+                7.500000000000001,
+                0
+              ],
+              "areas": [
+                2.5,
+                0
+              ]
+            },
+            "legalCaptureReplies": 0,
+            "worstSingleCapture": null,
+            "worstSingleCapturePosition": {
+              "MoveNumber": 11,
+              "Turn": 0,
+              "ActionsRemaining": 2,
+              "Finished": false,
+              "scores": [
+                7.500000000000001,
+                0
+              ],
+              "areas": [
+                2.5,
+                0
+              ]
+            },
+            "retainedAreaAfterWorstSingleCapture": 0,
+            "capturePairAudit": null,
+            "actualFollowingTurn": {
+              "appliedReplies": [
+                {
+                  "Id": 183,
+                  "Label": "A9\u2013B12",
+                  "From": {
+                    "X": 0,
+                    "Y": 8
+                  },
+                  "To": {
+                    "X": 1,
+                    "Y": 11
+                  }
+                },
+                {
+                  "Id": 676,
+                  "Label": "B12\u2013D15",
+                  "From": {
+                    "X": 1,
+                    "Y": 11
+                  },
+                  "To": {
+                    "X": 3,
+                    "Y": 14
+                  }
+                }
+              ],
+              "blockedMove": null,
+              "position": {
+                "MoveNumber": 13,
+                "Turn": 1,
+                "ActionsRemaining": 2,
+                "Finished": false,
+                "scores": [
+                  25.25,
+                  0
+                ],
+                "areas": [
+                  17.75,
+                  0
+                ]
+              }
+            },
+            "captureAndProtectionChecksPassed": true
+          },
+          "searches": [
+            {
+              "Action": {
+                "Id": 1992,
+                "Label": "E15\u2013H13",
+                "From": {
+                  "X": 4,
+                  "Y": 14
+                },
+                "To": {
+                  "X": 7,
+                  "Y": 12
+                }
+              },
+              "CompletedDepth": 2,
+              "Nodes": 13134,
+              "ElapsedMilliseconds": 100.0658,
+              "SearchMilliseconds": 100.0101,
+              "Value": 0.5233429280303858,
+              "PrincipalVariation": [
+                {
+                  "Id": 1992,
+                  "Label": "E15\u2013H13",
+                  "From": {
+                    "X": 4,
+                    "Y": 14
+                  },
+                  "To": {
+                    "X": 7,
+                    "Y": 12
+                  }
+                },
+                {
+                  "Id": 1457,
+                  "Label": "D10\u2013G7",
+                  "From": {
+                    "X": 3,
+                    "Y": 9
+                  },
+                  "To": {
+                    "X": 6,
+                    "Y": 6
+                  }
+                }
+              ],
+              "CaptureQuiescencePlies": 2
+            }
+          ],
+          "CompletedDepth": 2,
+          "Nodes": 13134,
+          "CaptureQuiescencePlies": 2,
+          "elapsedMilliseconds": 100.0658,
+          "searchMilliseconds": 100.0101,
+          "Value": 0.5233429280303858,
+          "principalVariation": [
+            {
+              "Id": 1992,
+              "Label": "E15\u2013H13",
+              "From": {
+                "X": 4,
+                "Y": 14
+              },
+              "To": {
+                "X": 7,
+                "Y": 12
+              }
+            },
+            {
+              "Id": 1457,
+              "Label": "D10\u2013G7",
+              "From": {
+                "X": 3,
+                "Y": 9
+              },
+              "To": {
+                "X": 6,
+                "Y": 6
+              }
+            }
+          ]
+        },
+        {
+          "prefix": 10,
+          "decisionMove": 11,
+          "player": 1,
+          "budgetMilliseconds": 1000,
+          "before": {
+            "MoveNumber": 10,
+            "Turn": 1,
+            "ActionsRemaining": 1,
+            "Finished": false,
+            "scores": [
+              5,
+              0
+            ],
+            "areas": [
+              2.5,
+              0
+            ]
+          },
+          "recorded": {
+            "action": {
+              "Id": 2561,
+              "Label": "G4\u2013J7",
+              "From": {
+                "X": 6,
+                "Y": 3
+              },
+              "To": {
+                "X": 9,
+                "Y": 6
+              }
+            },
+            "actions": [
+              {
+                "Id": 2561,
+                "Label": "G4\u2013J7",
+                "From": {
+                  "X": 6,
+                  "Y": 3
+                },
+                "To": {
+                  "X": 9,
+                  "Y": 6
+                }
+              }
+            ],
+            "afterMove": {
+              "MoveNumber": 11,
+              "Turn": 0,
+              "ActionsRemaining": 2,
+              "Finished": false,
+              "scores": [
+                7.500000000000001,
+                0
+              ],
+              "areas": [
+                2.5,
+                0
+              ]
+            },
+            "legalCaptureReplies": 0,
+            "worstSingleCapture": null,
+            "worstSingleCapturePosition": {
+              "MoveNumber": 11,
+              "Turn": 0,
+              "ActionsRemaining": 2,
+              "Finished": false,
+              "scores": [
+                7.500000000000001,
+                0
+              ],
+              "areas": [
+                2.5,
+                0
+              ]
+            },
+            "retainedAreaAfterWorstSingleCapture": 0,
+            "capturePairAudit": null,
+            "actualFollowingTurn": {
+              "appliedReplies": [
+                {
+                  "Id": 183,
+                  "Label": "A9\u2013B12",
+                  "From": {
+                    "X": 0,
+                    "Y": 8
+                  },
+                  "To": {
+                    "X": 1,
+                    "Y": 11
+                  }
+                },
+                {
+                  "Id": 676,
+                  "Label": "B12\u2013D15",
+                  "From": {
+                    "X": 1,
+                    "Y": 11
+                  },
+                  "To": {
+                    "X": 3,
+                    "Y": 14
+                  }
+                }
+              ],
+              "blockedMove": null,
+              "position": {
+                "MoveNumber": 13,
+                "Turn": 1,
+                "ActionsRemaining": 2,
+                "Finished": false,
+                "scores": [
+                  25.25,
+                  0
+                ],
+                "areas": [
+                  17.75,
+                  0
+                ]
+              }
+            },
+            "captureAndProtectionChecksPassed": true
+          },
+          "chosen": {
+            "action": {
+              "Id": 4013,
+              "Label": "J13\u2013M10",
+              "From": {
+                "X": 9,
+                "Y": 12
+              },
+              "To": {
+                "X": 12,
+                "Y": 9
+              }
+            },
+            "actions": [
+              {
+                "Id": 4013,
+                "Label": "J13\u2013M10",
+                "From": {
+                  "X": 9,
+                  "Y": 12
+                },
+                "To": {
+                  "X": 12,
+                  "Y": 9
+                }
+              }
+            ],
+            "afterMove": {
+              "MoveNumber": 11,
+              "Turn": 0,
+              "ActionsRemaining": 2,
+              "Finished": false,
+              "scores": [
+                7.500000000000001,
+                18
+              ],
+              "areas": [
+                2.5,
+                18
+              ]
+            },
+            "legalCaptureReplies": 0,
+            "worstSingleCapture": null,
+            "worstSingleCapturePosition": {
+              "MoveNumber": 11,
+              "Turn": 0,
+              "ActionsRemaining": 2,
+              "Finished": false,
+              "scores": [
+                7.500000000000001,
+                18
+              ],
+              "areas": [
+                2.5,
+                18
+              ]
+            },
+            "retainedAreaAfterWorstSingleCapture": 18,
+            "capturePairAudit": null,
+            "actualFollowingTurn": {
+              "appliedReplies": [
+                {
+                  "Id": 183,
+                  "Label": "A9\u2013B12",
+                  "From": {
+                    "X": 0,
+                    "Y": 8
+                  },
+                  "To": {
+                    "X": 1,
+                    "Y": 11
+                  }
+                },
+                {
+                  "Id": 676,
+                  "Label": "B12\u2013D15",
+                  "From": {
+                    "X": 1,
+                    "Y": 11
+                  },
+                  "To": {
+                    "X": 3,
+                    "Y": 14
+                  }
+                }
+              ],
+              "blockedMove": null,
+              "position": {
+                "MoveNumber": 13,
+                "Turn": 1,
+                "ActionsRemaining": 2,
+                "Finished": false,
+                "scores": [
+                  25.25,
+                  36
+                ],
+                "areas": [
+                  17.75,
+                  18
+                ]
+              }
+            },
+            "captureAndProtectionChecksPassed": true
+          },
+          "searches": [
+            {
+              "Action": {
+                "Id": 4013,
+                "Label": "J13\u2013M10",
+                "From": {
+                  "X": 9,
+                  "Y": 12
+                },
+                "To": {
+                  "X": 12,
+                  "Y": 9
+                }
+              },
+              "CompletedDepth": 3,
+              "Nodes": 717583,
+              "ElapsedMilliseconds": 1000.0422,
+              "SearchMilliseconds": 1000.0107,
+              "Value": -0.17006487229609174,
+              "PrincipalVariation": [
+                {
+                  "Id": 4013,
+                  "Label": "J13\u2013M10",
+                  "From": {
+                    "X": 9,
+                    "Y": 12
+                  },
+                  "To": {
+                    "X": 12,
+                    "Y": 9
+                  }
+                },
+                {
+                  "Id": 1457,
+                  "Label": "D10\u2013G7",
+                  "From": {
+                    "X": 3,
+                    "Y": 9
+                  },
+                  "To": {
+                    "X": 6,
+                    "Y": 6
+                  }
+                },
+                {
+                  "Id": 2633,
+                  "Label": "G7\u2013J10",
+                  "From": {
+                    "X": 6,
+                    "Y": 6
+                  },
+                  "To": {
+                    "X": 9,
+                    "Y": 9
+                  }
+                }
+              ],
+              "CaptureQuiescencePlies": 2
+            }
+          ],
+          "CompletedDepth": 3,
+          "Nodes": 717583,
+          "CaptureQuiescencePlies": 2,
+          "elapsedMilliseconds": 1000.0422,
+          "searchMilliseconds": 1000.0107,
+          "Value": -0.17006487229609174,
+          "principalVariation": [
+            {
+              "Id": 4013,
+              "Label": "J13\u2013M10",
+              "From": {
+                "X": 9,
+                "Y": 12
+              },
+              "To": {
+                "X": 12,
+                "Y": 9
+              }
+            },
+            {
+              "Id": 1457,
+              "Label": "D10\u2013G7",
+              "From": {
+                "X": 3,
+                "Y": 9
+              },
+              "To": {
+                "X": 6,
+                "Y": 6
+              }
+            },
+            {
+              "Id": 2633,
+              "Label": "G7\u2013J10",
+              "From": {
+                "X": 6,
+                "Y": 6
+              },
+              "To": {
+                "X": 9,
+                "Y": 9
+              }
+            }
+          ]
+        },
+        {
+          "prefix": 26,
+          "decisionMove": 27,
+          "player": 1,
+          "budgetMilliseconds": 100,
+          "before": {
+            "MoveNumber": 26,
+            "Turn": 1,
+            "ActionsRemaining": 1,
+            "Finished": false,
+            "scores": [
+              145.75,
+              54
+            ],
+            "areas": [
+              17.75,
+              0
+            ]
+          },
+          "recorded": {
+            "action": {
+              "Id": 2699,
+              "Label": "G10\u2013J7",
+              "From": {
+                "X": 6,
+                "Y": 9
+              },
+              "To": {
+                "X": 9,
+                "Y": 6
+              }
+            },
+            "actions": [
+              {
+                "Id": 2699,
+                "Label": "G10\u2013J7",
+                "From": {
+                  "X": 6,
+                  "Y": 9
+                },
+                "To": {
+                  "X": 9,
+                  "Y": 6
+                }
+              }
+            ],
+            "afterMove": {
+              "MoveNumber": 27,
+              "Turn": 0,
+              "ActionsRemaining": 2,
+              "Finished": false,
+              "scores": [
+                163.5,
+                72
+              ],
+              "areas": [
+                17.75,
+                18
+              ]
+            },
+            "legalCaptureReplies": 65,
+            "worstSingleCapture": null,
+            "worstSingleCapturePosition": {
+              "MoveNumber": 27,
+              "Turn": 0,
+              "ActionsRemaining": 2,
+              "Finished": false,
+              "scores": [
+                163.5,
+                72
+              ],
+              "areas": [
+                17.75,
+                18
+              ]
+            },
+            "retainedAreaAfterWorstSingleCapture": 18,
+            "capturePairAudit": null,
+            "actualFollowingTurn": {
+              "appliedReplies": [
+                {
+                  "Id": 3496,
+                  "Label": "I9\u2013K6",
+                  "From": {
+                    "X": 8,
+                    "Y": 8
+                  },
+                  "To": {
+                    "X": 10,
+                    "Y": 5
+                  }
+                },
+                {
+                  "Id": 3066,
+                  "Label": "H8\u2013K6",
+                  "From": {
+                    "X": 7,
+                    "Y": 7
+                  },
+                  "To": {
+                    "X": 10,
+                    "Y": 5
+                  }
+                }
+              ],
+              "blockedMove": null,
+              "position": {
+                "MoveNumber": 29,
+                "Turn": 1,
+                "ActionsRemaining": 2,
+                "Finished": false,
+                "scores": [
+                  181.25,
+                  72
+                ],
+                "areas": [
+                  17.75,
+                  0
+                ]
+              }
+            },
+            "captureAndProtectionChecksPassed": true
+          },
+          "chosen": {
+            "action": {
+              "Id": 5329,
+              "Label": "M16\u2013P15",
+              "From": {
+                "X": 12,
+                "Y": 15
+              },
+              "To": {
+                "X": 15,
+                "Y": 14
+              }
+            },
+            "actions": [
+              {
+                "Id": 5329,
+                "Label": "M16\u2013P15",
+                "From": {
+                  "X": 12,
+                  "Y": 15
+                },
+                "To": {
+                  "X": 15,
+                  "Y": 14
+                }
+              }
+            ],
+            "afterMove": {
+              "MoveNumber": 27,
+              "Turn": 0,
+              "ActionsRemaining": 2,
+              "Finished": false,
+              "scores": [
+                163.5,
+                54
+              ],
+              "areas": [
+                17.75,
+                0
+              ]
+            },
+            "legalCaptureReplies": 86,
+            "worstSingleCapture": null,
+            "worstSingleCapturePosition": {
+              "MoveNumber": 27,
+              "Turn": 0,
+              "ActionsRemaining": 2,
+              "Finished": false,
+              "scores": [
+                163.5,
+                54
+              ],
+              "areas": [
+                17.75,
+                0
+              ]
+            },
+            "retainedAreaAfterWorstSingleCapture": 0,
+            "capturePairAudit": null,
+            "actualFollowingTurn": {
+              "appliedReplies": [
+                {
+                  "Id": 3496,
+                  "Label": "I9\u2013K6",
+                  "From": {
+                    "X": 8,
+                    "Y": 8
+                  },
+                  "To": {
+                    "X": 10,
+                    "Y": 5
+                  }
+                }
+              ],
+              "blockedMove": 29,
+              "position": {
+                "MoveNumber": 28,
+                "Turn": 0,
+                "ActionsRemaining": 1,
+                "Finished": false,
+                "scores": [
+                  163.5,
+                  54
+                ],
+                "areas": [
+                  17.75,
+                  0
+                ]
+              }
+            },
+            "captureAndProtectionChecksPassed": true
+          },
+          "searches": [
+            {
+              "Action": {
+                "Id": 5329,
+                "Label": "M16\u2013P15",
+                "From": {
+                  "X": 12,
+                  "Y": 15
+                },
+                "To": {
+                  "X": 15,
+                  "Y": 14
+                }
+              },
+              "CompletedDepth": 2,
+              "Nodes": 20010,
+              "ElapsedMilliseconds": 100.0467,
+              "SearchMilliseconds": 100.0199,
+              "Value": -0.7049180109318758,
+              "PrincipalVariation": [
+                {
+                  "Id": 5329,
+                  "Label": "M16\u2013P15",
+                  "From": {
+                    "X": 12,
+                    "Y": 15
+                  },
+                  "To": {
+                    "X": 15,
+                    "Y": 14
+                  }
+                },
+                {
+                  "Id": 3503,
+                  "Label": "I9\u2013L6",
+                  "From": {
+                    "X": 8,
+                    "Y": 8
+                  },
+                  "To": {
+                    "X": 11,
+                    "Y": 5
+                  }
+                }
+              ],
+              "CaptureQuiescencePlies": 2
+            }
+          ],
+          "CompletedDepth": 2,
+          "Nodes": 20010,
+          "CaptureQuiescencePlies": 2,
+          "elapsedMilliseconds": 100.0467,
+          "searchMilliseconds": 100.0199,
+          "Value": -0.7049180109318758,
+          "principalVariation": [
+            {
+              "Id": 5329,
+              "Label": "M16\u2013P15",
+              "From": {
+                "X": 12,
+                "Y": 15
+              },
+              "To": {
+                "X": 15,
+                "Y": 14
+              }
+            },
+            {
+              "Id": 3503,
+              "Label": "I9\u2013L6",
+              "From": {
+                "X": 8,
+                "Y": 8
+              },
+              "To": {
+                "X": 11,
+                "Y": 5
+              }
+            }
+          ]
+        },
+        {
+          "prefix": 26,
+          "decisionMove": 27,
+          "player": 1,
+          "budgetMilliseconds": 1000,
+          "before": {
+            "MoveNumber": 26,
+            "Turn": 1,
+            "ActionsRemaining": 1,
+            "Finished": false,
+            "scores": [
+              145.75,
+              54
+            ],
+            "areas": [
+              17.75,
+              0
+            ]
+          },
+          "recorded": {
+            "action": {
+              "Id": 2699,
+              "Label": "G10\u2013J7",
+              "From": {
+                "X": 6,
+                "Y": 9
+              },
+              "To": {
+                "X": 9,
+                "Y": 6
+              }
+            },
+            "actions": [
+              {
+                "Id": 2699,
+                "Label": "G10\u2013J7",
+                "From": {
+                  "X": 6,
+                  "Y": 9
+                },
+                "To": {
+                  "X": 9,
+                  "Y": 6
+                }
+              }
+            ],
+            "afterMove": {
+              "MoveNumber": 27,
+              "Turn": 0,
+              "ActionsRemaining": 2,
+              "Finished": false,
+              "scores": [
+                163.5,
+                72
+              ],
+              "areas": [
+                17.75,
+                18
+              ]
+            },
+            "legalCaptureReplies": 65,
+            "worstSingleCapture": null,
+            "worstSingleCapturePosition": {
+              "MoveNumber": 27,
+              "Turn": 0,
+              "ActionsRemaining": 2,
+              "Finished": false,
+              "scores": [
+                163.5,
+                72
+              ],
+              "areas": [
+                17.75,
+                18
+              ]
+            },
+            "retainedAreaAfterWorstSingleCapture": 18,
+            "capturePairAudit": null,
+            "actualFollowingTurn": {
+              "appliedReplies": [
+                {
+                  "Id": 3496,
+                  "Label": "I9\u2013K6",
+                  "From": {
+                    "X": 8,
+                    "Y": 8
+                  },
+                  "To": {
+                    "X": 10,
+                    "Y": 5
+                  }
+                },
+                {
+                  "Id": 3066,
+                  "Label": "H8\u2013K6",
+                  "From": {
+                    "X": 7,
+                    "Y": 7
+                  },
+                  "To": {
+                    "X": 10,
+                    "Y": 5
+                  }
+                }
+              ],
+              "blockedMove": null,
+              "position": {
+                "MoveNumber": 29,
+                "Turn": 1,
+                "ActionsRemaining": 2,
+                "Finished": false,
+                "scores": [
+                  181.25,
+                  72
+                ],
+                "areas": [
+                  17.75,
+                  0
+                ]
+              }
+            },
+            "captureAndProtectionChecksPassed": true
+          },
+          "chosen": {
+            "action": {
+              "Id": 5329,
+              "Label": "M16\u2013P15",
+              "From": {
+                "X": 12,
+                "Y": 15
+              },
+              "To": {
+                "X": 15,
+                "Y": 14
+              }
+            },
+            "actions": [
+              {
+                "Id": 5329,
+                "Label": "M16\u2013P15",
+                "From": {
+                  "X": 12,
+                  "Y": 15
+                },
+                "To": {
+                  "X": 15,
+                  "Y": 14
+                }
+              }
+            ],
+            "afterMove": {
+              "MoveNumber": 27,
+              "Turn": 0,
+              "ActionsRemaining": 2,
+              "Finished": false,
+              "scores": [
+                163.5,
+                54
+              ],
+              "areas": [
+                17.75,
+                0
+              ]
+            },
+            "legalCaptureReplies": 86,
+            "worstSingleCapture": null,
+            "worstSingleCapturePosition": {
+              "MoveNumber": 27,
+              "Turn": 0,
+              "ActionsRemaining": 2,
+              "Finished": false,
+              "scores": [
+                163.5,
+                54
+              ],
+              "areas": [
+                17.75,
+                0
+              ]
+            },
+            "retainedAreaAfterWorstSingleCapture": 0,
+            "capturePairAudit": null,
+            "actualFollowingTurn": {
+              "appliedReplies": [
+                {
+                  "Id": 3496,
+                  "Label": "I9\u2013K6",
+                  "From": {
+                    "X": 8,
+                    "Y": 8
+                  },
+                  "To": {
+                    "X": 10,
+                    "Y": 5
+                  }
+                }
+              ],
+              "blockedMove": 29,
+              "position": {
+                "MoveNumber": 28,
+                "Turn": 0,
+                "ActionsRemaining": 1,
+                "Finished": false,
+                "scores": [
+                  163.5,
+                  54
+                ],
+                "areas": [
+                  17.75,
+                  0
+                ]
+              }
+            },
+            "captureAndProtectionChecksPassed": true
+          },
+          "searches": [
+            {
+              "Action": {
+                "Id": 5329,
+                "Label": "M16\u2013P15",
+                "From": {
+                  "X": 12,
+                  "Y": 15
+                },
+                "To": {
+                  "X": 15,
+                  "Y": 14
+                }
+              },
+              "CompletedDepth": 2,
+              "Nodes": 286212,
+              "ElapsedMilliseconds": 1000.0462,
+              "SearchMilliseconds": 1000.0111,
+              "Value": -0.7049180109318758,
+              "PrincipalVariation": [
+                {
+                  "Id": 5329,
+                  "Label": "M16\u2013P15",
+                  "From": {
+                    "X": 12,
+                    "Y": 15
+                  },
+                  "To": {
+                    "X": 15,
+                    "Y": 14
+                  }
+                },
+                {
+                  "Id": 3503,
+                  "Label": "I9\u2013L6",
+                  "From": {
+                    "X": 8,
+                    "Y": 8
+                  },
+                  "To": {
+                    "X": 11,
+                    "Y": 5
+                  }
+                }
+              ],
+              "CaptureQuiescencePlies": 2
+            }
+          ],
+          "CompletedDepth": 2,
+          "Nodes": 286212,
+          "CaptureQuiescencePlies": 2,
+          "elapsedMilliseconds": 1000.0462,
+          "searchMilliseconds": 1000.0111,
+          "Value": -0.7049180109318758,
+          "principalVariation": [
+            {
+              "Id": 5329,
+              "Label": "M16\u2013P15",
+              "From": {
+                "X": 12,
+                "Y": 15
+              },
+              "To": {
+                "X": 15,
+                "Y": 14
+              }
+            },
+            {
+              "Id": 3503,
+              "Label": "I9\u2013L6",
+              "From": {
+                "X": 8,
+                "Y": 8
+              },
+              "To": {
+                "X": 11,
+                "Y": 5
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "lateAlternativeCapturePairAudit": [
+    {
+      "prefix": 102,
+      "candidate": 5327,
+      "label": "M16-P13",
+      "after": {
+        "move": 103,
+        "turn": 0,
+        "remaining": 2,
+        "scores": [
+          3308.042857146,
+          2908.533333333
+        ],
+        "areas": [
+          107.10000000000001,
+          53.333333333000006
+        ],
+        "blue": {
+          "CurrentArea": 107.10000000000001,
+          "PotentialArea": 1.5599999999999965,
+          "CompletionMoves": 5,
+          "RemainingScoringEvents": 9,
+          "ProtectedEdges": 0,
+          "ReinforcedBoundary": 0,
+          "ProjectedScore": 4297.522023812667,
+          "ControlledSpace": 167.33333333333334,
+          "ExpansionScore": 17.77916666666667
+        },
+        "red": {
+          "CurrentArea": 53.333333333000006,
+          "PotentialArea": 42.29166666687499,
+          "CompletionMoves": 2,
+          "RemainingScoringEvents": 9,
+          "ProtectedEdges": 2,
+          "ReinforcedBoundary": 0,
+          "ProjectedScore": 3743.512499998333,
+          "ControlledSpace": 156.66666666666663,
+          "ExpansionScore": 16.645833333333332
+        },
+        "redEvaluation": -0.6246736666288955
+      },
+      "worstOne": {
+        "action": 1455,
+        "label": "D10-F12",
+        "position": {
+          "move": 104,
+          "turn": 0,
+          "remaining": 1,
+          "scores": [
+            3308.042857146,
+            2908.533333333
+          ],
+          "areas": [
+            107.10000000000001,
+            2.6666666670000003
+          ],
+          "blue": {
+            "CurrentArea": 107.10000000000001,
+            "PotentialArea": 9.322580645161286,
+            "CompletionMoves": 7,
+            "RemainingScoringEvents": 9,
+            "ProtectedEdges": 1,
+            "ReinforcedBoundary": 0,
+            "ProjectedScore": 4316.843932414818,
+            "ControlledSpace": 169.33333333333331,
+            "ExpansionScore": 16.93333333333333
+          },
+          "red": {
+            "CurrentArea": 2.6666666670000003,
+            "PotentialArea": 73.958333333125,
+            "CompletionMoves": 2,
+            "RemainingScoringEvents": 9,
+            "ProtectedEdges": 2,
+            "ReinforcedBoundary": 0,
+            "ProjectedScore": 3539.6666666676665,
+            "ControlledSpace": 154.66666666666663,
+            "ExpansionScore": 15.466666666666663
+          },
+          "redEvaluation": -0.6987117488006224
+        }
+      },
+      "worstTwo": {
+        "first": 221,
+        "firstLabel": "A10-D13",
+        "second": 1150,
+        "secondLabel": "C15-D13",
+        "position": {
+          "move": 105,
+          "turn": 1,
+          "remaining": 2,
+          "scores": [
+            3415.142857146,
+            2908.533333333
+          ],
+          "areas": [
+            107.10000000000001,
+            0
+          ],
+          "blue": {
+            "CurrentArea": 107.10000000000001,
+            "PotentialArea": 13.352941176470585,
+            "CompletionMoves": 8,
+            "RemainingScoringEvents": 8,
+            "ProtectedEdges": 2,
+            "ReinforcedBoundary": 0,
+            "ProjectedScore": 4296.420798322471,
+            "ControlledSpace": 177.99999999999997,
+            "ExpansionScore": 11.124999999999998
+          },
+          "red": {
+            "CurrentArea": 0,
+            "PotentialArea": 63.684210526315795,
+            "CompletionMoves": 3,
+            "RemainingScoringEvents": 8,
+            "ProtectedEdges": 0,
+            "ReinforcedBoundary": 0,
+            "ProjectedScore": 3299.763596490895,
+            "ControlledSpace": 146,
+            "ExpansionScore": 9.125
+          },
+          "redEvaluation": -0.7471209246766317
+        }
+      },
+      "firstCaptureCount": 139,
+      "pairs": 18462,
+      "areaCacheEntries": 105
+    },
+    {
+      "prefix": 102,
+      "candidate": 1914,
+      "label": "E12-G11",
+      "after": {
+        "move": 103,
+        "turn": 0,
+        "remaining": 2,
+        "scores": [
+          3308.4285714320004,
+          2908.533333333
+        ],
+        "areas": [
+          107.485714286,
+          53.333333333000006
+        ],
+        "blue": {
+          "CurrentArea": 107.485714286,
+          "PotentialArea": 1.4057142855999984,
+          "CompletionMoves": 5,
+          "RemainingScoringEvents": 9,
+          "ProtectedEdges": 0,
+          "ReinforcedBoundary": 0,
+          "ProjectedScore": 4300.678571434,
+          "ControlledSpace": 168,
+          "ExpansionScore": 17.85
+        },
+        "red": {
+          "CurrentArea": 53.333333333000006,
+          "PotentialArea": 3.5897435899999954,
+          "CompletionMoves": 1,
+          "RemainingScoringEvents": 9,
+          "ProtectedEdges": 2,
+          "ReinforcedBoundary": 0,
+          "ProjectedScore": 3433.82628205,
+          "ControlledSpace": 155.99999999999997,
+          "ExpansionScore": 16.575
+        },
+        "redEvaluation": -0.7206466949264367
+      },
+      "worstOne": {
+        "action": 2359,
+        "label": "F13-I12",
+        "position": {
+          "move": 104,
+          "turn": 0,
+          "remaining": 1,
+          "scores": [
+            3308.4285714320004,
+            2908.533333333
+          ],
+          "areas": [
+            107.485714286,
+            2.6666666670000003
+          ],
+          "blue": {
+            "CurrentArea": 107.485714286,
+            "PotentialArea": 1.4057142855999984,
+            "CompletionMoves": 5,
+            "RemainingScoringEvents": 9,
+            "ProtectedEdges": 1,
+            "ReinforcedBoundary": 0,
+            "ProjectedScore": 4299.961904767333,
+            "ControlledSpace": 171.3333333333333,
+            "ExpansionScore": 17.13333333333333
+          },
+          "red": {
+            "CurrentArea": 2.6666666670000003,
+            "PotentialArea": 42.56410256384615,
+            "CompletionMoves": 1,
+            "RemainingScoringEvents": 9,
+            "ProtectedEdges": 2,
+            "ReinforcedBoundary": 0,
+            "ProjectedScore": 3288.312820513436,
+            "ControlledSpace": 152.66666666666663,
+            "ExpansionScore": 15.266666666666662
+          },
+          "redEvaluation": -0.7498471007231823
+        }
+      },
+      "worstTwo": {
+        "first": 221,
+        "firstLabel": "A10-D13",
+        "second": 2359,
+        "secondLabel": "F13-I12",
+        "position": {
+          "move": 105,
+          "turn": 1,
+          "remaining": 2,
+          "scores": [
+            3415.9142857180004,
+            2908.533333333
+          ],
+          "areas": [
+            107.485714286,
+            0
+          ],
+          "blue": {
+            "CurrentArea": 107.485714286,
+            "PotentialArea": 10.897959183571428,
+            "CompletionMoves": 6,
+            "RemainingScoringEvents": 8,
+            "ProtectedEdges": 2,
+            "ReinforcedBoundary": 0,
+            "ProjectedScore": 4319.368877556714,
+            "ControlledSpace": 173.99999999999994,
+            "ExpansionScore": 10.874999999999996
+          },
+          "red": {
+            "CurrentArea": 0,
+            "PotentialArea": 27.8125,
+            "CompletionMoves": 2,
+            "RemainingScoringEvents": 8,
+            "ProtectedEdges": 0,
+            "ReinforcedBoundary": 0,
+            "ProjectedScore": 3140.408333333,
+            "ControlledSpace": 149.99999999999997,
+            "ExpansionScore": 9.374999999999998
+          },
+          "redEvaluation": -0.7765812238167077
+        }
+      },
+      "firstCaptureCount": 131,
+      "pairs": 16082,
+      "areaCacheEntries": 89
+    },
+    {
+      "prefix": 102,
+      "candidate": 1916,
+      "label": "E12-G13",
+      "after": {
+        "move": 103,
+        "turn": 0,
+        "remaining": 2,
+        "scores": [
+          3308.4285714320004,
+          2908.533333333
+        ],
+        "areas": [
+          107.485714286,
+          53.333333333000006
+        ],
+        "blue": {
+          "CurrentArea": 107.485714286,
+          "PotentialArea": 1.4057142855999984,
+          "CompletionMoves": 5,
+          "RemainingScoringEvents": 9,
+          "ProtectedEdges": 0,
+          "ReinforcedBoundary": 0,
+          "ProjectedScore": 4300.678571434,
+          "ControlledSpace": 168,
+          "ExpansionScore": 17.85
+        },
+        "red": {
+          "CurrentArea": 53.333333333000006,
+          "PotentialArea": 3.5897435899999954,
+          "CompletionMoves": 1,
+          "RemainingScoringEvents": 9,
+          "ProtectedEdges": 2,
+          "ReinforcedBoundary": 0,
+          "ProjectedScore": 3433.82628205,
+          "ControlledSpace": 155.99999999999997,
+          "ExpansionScore": 16.575
+        },
+        "redEvaluation": -0.7206466949264367
+      },
+      "worstOne": {
+        "action": 1455,
+        "label": "D10-F12",
+        "position": {
+          "move": 104,
+          "turn": 0,
+          "remaining": 1,
+          "scores": [
+            3308.4285714320004,
+            2908.533333333
+          ],
+          "areas": [
+            107.485714286,
+            47
+          ],
+          "blue": {
+            "CurrentArea": 107.485714286,
+            "PotentialArea": 9.198156681935483,
+            "CompletionMoves": 7,
+            "RemainingScoringEvents": 9,
+            "ProtectedEdges": 1,
+            "ReinforcedBoundary": 0,
+            "ProjectedScore": 4320.394470051807,
+            "ControlledSpace": 169.99999999999997,
+            "ExpansionScore": 16.999999999999993
+          },
+          "red": {
+            "CurrentArea": 47,
+            "PotentialArea": 3.947368421052632,
+            "CompletionMoves": 3,
+            "RemainingScoringEvents": 9,
+            "ProtectedEdges": 2,
+            "ReinforcedBoundary": 0,
+            "ProjectedScore": 3370.617543859316,
+            "ControlledSpace": 153.99999999999997,
+            "ExpansionScore": 15.399999999999999
+          },
+          "redEvaluation": -0.738181967027147
+        }
+      },
+      "worstTwo": {
+        "first": 1455,
+        "firstLabel": "D10-F12",
+        "second": 2307,
+        "secondLabel": "F11-H13",
+        "position": {
+          "move": 105,
+          "turn": 1,
+          "remaining": 2,
+          "scores": [
+            3415.9142857180004,
+            2911.2000000000003
+          ],
+          "areas": [
+            107.485714286,
+            2.6666666670000003
+          ],
+          "blue": {
+            "CurrentArea": 107.485714286,
+            "PotentialArea": 9.198156681935483,
+            "CompletionMoves": 7,
+            "RemainingScoringEvents": 8,
+            "ProtectedEdges": 2,
+            "ReinforcedBoundary": 0,
+            "ProjectedScore": 4295.706490021269,
+            "ControlledSpace": 171.3333333333333,
+            "ExpansionScore": 10.70833333333333
+          },
+          "red": {
+            "CurrentArea": 2.6666666670000003,
+            "PotentialArea": 27.280701754210526,
+            "CompletionMoves": 3,
+            "RemainingScoringEvents": 8,
+            "ProtectedEdges": 0,
+            "ReinforcedBoundary": 0,
+            "ProjectedScore": 3105.75921052793,
+            "ControlledSpace": 152.66666666666663,
+            "ExpansionScore": 9.541666666666664
+          },
+          "redEvaluation": -0.7781300066754331
+        }
+      },
+      "firstCaptureCount": 134,
+      "pairs": 16944,
+      "areaCacheEntries": 87
+    },
+    {
+      "prefix": 102,
+      "candidate": 1509,
+      "label": "D12-G13",
+      "after": {
+        "move": 103,
+        "turn": 0,
+        "remaining": 2,
+        "scores": [
+          3308.4285714320004,
+          2908.533333333
+        ],
+        "areas": [
+          107.485714286,
+          53.333333333000006
+        ],
+        "blue": {
+          "CurrentArea": 107.485714286,
+          "PotentialArea": 1.4057142855999984,
+          "CompletionMoves": 5,
+          "RemainingScoringEvents": 9,
+          "ProtectedEdges": 0,
+          "ReinforcedBoundary": 0,
+          "ProjectedScore": 4300.536904767333,
+          "ControlledSpace": 166.66666666666666,
+          "ExpansionScore": 17.708333333333336
+        },
+        "red": {
+          "CurrentArea": 53.333333333000006,
+          "PotentialArea": 3.25757575772727,
+          "CompletionMoves": 4,
+          "RemainingScoringEvents": 9,
+          "ProtectedEdges": 2,
+          "ReinforcedBoundary": 0,
+          "ProjectedScore": 3424.7954545430302,
+          "ControlledSpace": 157.3333333333333,
+          "ExpansionScore": 16.716666666666665
+        },
+        "redEvaluation": -0.7226423956261319
+      },
+      "worstOne": {
+        "action": 1455,
+        "label": "D10-F12",
+        "position": {
+          "move": 104,
+          "turn": 0,
+          "remaining": 1,
+          "scores": [
+            3308.4285714320004,
+            2908.533333333
+          ],
+          "areas": [
+            107.485714286,
+            46.666666667
+          ],
+          "blue": {
+            "CurrentArea": 107.485714286,
+            "PotentialArea": 9.198156681935483,
+            "CompletionMoves": 7,
+            "RemainingScoringEvents": 9,
+            "ProtectedEdges": 1,
+            "ReinforcedBoundary": 0,
+            "ProjectedScore": 4320.261136718474,
+            "ControlledSpace": 168.66666666666666,
+            "ExpansionScore": 16.866666666666667
+          },
+          "red": {
+            "CurrentArea": 46.666666667,
+            "PotentialArea": 4.469696969545454,
+            "CompletionMoves": 4,
+            "RemainingScoringEvents": 9,
+            "ProtectedEdges": 2,
+            "ReinforcedBoundary": 0,
+            "ProjectedScore": 3370.884848486606,
+            "ControlledSpace": 155.3333333333333,
+            "ExpansionScore": 15.533333333333328
+          },
+          "redEvaluation": -0.7381027383937016
+        }
+      },
+      "worstTwo": {
+        "first": 221,
+        "firstLabel": "A10-D13",
+        "second": 1518,
+        "secondLabel": "D13-E13",
+        "position": {
+          "move": 105,
+          "turn": 1,
+          "remaining": 2,
+          "scores": [
+            3415.9142857180004,
+            2908.533333333
+          ],
+          "areas": [
+            107.485714286,
+            0
+          ],
+          "blue": {
+            "CurrentArea": 107.485714286,
+            "PotentialArea": 12.505102040714284,
+            "CompletionMoves": 6,
+            "RemainingScoringEvents": 8,
+            "ProtectedEdges": 2,
+            "ReinforcedBoundary": 0,
+            "ProjectedScore": 4324.10697279481,
+            "ControlledSpace": 172.66666666666663,
+            "ExpansionScore": 10.791666666666664
+          },
+          "red": {
+            "CurrentArea": 0,
+            "PotentialArea": 25.68181818181818,
+            "CompletionMoves": 4,
+            "RemainingScoringEvents": 8,
+            "ProtectedEdges": 0,
+            "ReinforcedBoundary": 0,
+            "ProjectedScore": 3072.0825757572425,
+            "ControlledSpace": 151.33333333333334,
+            "ExpansionScore": 9.458333333333334
+          },
+          "redEvaluation": -0.7864752318536893
+        }
+      },
+      "firstCaptureCount": 133,
+      "pairs": 16672,
+      "areaCacheEntries": 87
+    },
+    {
+      "prefix": 106,
+      "candidate": 4289,
+      "label": "K7-N10",
+      "after": {
+        "move": 107,
+        "turn": 0,
+        "remaining": 2,
+        "scores": [
+          3522.242857146,
+          2974.2000000000003
+        ],
+        "areas": [
+          107.10000000000001,
+          63.00000000000001
+        ],
+        "blue": {
+          "CurrentArea": 107.10000000000001,
+          "PotentialArea": 10.290322580645158,
+          "CompletionMoves": 7,
+          "RemainingScoringEvents": 7,
+          "ProtectedEdges": 0,
+          "ReinforcedBoundary": 0,
+          "ProjectedScore": 4286.909568615534,
+          "ControlledSpace": 172.66666666666666,
+          "ExpansionScore": 4.676388888888888
+        },
+        "red": {
+          "CurrentArea": 63.00000000000001,
+          "PotentialArea": 29.736842105263154,
+          "CompletionMoves": 3,
+          "RemainingScoringEvents": 7,
+          "ProtectedEdges": 2,
+          "ReinforcedBoundary": 0,
+          "ProjectedScore": 3538.245979532164,
+          "ControlledSpace": 151.33333333333334,
+          "ExpansionScore": 4.098611111111111
+        },
+        "redEvaluation": -0.6909686883526075
+      },
+      "worstOne": {
+        "action": 2393,
+        "label": "F15-G14",
+        "position": {
+          "move": 108,
+          "turn": 0,
+          "remaining": 1,
+          "scores": [
+            3522.242857146,
+            2974.2000000000003
+          ],
+          "areas": [
+            107.10000000000001,
+            21
+          ],
+          "blue": {
+            "CurrentArea": 107.10000000000001,
+            "PotentialArea": 10.290322580645158,
+            "CompletionMoves": 7,
+            "RemainingScoringEvents": 7,
+            "ProtectedEdges": 1,
+            "ReinforcedBoundary": 0,
+            "ProjectedScore": 4286.649846393312,
+            "ControlledSpace": 176.66666666666669,
+            "ExpansionScore": 4.416666666666667
+          },
+          "red": {
+            "CurrentArea": 21,
+            "PotentialArea": 51.8421052631579,
+            "CompletionMoves": 3,
+            "RemainingScoringEvents": 7,
+            "ProtectedEdges": 2,
+            "ReinforcedBoundary": 0,
+            "ProjectedScore": 3332.2517543859653,
+            "ControlledSpace": 147.33333333333334,
+            "ExpansionScore": 3.6833333333333336
+          },
+          "redEvaluation": -0.7390922412936793
+        }
+      },
+      "worstTwo": {
+        "first": 2393,
+        "firstLabel": "F15-G14",
+        "second": 5112,
+        "secondLabel": "M7-P5",
+        "position": {
+          "move": 109,
+          "turn": 1,
+          "remaining": 2,
+          "scores": [
+            3629.3428571460004,
+            2976.9
+          ],
+          "areas": [
+            107.10000000000001,
+            2.7
+          ],
+          "blue": {
+            "CurrentArea": 107.10000000000001,
+            "PotentialArea": 0,
+            "CompletionMoves": 7,
+            "RemainingScoringEvents": 6,
+            "ProtectedEdges": 2,
+            "ReinforcedBoundary": 0,
+            "ProjectedScore": 4271.942857146,
+            "ControlledSpace": 177.33333333333334,
+            "ExpansionScore": 0
+          },
+          "red": {
+            "CurrentArea": 2.7,
+            "PotentialArea": 53.090909090909086,
+            "CompletionMoves": 4,
+            "RemainingScoringEvents": 6,
+            "ProtectedEdges": 0,
+            "ReinforcedBoundary": 0,
+            "ProjectedScore": 3205.4636363636364,
+            "ControlledSpace": 146.66666666666666,
+            "ExpansionScore": 0
+          },
+          "redEvaluation": -0.7593169410906249
+        }
+      },
+      "firstCaptureCount": 125,
+      "pairs": 16302,
+      "areaCacheEntries": 129
+    },
+    {
+      "prefix": 106,
+      "candidate": 1918,
+      "label": "E12-G15",
+      "after": {
+        "move": 107,
+        "turn": 0,
+        "remaining": 2,
+        "scores": [
+          3522.242857146,
+          2957.033333333
+        ],
+        "areas": [
+          107.10000000000001,
+          45.833333333000006
+        ],
+        "blue": {
+          "CurrentArea": 107.10000000000001,
+          "PotentialArea": 10.290322580645158,
+          "CompletionMoves": 7,
+          "RemainingScoringEvents": 7,
+          "ProtectedEdges": 0,
+          "ReinforcedBoundary": 0,
+          "ProjectedScore": 4286.963735282201,
+          "ControlledSpace": 174.66666666666666,
+          "ExpansionScore": 4.730555555555555
+        },
+        "red": {
+          "CurrentArea": 45.833333333000006,
+          "PotentialArea": 38.77192982473684,
+          "CompletionMoves": 3,
+          "RemainingScoringEvents": 7,
+          "ProtectedEdges": 2,
+          "ReinforcedBoundary": 0,
+          "ProjectedScore": 3436.998830407392,
+          "ControlledSpace": 149.33333333333334,
+          "ExpansionScore": 4.044444444444444
+        },
+        "redEvaluation": -0.7167720707253974
+      },
+      "worstOne": {
+        "action": 221,
+        "label": "A10-D13",
+        "position": {
+          "move": 108,
+          "turn": 0,
+          "remaining": 1,
+          "scores": [
+            3522.242857146,
+            2957.033333333
+          ],
+          "areas": [
+            107.10000000000001,
+            43.166666667
+          ],
+          "blue": {
+            "CurrentArea": 107.10000000000001,
+            "PotentialArea": 14.322580645161286,
+            "CompletionMoves": 7,
+            "RemainingScoringEvents": 7,
+            "ProtectedEdges": 1,
+            "ReinforcedBoundary": 0,
+            "ProjectedScore": 4290.715437791161,
+            "ControlledSpace": 177.99999999999997,
+            "ExpansionScore": 4.449999999999999
+          },
+          "red": {
+            "CurrentArea": 43.166666667,
+            "PotentialArea": 34.69696969681818,
+            "CompletionMoves": 4,
+            "RemainingScoringEvents": 7,
+            "ProtectedEdges": 2,
+            "ReinforcedBoundary": 0,
+            "ProjectedScore": 3401.6378787892727,
+            "ControlledSpace": 146,
+            "ExpansionScore": 3.6500000000000004
+          },
+          "redEvaluation": -0.725581622444719
+        }
+      },
+      "worstTwo": {
+        "first": 221,
+        "firstLabel": "A10-D13",
+        "second": 1521,
+        "secondLabel": "D13-E16",
+        "position": {
+          "move": 109,
+          "turn": 1,
+          "remaining": 2,
+          "scores": [
+            3629.3428571460004,
+            2958.533333333
+          ],
+          "areas": [
+            107.10000000000001,
+            1.5
+          ],
+          "blue": {
+            "CurrentArea": 107.10000000000001,
+            "PotentialArea": 0,
+            "CompletionMoves": 7,
+            "RemainingScoringEvents": 6,
+            "ProtectedEdges": 2,
+            "ReinforcedBoundary": 0,
+            "ProjectedScore": 4271.942857146,
+            "ControlledSpace": 183.99999999999997,
+            "ExpansionScore": 0
+          },
+          "red": {
+            "CurrentArea": 1.5,
+            "PotentialArea": 52.95454545454545,
+            "CompletionMoves": 4,
+            "RemainingScoringEvents": 6,
+            "ProtectedEdges": 0,
+            "ReinforcedBoundary": 0,
+            "ProjectedScore": 3179.351515151182,
+            "ControlledSpace": 140.00000000000003,
+            "ExpansionScore": 0
+          },
+          "redEvaluation": -0.7635691370608607
+        }
+      },
+      "firstCaptureCount": 165,
+      "pairs": 27561,
+      "areaCacheEntries": 112
+    }
+  ],
+  "rejectedSearchOnlyMatches": [
+    {
+      "kind": "head-to-head",
+      "book": 0,
+      "candidateSeat": 0,
+      "moveBudgetMs": 100,
+      "scores": [
+        55.5,
+        179.24615384400002
+      ],
+      "areas": [
+        0,
+        0
+      ],
+      "candidateResult": -1,
+      "beforeMeanDepth": 1.6166666666666667,
+      "candidateMeanDepth": 1.6666666666666667,
+      "beforeNodes": 2755167,
+      "candidateNodes": 2630812,
+      "snapshots": [
+        {
+          "move": 20,
+          "areas": [
+            0,
+            0
+          ],
+          "scores": [
+            0,
+            0
+          ]
+        },
+        {
+          "move": 40,
+          "areas": [
+            0,
+            0
+          ],
+          "scores": [
+            0,
+            43.5
+          ]
+        },
+        {
+          "move": 60,
+          "areas": [
+            0,
+            0
+          ],
+          "scores": [
+            55.5,
+            75
+          ]
+        },
+        {
+          "move": 80,
+          "areas": [
+            0,
+            0
+          ],
+          "scores": [
+            55.5,
+            95.49230769200001
+          ]
+        },
+        {
+          "move": 100,
+          "areas": [
+            0,
+            8.492307692
+          ],
+          "scores": [
+            55.5,
+            161.446153844
+          ]
+        },
+        {
+          "move": 120,
+          "areas": [
+            0,
+            0
+          ],
+          "scores": [
+            55.5,
+            179.24615384400002
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "head-to-head",
+      "book": 0,
+      "candidateSeat": 1,
+      "moveBudgetMs": 100,
+      "scores": [
+        325.049999999,
+        114
+      ],
+      "areas": [
+        9.333333333,
+        12
+      ],
+      "candidateResult": -1,
+      "beforeMeanDepth": 1.65,
+      "candidateMeanDepth": 1.6666666666666667,
+      "beforeNodes": 3085421,
+      "candidateNodes": 2718466,
+      "snapshots": [
+        {
+          "move": 20,
+          "areas": [
+            0,
+            0
+          ],
+          "scores": [
+            18,
+            0
+          ]
+        },
+        {
+          "move": 40,
+          "areas": [
+            18,
+            0
+          ],
+          "scores": [
+            36,
+            0
+          ]
+        },
+        {
+          "move": 60,
+          "areas": [
+            0,
+            0
+          ],
+          "scores": [
+            102,
+            0
+          ]
+        },
+        {
+          "move": 80,
+          "areas": [
+            0,
+            0
+          ],
+          "scores": [
+            163.5,
+            0
+          ]
+        },
+        {
+          "move": 100,
+          "areas": [
+            0,
+            0
+          ],
+          "scores": [
+            274.5,
+            90
+          ]
+        },
+        {
+          "move": 120,
+          "areas": [
+            9.333333333,
+            12
+          ],
+          "scores": [
+            325.049999999,
+            114
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "head-to-head",
+      "book": 1,
+      "candidateSeat": 0,
+      "moveBudgetMs": 100,
+      "scores": [
+        87.5,
+        112.840909091
+      ],
+      "areas": [
+        0,
+        5.375
+      ],
+      "candidateResult": -1,
+      "beforeMeanDepth": 1.7586206896551724,
+      "candidateMeanDepth": 1.6610169491525424,
+      "beforeNodes": 3227262,
+      "candidateNodes": 3132765,
+      "snapshots": [
+        {
+          "move": 20,
+          "areas": [
+            0,
+            0
+          ],
+          "scores": [
+            0,
+            0
+          ]
+        },
+        {
+          "move": 40,
+          "areas": [
+            0,
+            0
+          ],
+          "scores": [
+            0,
+            0
+          ]
+        },
+        {
+          "move": 60,
+          "areas": [
+            0,
+            0
+          ],
+          "scores": [
+            15.500000000000002,
+            12
+          ]
+        },
+        {
+          "move": 80,
+          "areas": [
+            0,
+            0
+          ],
+          "scores": [
+            15.500000000000002,
+            12
+          ]
+        },
+        {
+          "move": 100,
+          "areas": [
+            0,
+            0
+          ],
+          "scores": [
+            30.500000000000004,
+            46.090909091
+          ]
+        },
+        {
+          "move": 120,
+          "areas": [
+            0,
+            5.375
+          ],
+          "scores": [
+            87.5,
+            112.840909091
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "head-to-head",
+      "book": 1,
+      "candidateSeat": 1,
+      "moveBudgetMs": 100,
+      "scores": [
+        188.16666666700002,
+        51.25
+      ],
+      "areas": [
+        15.500000000000002,
+        0
+      ],
+      "candidateResult": -1,
+      "beforeMeanDepth": 1.6610169491525424,
+      "candidateMeanDepth": 1.5862068965517242,
+      "beforeNodes": 3221389,
+      "candidateNodes": 2736077,
+      "snapshots": [
+        {
+          "move": 20,
+          "areas": [
+            0,
+            6.75
+          ],
+          "scores": [
+            0,
+            6.75
+          ]
+        },
+        {
+          "move": 40,
+          "areas": [
+            0,
+            0
+          ],
+          "scores": [
+            0,
+            20.25
+          ]
+        },
+        {
+          "move": 60,
+          "areas": [
+            0,
+            0
+          ],
+          "scores": [
+            0,
+            20.25
+          ]
+        },
+        {
+          "move": 80,
+          "areas": [
+            0,
+            0
+          ],
+          "scores": [
+            11,
+            20.25
+          ]
+        },
+        {
+          "move": 100,
+          "areas": [
+            0,
+            0
+          ],
+          "scores": [
+            74.5,
+            20.25
+          ]
+        },
+        {
+          "move": 120,
+          "areas": [
+            15.500000000000002,
+            0
+          ],
+          "scores": [
+            188.16666666700002,
+            51.25
+          ]
+        }
+      ]
+    }
+  ],
+  "unconditionalTacticsPressureMatches": [
+    {
+      "kind": "head-to-head",
+      "book": 0,
+      "candidateSeat": 0,
+      "moveBudgetMs": 100,
+      "scores": [
+        461.797435896,
+        518.1095779230001
+      ],
+      "areas": [
+        28.400000000000002,
+        22.324675325
+      ],
+      "candidateResult": -1,
+      "beforeMeanDepth": 1.6166666666666667,
+      "candidateMeanDepth": 1.3666666666666667,
+      "beforeNodes": 2137760,
+      "candidateNodes": 1428844,
+      "snapshots": [
+        {
+          "move": 20,
+          "areas": [
+            0,
+            24
+          ],
+          "scores": [
+            15.000000000000002,
+            70.5
+          ]
+        },
+        {
+          "move": 40,
+          "areas": [
+            5.470085470000001,
+            9
+          ],
+          "scores": [
+            27.755555556,
+            144
+          ]
+        },
+        {
+          "move": 60,
+          "areas": [
+            13.692307692,
+            0
+          ],
+          "scores": [
+            70.50448717900001,
+            189
+          ]
+        },
+        {
+          "move": 80,
+          "areas": [
+            16.3,
+            35.25
+          ],
+          "scores": [
+            159.45576923000002,
+            242.25000000000003
+          ]
+        },
+        {
+          "move": 100,
+          "areas": [
+            13.125,
+            11.5
+          ],
+          "scores": [
+            256.70576923000004,
+            364.6875
+          ]
+        },
+        {
+          "move": 120,
+          "areas": [
+            28.400000000000002,
+            22.324675325
+          ],
+          "scores": [
+            461.797435896,
+            518.1095779230001
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "head-to-head",
+      "book": 0,
+      "candidateSeat": 1,
+      "moveBudgetMs": 100,
+      "scores": [
+        738.107142855,
+        594.1997585720001
+      ],
+      "areas": [
+        9,
+        21.123863636000003
+      ],
+      "candidateResult": -1,
+      "beforeMeanDepth": 1.65,
+      "candidateMeanDepth": 1.4666666666666666,
+      "beforeNodes": 2424944,
+      "candidateNodes": 1714788,
+      "snapshots": [
+        {
+          "move": 20,
+          "areas": [
+            0,
+            0
+          ],
+          "scores": [
+            54,
+            50.6
+          ]
+        },
+        {
+          "move": 40,
+          "areas": [
+            0,
+            3
+          ],
+          "scores": [
+            126.00000000000001,
+            116.60000000000001
+          ]
+        },
+        {
+          "move": 60,
+          "areas": [
+            3.208333333,
+            13.8
+          ],
+          "scores": [
+            151.66666666400002,
+            157.4
+          ]
+        },
+        {
+          "move": 80,
+          "areas": [
+            12,
+            4.333333333000001
+          ],
+          "scores": [
+            399.37499999700003,
+            267.28333333300003
+          ]
+        },
+        {
+          "move": 100,
+          "areas": [
+            16.5,
+            20.169047619
+          ],
+          "scores": [
+            597.749999997,
+            403.00238095000003
+          ]
+        },
+        {
+          "move": 120,
+          "areas": [
+            9,
+            21.123863636000003
+          ],
+          "scores": [
+            738.107142855,
+            594.1997585720001
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "head-to-head",
+      "book": 1,
+      "candidateSeat": 0,
+      "moveBudgetMs": 100,
+      "scores": [
+        697.9042540820001,
+        468.81250000000006
+      ],
+      "areas": [
+        29.642045455,
+        14.750000000000002
+      ],
+      "candidateResult": 1,
+      "beforeMeanDepth": 1.603448275862069,
+      "candidateMeanDepth": 1.3559322033898304,
+      "beforeNodes": 2148100,
+      "candidateNodes": 1613847,
+      "snapshots": [
+        {
+          "move": 20,
+          "areas": [
+            0,
+            0
+          ],
+          "scores": [
+            0,
+            0
+          ]
+        },
+        {
+          "move": 40,
+          "areas": [
+            3,
+            12
+          ],
+          "scores": [
+            49.5,
+            124.50000000000001
+          ]
+        },
+        {
+          "move": 60,
+          "areas": [
+            11.281060606,
+            12
+          ],
+          "scores": [
+            110.07546620000001,
+            175.5
+          ]
+        },
+        {
+          "move": 80,
+          "areas": [
+            15.575000000000001,
+            5.800000000000001
+          ],
+          "scores": [
+            226.91864802,
+            302.425
+          ]
+        },
+        {
+          "move": 100,
+          "areas": [
+            33.575,
+            5.25
+          ],
+          "scores": [
+            374.06107226200004,
+            388.46250000000003
+          ]
+        },
+        {
+          "move": 120,
+          "areas": [
+            29.642045455,
+            14.750000000000002
+          ],
+          "scores": [
+            697.9042540820001,
+            468.81250000000006
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "head-to-head",
+      "book": 1,
+      "candidateSeat": 1,
+      "moveBudgetMs": 100,
+      "scores": [
+        878.811538462,
+        828.272222217
+      ],
+      "areas": [
+        3.5,
+        21.5
+      ],
+      "candidateResult": -1,
+      "beforeMeanDepth": 1.6271186440677967,
+      "candidateMeanDepth": 1.3275862068965518,
+      "beforeNodes": 2373615,
+      "candidateNodes": 1387852,
+      "snapshots": [
+        {
+          "move": 20,
+          "areas": [
+            0,
+            0
+          ],
+          "scores": [
+            54,
+            52.2
+          ]
+        },
+        {
+          "move": 40,
+          "areas": [
+            0,
+            4.5
+          ],
+          "scores": [
+            54,
+            92.7
+          ]
+        },
+        {
+          "move": 60,
+          "areas": [
+            0,
+            24.700000000000003
+          ],
+          "scores": [
+            106.061538462,
+            182.8
+          ]
+        },
+        {
+          "move": 80,
+          "areas": [
+            10.5,
+            25.658333333
+          ],
+          "scores": [
+            262.06153846200004,
+            467.30909090700004
+          ]
+        },
+        {
+          "move": 100,
+          "areas": [
+            3.5,
+            29.302272727000002
+          ],
+          "scores": [
+            716.561538462,
+            699.2431818130001
+          ]
+        },
+        {
+          "move": 120,
+          "areas": [
+            3.5,
+            21.5
+          ],
+          "scores": [
+            878.811538462,
+            828.272222217
+          ]
+        }
+      ]
+    }
+  ],
+  "finalAdaptiveMatches": [
+    {
+      "kind": "head-to-head",
+      "book": 0,
+      "candidateSeat": 0,
+      "moveBudgetMs": 100,
+      "scores": [
+        518.904292927,
+        337.25
+      ],
+      "areas": [
+        18.092929293,
+        9.818181818000001
+      ],
+      "candidateResult": 1,
+      "beforeMeanDepth": 1.6333333333333333,
+      "candidateMeanDepth": 1.6,
+      "beforeNodes": 2147471,
+      "candidateNodes": 2068327,
+      "snapshots": [
+        {
+          "move": 20,
+          "areas": [
+            0,
+            0
+          ],
+          "scores": [
+            18,
+            36.25
+          ]
+        },
+        {
+          "move": 40,
+          "areas": [
+            3.7500000000000004,
+            15.000000000000002
+          ],
+          "scores": [
+            41.5,
+            115.75000000000001
+          ]
+        },
+        {
+          "move": 60,
+          "areas": [
+            9.75,
+            0
+          ],
+          "scores": [
+            137.38888888900001,
+            129.75
+          ]
+        },
+        {
+          "move": 80,
+          "areas": [
+            9.75,
+            0
+          ],
+          "scores": [
+            234.88888888900001,
+            225.70454545500002
+          ]
+        },
+        {
+          "move": 100,
+          "areas": [
+            9.5,
+            0
+          ],
+          "scores": [
+            362.930555554,
+            257.613636364
+          ]
+        },
+        {
+          "move": 120,
+          "areas": [
+            18.092929293,
+            9.818181818000001
+          ],
+          "scores": [
+            518.904292927,
+            337.25
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "head-to-head",
+      "book": 0,
+      "candidateSeat": 1,
+      "moveBudgetMs": 100,
+      "scores": [
+        475.53888888800003,
+        581.9045454540001
+      ],
+      "areas": [
+        5.283333333000001,
+        14.9
+      ],
+      "candidateResult": 1,
+      "beforeMeanDepth": 1.65,
+      "candidateMeanDepth": 1.6833333333333333,
+      "beforeNodes": 2542269,
+      "candidateNodes": 2475080,
+      "snapshots": [
+        {
+          "move": 20,
+          "areas": [
+            0,
+            0
+          ],
+          "scores": [
+            0,
+            33.85
+          ]
+        },
+        {
+          "move": 40,
+          "areas": [
+            18,
+            6.6363636360000005
+          ],
+          "scores": [
+            66,
+            77.36136363600001
+          ]
+        },
+        {
+          "move": 60,
+          "areas": [
+            0,
+            7.352272727000001
+          ],
+          "scores": [
+            121.75000000000001,
+            151.18181818000002
+          ]
+        },
+        {
+          "move": 80,
+          "areas": [
+            0,
+            12.55
+          ],
+          "scores": [
+            251.75000000000003,
+            249.46363636200002
+          ]
+        },
+        {
+          "move": 100,
+          "areas": [
+            8.875,
+            12.100000000000001
+          ],
+          "scores": [
+            400.972222222,
+            397.454545454
+          ]
+        },
+        {
+          "move": 120,
+          "areas": [
+            5.283333333000001,
+            14.9
+          ],
+          "scores": [
+            475.53888888800003,
+            581.9045454540001
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "head-to-head",
+      "book": 1,
+      "candidateSeat": 0,
+      "moveBudgetMs": 100,
+      "scores": [
+        216.984523803,
+        274.5
+      ],
+      "areas": [
+        3.6583333330000003,
+        0
+      ],
+      "candidateResult": -1,
+      "beforeMeanDepth": 1.5862068965517242,
+      "candidateMeanDepth": 1.5932203389830508,
+      "beforeNodes": 2300820,
+      "candidateNodes": 2444580,
+      "snapshots": [
+        {
+          "move": 20,
+          "areas": [
+            0,
+            0
+          ],
+          "scores": [
+            26.700000000000003,
+            0
+          ]
+        },
+        {
+          "move": 40,
+          "areas": [
+            0,
+            0
+          ],
+          "scores": [
+            26.700000000000003,
+            4.5
+          ]
+        },
+        {
+          "move": 60,
+          "areas": [
+            8.8,
+            0
+          ],
+          "scores": [
+            41.7,
+            31.500000000000004
+          ]
+        },
+        {
+          "move": 80,
+          "areas": [
+            7.300000000000001,
+            0
+          ],
+          "scores": [
+            116.7,
+            124.50000000000001
+          ]
+        },
+        {
+          "move": 100,
+          "areas": [
+            4.271428571,
+            0
+          ],
+          "scores": [
+            176.31428571200001,
+            226.5
+          ]
+        },
+        {
+          "move": 120,
+          "areas": [
+            3.6583333330000003,
+            0
+          ],
+          "scores": [
+            216.984523803,
+            274.5
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "head-to-head",
+      "book": 1,
+      "candidateSeat": 1,
+      "moveBudgetMs": 100,
+      "scores": [
+        405.171428572,
+        1056.500349648
+      ],
+      "areas": [
+        6,
+        29.680419580000002
+      ],
+      "candidateResult": 1,
+      "beforeMeanDepth": 1.6440677966101696,
+      "candidateMeanDepth": 1.603448275862069,
+      "beforeNodes": 2241120,
+      "candidateNodes": 2072284,
+      "snapshots": [
+        {
+          "move": 20,
+          "areas": [
+            1.2857142860000002,
+            18
+          ],
+          "scores": [
+            106.71428571400001,
+            108
+          ]
+        },
+        {
+          "move": 40,
+          "areas": [
+            6.300000000000001,
+            18
+          ],
+          "scores": [
+            169.071428572,
+            289.818181818
+          ]
+        },
+        {
+          "move": 60,
+          "areas": [
+            0,
+            12.3
+          ],
+          "scores": [
+            217.67142857200002,
+            382.56048951
+          ]
+        },
+        {
+          "move": 80,
+          "areas": [
+            6,
+            24.592307692000002
+          ],
+          "scores": [
+            229.67142857200002,
+            506.12972027800004
+          ]
+        },
+        {
+          "move": 100,
+          "areas": [
+            6,
+            34.18041958
+          ],
+          "scores": [
+            294.171428572,
+            762.92062937
+          ]
+        },
+        {
+          "move": 120,
+          "areas": [
+            6,
+            29.680419580000002
+          ],
+          "scores": [
+            405.171428572,
+            1056.500349648
+          ]
+        }
+      ]
+    }
+  ],
+  "finalCandidateCoreSha256": "71e7791bdfbbe2c69d049feb708d59edaaf26417ceb09f52e58fddbe44fa3900",
+  "sourceSha256": {
+    "StratJamAI.Core/Bots/EnclosureAlphaBetaBot.cs": "3da70d0e98da55f9a4c031f10e4b0b34bf2e8403844b4bc6d7e1fe8f54195828",
+    "StratJamAI.Core/Bots/EnclosureStrategyEvaluation.cs": "0a11e882a3b90c069a45dea8892cb2d1d09dca8ce8f16dd2df972736751292d0",
+    "StratJamAI.Core/Games/Enclosure.cs": "2431505504a6f34c3d7c5aa14e58c51cc6522c515cdf25180ce027417fc323d8"
+  },
+  "publicDeployment": {
+    "engine": "alpha-beta-defense-v4",
+    "url": "https://brain-utilities-font-origin.trycloudflare.com",
+    "publishedCoreSha256": "991dae460b01107888adb7741ee570e6fa8de3cec45397ce333260180c7e5602",
+    "tests": {
+      "coreCli": 108,
+      "web": 55,
+      "javascript": 9
+    },
+    "publicCoachReplay": {
+      "engine": "alpha-beta-defense-v4",
+      "prefix": 102,
+      "hint": {
+        "id": 1639,
+        "from": {
+          "x": 3,
+          "y": 17
+        },
+        "to": {
+          "x": 6,
+          "y": 14
+        },
+        "pass": false
+      },
+      "search": {
+        "completedDepth": 2,
+        "nodes": 71473,
+        "elapsedMilliseconds": 999.9551,
+        "value": -0.7891216399495953,
+        "principalVariation": [
+          {
+            "id": 1639,
+            "from": {
+              "x": 3,
+              "y": 17
+            },
+            "to": {
+              "x": 6,
+              "y": 14
+            },
+            "pass": false
+          },
+          {
+            "id": 244,
+            "from": {
+              "x": 0,
+              "y": 10
+            },
+            "to": {
+              "x": 3,
+              "y": 12
+            },
+            "pass": false
+          },
+          {
+            "id": 1531,
+            "from": {
+              "x": 3,
+              "y": 12
+            },
+            "to": {
+              "x": 6,
+              "y": 11
+            },
+            "pass": false
+          }
+        ],
+        "positionRevision": 2
+      },
+      "revision": 2,
+      "hintRevision": 2
+    }
+  }
+}

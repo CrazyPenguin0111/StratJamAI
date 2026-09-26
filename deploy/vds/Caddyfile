@@ -1,0 +1,17 @@
+{
+	# Match Arch Linux's packaged Caddy service and its protected admin socket.
+	admin "unix//run/caddy/admin.socket"
+}
+
+# For a dedicated Caddy host. Merge this site block if Caddy serves other sites.
+enclosure.crazypenguin.net {
+	encode zstd gzip
+
+	# Existing invitation links keep working, including their room-code query string.
+	@oldPvp path /pvp.html /pvp/
+	redir @oldPvp /pvp?{query} 308
+	rewrite /pvp /pvp.html
+
+	# Keep the browser's Host header. Caddy supplies X-Forwarded-Proto automatically.
+	reverse_proxy 127.0.0.1:5081
+}

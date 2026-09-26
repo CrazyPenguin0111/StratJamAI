@@ -1,0 +1,213 @@
+{
+  "createdUtc": "2026-09-26T14:58:10.237348+00:00",
+  "samples": 5,
+  "seed": 72891,
+  "positions": [
+    {
+      "position": "opening",
+      "moveNumber": 0,
+      "legalActions": 69,
+      "simulatorStepsPerSecond": 1416275.279082403,
+      "search": [
+        {
+          "budgetMilliseconds": 5,
+          "timing": {
+            "meanMilliseconds": 5.0164599999999995,
+            "p50Milliseconds": 5.017,
+            "p95Milliseconds": 5.0238,
+            "meanAllocatedBytes": 363966.4
+          },
+          "meanNodes": 1237.8,
+          "minimumCompletedDepth": 2,
+          "maximumCompletedDepth": 2
+        },
+        {
+          "budgetMilliseconds": 50,
+          "timing": {
+            "meanMilliseconds": 50.032000000000004,
+            "p50Milliseconds": 50.0324,
+            "p95Milliseconds": 50.0356,
+            "meanAllocatedBytes": 581680
+          },
+          "meanNodes": 44137.6,
+          "minimumCompletedDepth": 2,
+          "maximumCompletedDepth": 2
+        },
+        {
+          "budgetMilliseconds": 1000,
+          "timing": {
+            "meanMilliseconds": 1000.0394199999998,
+            "p50Milliseconds": 1000.0393,
+            "p95Milliseconds": 1000.0425,
+            "meanAllocatedBytes": 14763547.2
+          },
+          "meanNodes": 1731845.4,
+          "minimumCompletedDepth": 4,
+          "maximumCompletedDepth": 4
+        }
+      ],
+      "inference": {
+        "originalJoined": {
+          "meanMilliseconds": 0.14185549999999997,
+          "p50Milliseconds": 0.14137,
+          "p95Milliseconds": 0.14355,
+          "meanAllocatedBytes": 5872
+        },
+        "factored": {
+          "meanMilliseconds": 0.059106000000000006,
+          "p50Milliseconds": 0.05886,
+          "p95Milliseconds": 0.05950999999999999,
+          "meanAllocatedBytes": 3680
+        },
+        "meanSpeedup": 2.4000186106317454,
+        "maximumOutputError": 0,
+        "argMaxMatches": true
+      }
+    },
+    {
+      "position": "middle",
+      "moveNumber": 60,
+      "legalActions": 930,
+      "simulatorStepsPerSecond": 92079.30032264085,
+      "search": [
+        {
+          "budgetMilliseconds": 5,
+          "timing": {
+            "meanMilliseconds": 5.01866,
+            "p50Milliseconds": 5.014,
+            "p95Milliseconds": 5.0308,
+            "meanAllocatedBytes": 295297.6
+          },
+          "meanNodes": 915,
+          "minimumCompletedDepth": 0,
+          "maximumCompletedDepth": 1
+        },
+        {
+          "budgetMilliseconds": 50,
+          "timing": {
+            "meanMilliseconds": 50.02786,
+            "p50Milliseconds": 50.028,
+            "p95Milliseconds": 50.0308,
+            "meanAllocatedBytes": 1577816
+          },
+          "meanNodes": 2514,
+          "minimumCompletedDepth": 1,
+          "maximumCompletedDepth": 1
+        },
+        {
+          "budgetMilliseconds": 1000,
+          "timing": {
+            "meanMilliseconds": 1000.0405800000001,
+            "p50Milliseconds": 1000.0392,
+            "p95Milliseconds": 1000.0563,
+            "meanAllocatedBytes": 3761123.2
+          },
+          "meanNodes": 110845.4,
+          "minimumCompletedDepth": 2,
+          "maximumCompletedDepth": 2
+        }
+      ],
+      "inference": {
+        "originalJoined": {
+          "meanMilliseconds": 1.479175,
+          "p50Milliseconds": 1.47324,
+          "p95Milliseconds": 1.49282,
+          "meanAllocatedBytes": 72064
+        },
+        "factored": {
+          "meanMilliseconds": 0.33971350000000006,
+          "p50Milliseconds": 0.33509,
+          "p95Milliseconds": 0.35927,
+          "meanAllocatedBytes": 69872
+        },
+        "meanSpeedup": 4.354183746009504,
+        "maximumOutputError": 0,
+        "argMaxMatches": true
+      }
+    },
+    {
+      "position": "late",
+      "moveNumber": 110,
+      "legalActions": 1096,
+      "simulatorStepsPerSecond": 43373.27550229933,
+      "search": [
+        {
+          "budgetMilliseconds": 5,
+          "timing": {
+            "meanMilliseconds": 5.02232,
+            "p50Milliseconds": 5.0228,
+            "p95Milliseconds": 5.0348,
+            "meanAllocatedBytes": 276104
+          },
+          "meanNodes": 268,
+          "minimumCompletedDepth": 0,
+          "maximumCompletedDepth": 0
+        },
+        {
+          "budgetMilliseconds": 50,
+          "timing": {
+            "meanMilliseconds": 50.03724,
+            "p50Milliseconds": 50.0417,
+            "p95Milliseconds": 50.0463,
+            "meanAllocatedBytes": 488484.8
+          },
+          "meanNodes": 2997.4,
+          "minimumCompletedDepth": 1,
+          "maximumCompletedDepth": 1
+        },
+        {
+          "budgetMilliseconds": 1000,
+          "timing": {
+            "meanMilliseconds": 1000.0373400000001,
+            "p50Milliseconds": 1000.0375,
+            "p95Milliseconds": 1000.0398,
+            "meanAllocatedBytes": 5668908.8
+          },
+          "meanNodes": 45761.8,
+          "minimumCompletedDepth": 2,
+          "maximumCompletedDepth": 2
+        }
+      ],
+      "inference": {
+        "originalJoined": {
+          "meanMilliseconds": 1.7433535000000002,
+          "p50Milliseconds": 1.7423300000000002,
+          "p95Milliseconds": 1.74786,
+          "meanAllocatedBytes": 74056
+        },
+        "factored": {
+          "meanMilliseconds": 0.39055300000000004,
+          "p50Milliseconds": 0.39005,
+          "p95Milliseconds": 0.39228999999999997,
+          "meanAllocatedBytes": 71864
+        },
+        "meanSpeedup": 4.463807729040617,
+        "maximumOutputError": 0,
+        "argMaxMatches": true
+      }
+    }
+  ],
+  "matches": {
+    "bot": "alpha-beta",
+    "complete": true,
+    "games": 8,
+    "meanScore": 1,
+    "lower95": 1,
+    "upper95": 1,
+    "meanMoveMilliseconds": 49.37376333333334,
+    "p95MoveMilliseconds": 50.04,
+    "elapsedSeconds": 35.0609724,
+    "opponents": [
+      {
+        "opponent": "tactical",
+        "games": 4,
+        "meanScore": 1
+      },
+      {
+        "opponent": "search",
+        "games": 4,
+        "meanScore": 1
+      }
+    ]
+  }
+}

@@ -1,0 +1,1402 @@
+{
+  "date": "2026-09-26",
+  "baseline": {
+    "label": "preserved public v3",
+    "coreSha256": "94507fa6346214bbc094dd1ed2b73f4922920516df2d184bf2e304e5f28a864d"
+  },
+  "method": {
+    "moveBudgetMs": 100,
+    "maximumDepth": 120,
+    "gamesPerCandidate": 4,
+    "arrayOrder": [
+      "Blue",
+      "Red"
+    ],
+    "book0": "Standard initial position",
+    "book1ZeroBasedOpeningSegments": [
+      [
+        3,
+        9,
+        6,
+        12
+      ],
+      [
+        15,
+        9,
+        12,
+        6
+      ],
+      [
+        12,
+        6,
+        12,
+        9
+      ]
+    ],
+    "warmup": "Three 30 ms searches per engine",
+    "simulatorParity": "Every selected move replayed through both DLLs; exact scores and areas compared after every move.",
+    "limitation": "Four timing-dependent games per candidate are a small development check, not a general win-rate estimate."
+  },
+  "candidates": [
+    {
+      "label": "capture-extension-only",
+      "coreSha256": "88d19ee771c73718a5cb2f135b8fdc2f91acb71c9adc5df02e9c635e48e5ef22",
+      "candidateWins": 0,
+      "candidateLosses": 4,
+      "candidateScoresSum": 308.25,
+      "baselineScoresSum": 805.3037296010001,
+      "candidateMeanFinalArea": 3.0,
+      "baselineMeanFinalArea": 7.552083333250001,
+      "matches": [
+        {
+          "kind": "head-to-head",
+          "book": 0,
+          "candidateSeat": 0,
+          "moveBudgetMs": 100,
+          "scores": [
+            55.5,
+            179.24615384400002
+          ],
+          "areas": [
+            0,
+            0
+          ],
+          "candidateResult": -1,
+          "beforeMeanDepth": 1.6166666666666667,
+          "candidateMeanDepth": 1.6666666666666667,
+          "beforeNodes": 2755167,
+          "candidateNodes": 2630812,
+          "snapshots": [
+            {
+              "move": 20,
+              "areas": [
+                0,
+                0
+              ],
+              "scores": [
+                0,
+                0
+              ]
+            },
+            {
+              "move": 40,
+              "areas": [
+                0,
+                0
+              ],
+              "scores": [
+                0,
+                43.5
+              ]
+            },
+            {
+              "move": 60,
+              "areas": [
+                0,
+                0
+              ],
+              "scores": [
+                55.5,
+                75
+              ]
+            },
+            {
+              "move": 80,
+              "areas": [
+                0,
+                0
+              ],
+              "scores": [
+                55.5,
+                95.49230769200001
+              ]
+            },
+            {
+              "move": 100,
+              "areas": [
+                0,
+                8.492307692
+              ],
+              "scores": [
+                55.5,
+                161.446153844
+              ]
+            },
+            {
+              "move": 120,
+              "areas": [
+                0,
+                0
+              ],
+              "scores": [
+                55.5,
+                179.24615384400002
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "head-to-head",
+          "book": 0,
+          "candidateSeat": 1,
+          "moveBudgetMs": 100,
+          "scores": [
+            325.049999999,
+            114
+          ],
+          "areas": [
+            9.333333333,
+            12
+          ],
+          "candidateResult": -1,
+          "beforeMeanDepth": 1.65,
+          "candidateMeanDepth": 1.6666666666666667,
+          "beforeNodes": 3085421,
+          "candidateNodes": 2718466,
+          "snapshots": [
+            {
+              "move": 20,
+              "areas": [
+                0,
+                0
+              ],
+              "scores": [
+                18,
+                0
+              ]
+            },
+            {
+              "move": 40,
+              "areas": [
+                18,
+                0
+              ],
+              "scores": [
+                36,
+                0
+              ]
+            },
+            {
+              "move": 60,
+              "areas": [
+                0,
+                0
+              ],
+              "scores": [
+                102,
+                0
+              ]
+            },
+            {
+              "move": 80,
+              "areas": [
+                0,
+                0
+              ],
+              "scores": [
+                163.5,
+                0
+              ]
+            },
+            {
+              "move": 100,
+              "areas": [
+                0,
+                0
+              ],
+              "scores": [
+                274.5,
+                90
+              ]
+            },
+            {
+              "move": 120,
+              "areas": [
+                9.333333333,
+                12
+              ],
+              "scores": [
+                325.049999999,
+                114
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "head-to-head",
+          "book": 1,
+          "candidateSeat": 0,
+          "moveBudgetMs": 100,
+          "scores": [
+            87.5,
+            112.840909091
+          ],
+          "areas": [
+            0,
+            5.375
+          ],
+          "candidateResult": -1,
+          "beforeMeanDepth": 1.7586206896551724,
+          "candidateMeanDepth": 1.6610169491525424,
+          "beforeNodes": 3227262,
+          "candidateNodes": 3132765,
+          "snapshots": [
+            {
+              "move": 20,
+              "areas": [
+                0,
+                0
+              ],
+              "scores": [
+                0,
+                0
+              ]
+            },
+            {
+              "move": 40,
+              "areas": [
+                0,
+                0
+              ],
+              "scores": [
+                0,
+                0
+              ]
+            },
+            {
+              "move": 60,
+              "areas": [
+                0,
+                0
+              ],
+              "scores": [
+                15.500000000000002,
+                12
+              ]
+            },
+            {
+              "move": 80,
+              "areas": [
+                0,
+                0
+              ],
+              "scores": [
+                15.500000000000002,
+                12
+              ]
+            },
+            {
+              "move": 100,
+              "areas": [
+                0,
+                0
+              ],
+              "scores": [
+                30.500000000000004,
+                46.090909091
+              ]
+            },
+            {
+              "move": 120,
+              "areas": [
+                0,
+                5.375
+              ],
+              "scores": [
+                87.5,
+                112.840909091
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "head-to-head",
+          "book": 1,
+          "candidateSeat": 1,
+          "moveBudgetMs": 100,
+          "scores": [
+            188.16666666700002,
+            51.25
+          ],
+          "areas": [
+            15.500000000000002,
+            0
+          ],
+          "candidateResult": -1,
+          "beforeMeanDepth": 1.6610169491525424,
+          "candidateMeanDepth": 1.5862068965517242,
+          "beforeNodes": 3221389,
+          "candidateNodes": 2736077,
+          "snapshots": [
+            {
+              "move": 20,
+              "areas": [
+                0,
+                6.75
+              ],
+              "scores": [
+                0,
+                6.75
+              ]
+            },
+            {
+              "move": 40,
+              "areas": [
+                0,
+                0
+              ],
+              "scores": [
+                0,
+                20.25
+              ]
+            },
+            {
+              "move": 60,
+              "areas": [
+                0,
+                0
+              ],
+              "scores": [
+                0,
+                20.25
+              ]
+            },
+            {
+              "move": 80,
+              "areas": [
+                0,
+                0
+              ],
+              "scores": [
+                11,
+                20.25
+              ]
+            },
+            {
+              "move": 100,
+              "areas": [
+                0,
+                0
+              ],
+              "scores": [
+                74.5,
+                20.25
+              ]
+            },
+            {
+              "move": 120,
+              "areas": [
+                15.500000000000002,
+                0
+              ],
+              "scores": [
+                188.16666666700002,
+                51.25
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "pressure-cap-with-capture-extension-at-all-budgets",
+      "coreSha256": "9a9c29501a73d13106b4b1e2b59b29e3cea48e3a6c0aed15b22221692ac1fd22",
+      "candidateWins": 1,
+      "candidateLosses": 3,
+      "candidateScoresSum": 2582.173670767,
+      "baselineScoresSum": 2603.8407592400004,
+      "candidateMeanFinalArea": 25.16647727275,
+      "baselineMeanFinalArea": 12.39366883125,
+      "matches": [
+        {
+          "kind": "head-to-head",
+          "book": 0,
+          "candidateSeat": 0,
+          "moveBudgetMs": 100,
+          "scores": [
+            461.797435896,
+            518.1095779230001
+          ],
+          "areas": [
+            28.400000000000002,
+            22.324675325
+          ],
+          "candidateResult": -1,
+          "beforeMeanDepth": 1.6166666666666667,
+          "candidateMeanDepth": 1.3666666666666667,
+          "beforeNodes": 2137760,
+          "candidateNodes": 1428844,
+          "snapshots": [
+            {
+              "move": 20,
+              "areas": [
+                0,
+                24
+              ],
+              "scores": [
+                15.000000000000002,
+                70.5
+              ]
+            },
+            {
+              "move": 40,
+              "areas": [
+                5.470085470000001,
+                9
+              ],
+              "scores": [
+                27.755555556,
+                144
+              ]
+            },
+            {
+              "move": 60,
+              "areas": [
+                13.692307692,
+                0
+              ],
+              "scores": [
+                70.50448717900001,
+                189
+              ]
+            },
+            {
+              "move": 80,
+              "areas": [
+                16.3,
+                35.25
+              ],
+              "scores": [
+                159.45576923000002,
+                242.25000000000003
+              ]
+            },
+            {
+              "move": 100,
+              "areas": [
+                13.125,
+                11.5
+              ],
+              "scores": [
+                256.70576923000004,
+                364.6875
+              ]
+            },
+            {
+              "move": 120,
+              "areas": [
+                28.400000000000002,
+                22.324675325
+              ],
+              "scores": [
+                461.797435896,
+                518.1095779230001
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "head-to-head",
+          "book": 0,
+          "candidateSeat": 1,
+          "moveBudgetMs": 100,
+          "scores": [
+            738.107142855,
+            594.1997585720001
+          ],
+          "areas": [
+            9,
+            21.123863636000003
+          ],
+          "candidateResult": -1,
+          "beforeMeanDepth": 1.65,
+          "candidateMeanDepth": 1.4666666666666666,
+          "beforeNodes": 2424944,
+          "candidateNodes": 1714788,
+          "snapshots": [
+            {
+              "move": 20,
+              "areas": [
+                0,
+                0
+              ],
+              "scores": [
+                54,
+                50.6
+              ]
+            },
+            {
+              "move": 40,
+              "areas": [
+                0,
+                3
+              ],
+              "scores": [
+                126.00000000000001,
+                116.60000000000001
+              ]
+            },
+            {
+              "move": 60,
+              "areas": [
+                3.208333333,
+                13.8
+              ],
+              "scores": [
+                151.66666666400002,
+                157.4
+              ]
+            },
+            {
+              "move": 80,
+              "areas": [
+                12,
+                4.333333333000001
+              ],
+              "scores": [
+                399.37499999700003,
+                267.28333333300003
+              ]
+            },
+            {
+              "move": 100,
+              "areas": [
+                16.5,
+                20.169047619
+              ],
+              "scores": [
+                597.749999997,
+                403.00238095000003
+              ]
+            },
+            {
+              "move": 120,
+              "areas": [
+                9,
+                21.123863636000003
+              ],
+              "scores": [
+                738.107142855,
+                594.1997585720001
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "head-to-head",
+          "book": 1,
+          "candidateSeat": 0,
+          "moveBudgetMs": 100,
+          "scores": [
+            697.9042540820001,
+            468.81250000000006
+          ],
+          "areas": [
+            29.642045455,
+            14.750000000000002
+          ],
+          "candidateResult": 1,
+          "beforeMeanDepth": 1.603448275862069,
+          "candidateMeanDepth": 1.3559322033898304,
+          "beforeNodes": 2148100,
+          "candidateNodes": 1613847,
+          "snapshots": [
+            {
+              "move": 20,
+              "areas": [
+                0,
+                0
+              ],
+              "scores": [
+                0,
+                0
+              ]
+            },
+            {
+              "move": 40,
+              "areas": [
+                3,
+                12
+              ],
+              "scores": [
+                49.5,
+                124.50000000000001
+              ]
+            },
+            {
+              "move": 60,
+              "areas": [
+                11.281060606,
+                12
+              ],
+              "scores": [
+                110.07546620000001,
+                175.5
+              ]
+            },
+            {
+              "move": 80,
+              "areas": [
+                15.575000000000001,
+                5.800000000000001
+              ],
+              "scores": [
+                226.91864802,
+                302.425
+              ]
+            },
+            {
+              "move": 100,
+              "areas": [
+                33.575,
+                5.25
+              ],
+              "scores": [
+                374.06107226200004,
+                388.46250000000003
+              ]
+            },
+            {
+              "move": 120,
+              "areas": [
+                29.642045455,
+                14.750000000000002
+              ],
+              "scores": [
+                697.9042540820001,
+                468.81250000000006
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "head-to-head",
+          "book": 1,
+          "candidateSeat": 1,
+          "moveBudgetMs": 100,
+          "scores": [
+            878.811538462,
+            828.272222217
+          ],
+          "areas": [
+            3.5,
+            21.5
+          ],
+          "candidateResult": -1,
+          "beforeMeanDepth": 1.6271186440677967,
+          "candidateMeanDepth": 1.3275862068965518,
+          "beforeNodes": 2373615,
+          "candidateNodes": 1387852,
+          "snapshots": [
+            {
+              "move": 20,
+              "areas": [
+                0,
+                0
+              ],
+              "scores": [
+                54,
+                52.2
+              ]
+            },
+            {
+              "move": 40,
+              "areas": [
+                0,
+                4.5
+              ],
+              "scores": [
+                54,
+                92.7
+              ]
+            },
+            {
+              "move": 60,
+              "areas": [
+                0,
+                24.700000000000003
+              ],
+              "scores": [
+                106.061538462,
+                182.8
+              ]
+            },
+            {
+              "move": 80,
+              "areas": [
+                10.5,
+                25.658333333
+              ],
+              "scores": [
+                262.06153846200004,
+                467.30909090700004
+              ]
+            },
+            {
+              "move": 100,
+              "areas": [
+                3.5,
+                29.302272727000002
+              ],
+              "scores": [
+                716.561538462,
+                699.2431818130001
+              ]
+            },
+            {
+              "move": 120,
+              "areas": [
+                3.5,
+                21.5
+              ],
+              "scores": [
+                878.811538462,
+                828.272222217
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "final-adaptive-pressure-cap",
+      "coreSha256": "71e7791bdfbbe2c69d049feb708d59edaaf26417ceb09f52e58fddbe44fa3900",
+      "candidateWins": 3,
+      "candidateLosses": 1,
+      "candidateScoresSum": 2374.293711832,
+      "baselineScoresSum": 1492.4603174600002,
+      "candidateMeanFinalArea": 16.582920551500003,
+      "baselineMeanFinalArea": 5.27537878775,
+      "matches": [
+        {
+          "kind": "head-to-head",
+          "book": 0,
+          "candidateSeat": 0,
+          "moveBudgetMs": 100,
+          "scores": [
+            518.904292927,
+            337.25
+          ],
+          "areas": [
+            18.092929293,
+            9.818181818000001
+          ],
+          "candidateResult": 1,
+          "beforeMeanDepth": 1.6333333333333333,
+          "candidateMeanDepth": 1.6,
+          "beforeNodes": 2147471,
+          "candidateNodes": 2068327,
+          "snapshots": [
+            {
+              "move": 20,
+              "areas": [
+                0,
+                0
+              ],
+              "scores": [
+                18,
+                36.25
+              ]
+            },
+            {
+              "move": 40,
+              "areas": [
+                3.7500000000000004,
+                15.000000000000002
+              ],
+              "scores": [
+                41.5,
+                115.75000000000001
+              ]
+            },
+            {
+              "move": 60,
+              "areas": [
+                9.75,
+                0
+              ],
+              "scores": [
+                137.38888888900001,
+                129.75
+              ]
+            },
+            {
+              "move": 80,
+              "areas": [
+                9.75,
+                0
+              ],
+              "scores": [
+                234.88888888900001,
+                225.70454545500002
+              ]
+            },
+            {
+              "move": 100,
+              "areas": [
+                9.5,
+                0
+              ],
+              "scores": [
+                362.930555554,
+                257.613636364
+              ]
+            },
+            {
+              "move": 120,
+              "areas": [
+                18.092929293,
+                9.818181818000001
+              ],
+              "scores": [
+                518.904292927,
+                337.25
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "head-to-head",
+          "book": 0,
+          "candidateSeat": 1,
+          "moveBudgetMs": 100,
+          "scores": [
+            475.53888888800003,
+            581.9045454540001
+          ],
+          "areas": [
+            5.283333333000001,
+            14.9
+          ],
+          "candidateResult": 1,
+          "beforeMeanDepth": 1.65,
+          "candidateMeanDepth": 1.6833333333333333,
+          "beforeNodes": 2542269,
+          "candidateNodes": 2475080,
+          "snapshots": [
+            {
+              "move": 20,
+              "areas": [
+                0,
+                0
+              ],
+              "scores": [
+                0,
+                33.85
+              ]
+            },
+            {
+              "move": 40,
+              "areas": [
+                18,
+                6.6363636360000005
+              ],
+              "scores": [
+                66,
+                77.36136363600001
+              ]
+            },
+            {
+              "move": 60,
+              "areas": [
+                0,
+                7.352272727000001
+              ],
+              "scores": [
+                121.75000000000001,
+                151.18181818000002
+              ]
+            },
+            {
+              "move": 80,
+              "areas": [
+                0,
+                12.55
+              ],
+              "scores": [
+                251.75000000000003,
+                249.46363636200002
+              ]
+            },
+            {
+              "move": 100,
+              "areas": [
+                8.875,
+                12.100000000000001
+              ],
+              "scores": [
+                400.972222222,
+                397.454545454
+              ]
+            },
+            {
+              "move": 120,
+              "areas": [
+                5.283333333000001,
+                14.9
+              ],
+              "scores": [
+                475.53888888800003,
+                581.9045454540001
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "head-to-head",
+          "book": 1,
+          "candidateSeat": 0,
+          "moveBudgetMs": 100,
+          "scores": [
+            216.984523803,
+            274.5
+          ],
+          "areas": [
+            3.6583333330000003,
+            0
+          ],
+          "candidateResult": -1,
+          "beforeMeanDepth": 1.5862068965517242,
+          "candidateMeanDepth": 1.5932203389830508,
+          "beforeNodes": 2300820,
+          "candidateNodes": 2444580,
+          "snapshots": [
+            {
+              "move": 20,
+              "areas": [
+                0,
+                0
+              ],
+              "scores": [
+                26.700000000000003,
+                0
+              ]
+            },
+            {
+              "move": 40,
+              "areas": [
+                0,
+                0
+              ],
+              "scores": [
+                26.700000000000003,
+                4.5
+              ]
+            },
+            {
+              "move": 60,
+              "areas": [
+                8.8,
+                0
+              ],
+              "scores": [
+                41.7,
+                31.500000000000004
+              ]
+            },
+            {
+              "move": 80,
+              "areas": [
+                7.300000000000001,
+                0
+              ],
+              "scores": [
+                116.7,
+                124.50000000000001
+              ]
+            },
+            {
+              "move": 100,
+              "areas": [
+                4.271428571,
+                0
+              ],
+              "scores": [
+                176.31428571200001,
+                226.5
+              ]
+            },
+            {
+              "move": 120,
+              "areas": [
+                3.6583333330000003,
+                0
+              ],
+              "scores": [
+                216.984523803,
+                274.5
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "head-to-head",
+          "book": 1,
+          "candidateSeat": 1,
+          "moveBudgetMs": 100,
+          "scores": [
+            405.171428572,
+            1056.500349648
+          ],
+          "areas": [
+            6,
+            29.680419580000002
+          ],
+          "candidateResult": 1,
+          "beforeMeanDepth": 1.6440677966101696,
+          "candidateMeanDepth": 1.603448275862069,
+          "beforeNodes": 2241120,
+          "candidateNodes": 2072284,
+          "snapshots": [
+            {
+              "move": 20,
+              "areas": [
+                1.2857142860000002,
+                18
+              ],
+              "scores": [
+                106.71428571400001,
+                108
+              ]
+            },
+            {
+              "move": 40,
+              "areas": [
+                6.300000000000001,
+                18
+              ],
+              "scores": [
+                169.071428572,
+                289.818181818
+              ]
+            },
+            {
+              "move": 60,
+              "areas": [
+                0,
+                12.3
+              ],
+              "scores": [
+                217.67142857200002,
+                382.56048951
+              ]
+            },
+            {
+              "move": 80,
+              "areas": [
+                6,
+                24.592307692000002
+              ],
+              "scores": [
+                229.67142857200002,
+                506.12972027800004
+              ]
+            },
+            {
+              "move": 100,
+              "areas": [
+                6,
+                34.18041958
+              ],
+              "scores": [
+                294.171428572,
+                762.92062937
+              ]
+            },
+            {
+              "move": 120,
+              "areas": [
+                6,
+                29.680419580000002
+              ],
+              "scores": [
+                405.171428572,
+                1056.500349648
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "syntheticDisruptionDiagnostic": {
+    "policy": "Blue prioritizes the legal capture with maximum immediate Red area loss, then retained Blue area. Otherwise it follows the corresponding original Blue move when legal or uses the tactical teacher. Red gets 100 ms per placement.",
+    "status": "Stopped by parent after one candidate game; second candidate game terminated.",
+    "limitations": [
+      "Synthetic policy is not the actual human decision process.",
+      "First baseline game briefly overlapped an independent capture enumeration; do not treat it as a controlled strength benchmark.",
+      "The completed candidate loss is preserved as contrary limited evidence; neither these games nor the paired results establish robust performance against human disruption."
+    ],
+    "baselineGames": [
+      {
+        "kind": "adaptive-disruption",
+        "fixture": "EnclosureDisruption1.json",
+        "engine": "baseline",
+        "aiSeat": 1,
+        "moveBudgetMs": 100,
+        "scores": [
+          751.709906763,
+          896.4071428560001
+        ],
+        "areas": [
+          22.207692308000002,
+          0
+        ],
+        "aiResult": 1,
+        "scripted": 14,
+        "disruptive": 34,
+        "fallback": 12,
+        "aiMeanDepth": 1.6,
+        "aiNodes": 1666659,
+        "snapshots": [
+          {
+            "move": 20,
+            "areas": [
+              4.5,
+              0
+            ],
+            "scores": [
+              24,
+              76.5
+            ]
+          },
+          {
+            "move": 40,
+            "areas": [
+              6.5178571430000005,
+              0
+            ],
+            "scores": [
+              74.5625,
+              328.714285714
+            ]
+          },
+          {
+            "move": 60,
+            "areas": [
+              16.222222222000003,
+              0
+            ],
+            "scores": [
+              191.949404761,
+              515.2142857140001
+            ]
+          },
+          {
+            "move": 80,
+            "areas": [
+              18.888888889,
+              0
+            ],
+            "scores": [
+              361.78273809700005,
+              686.042857142
+            ]
+          },
+          {
+            "move": 100,
+            "areas": [
+              18.59291958,
+              3.375
+            ],
+            "scores": [
+              544.207738099,
+              803.5321428560001
+            ]
+          },
+          {
+            "move": 120,
+            "areas": [
+              22.207692308000002,
+              0
+            ],
+            "scores": [
+              751.709906763,
+              896.4071428560001
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "adaptive-disruption",
+        "fixture": "EnclosureDisruption2.json",
+        "engine": "baseline",
+        "aiSeat": 1,
+        "moveBudgetMs": 100,
+        "scores": [
+          1093.7006104900001,
+          1626.4714285700002
+        ],
+        "areas": [
+          25.914285714000002,
+          22.5
+        ],
+        "aiResult": 1,
+        "scripted": 10,
+        "disruptive": 41,
+        "fallback": 9,
+        "aiMeanDepth": 1.6333333333333333,
+        "aiNodes": 2066288,
+        "snapshots": [
+          {
+            "move": 20,
+            "areas": [
+              15.350000000000001,
+              18
+            ],
+            "scores": [
+              17.5,
+              72
+            ]
+          },
+          {
+            "move": 40,
+            "areas": [
+              25.364285714,
+              16.714285714000003
+            ],
+            "scores": [
+              190.78015873,
+              447.20000000000005
+            ]
+          },
+          {
+            "move": 60,
+            "areas": [
+              18.801984127,
+              16.714285714000003
+            ],
+            "scores": [
+              440.36071428300005,
+              751.3428571420001
+            ]
+          },
+          {
+            "move": 80,
+            "areas": [
+              18.496428571000003,
+              18
+            ],
+            "scores": [
+              660.351984121,
+              1048.9714285700002
+            ]
+          },
+          {
+            "move": 100,
+            "areas": [
+              25.778571429000003,
+              40.5
+            ],
+            "scores": [
+              865.951984117,
+              1353.4714285700002
+            ]
+          },
+          {
+            "move": 120,
+            "areas": [
+              25.914285714000002,
+              22.5
+            ],
+            "scores": [
+              1093.7006104900001,
+              1626.4714285700002
+            ]
+          }
+        ]
+      }
+    ],
+    "completedCandidateGames": [
+      {
+        "kind": "adaptive-disruption",
+        "fixture": "EnclosureDisruption1.json",
+        "engine": "candidate",
+        "aiSeat": 1,
+        "moveBudgetMs": 100,
+        "scores": [
+          746.486993557,
+          300.702328228
+        ],
+        "areas": [
+          16.690674603,
+          0.75
+        ],
+        "aiResult": -1,
+        "scripted": 10,
+        "disruptive": 27,
+        "fallback": 23,
+        "aiMeanDepth": 1.5666666666666667,
+        "aiNodes": 1591620,
+        "snapshots": [
+          {
+            "move": 20,
+            "areas": [
+              5.375,
+              0
+            ],
+            "scores": [
+              24,
+              57
+            ]
+          },
+          {
+            "move": 40,
+            "areas": [
+              11.045454545,
+              18
+            ],
+            "scores": [
+              86.95757575600001,
+              75
+            ]
+          },
+          {
+            "move": 60,
+            "areas": [
+              7.958333333000001,
+              0
+            ],
+            "scores": [
+              228.91693722600002,
+              171.996303697
+            ]
+          },
+          {
+            "move": 80,
+            "areas": [
+              15.647619048000001,
+              3
+            ],
+            "scores": [
+              388.492568538,
+              201.796303697
+            ]
+          },
+          {
+            "move": 100,
+            "areas": [
+              19.596629759000002,
+              7.6000000000000005
+            ],
+            "scores": [
+              568.8827020150001,
+              263.849081475
+            ]
+          },
+          {
+            "move": 120,
+            "areas": [
+              16.690674603,
+              0.75
+            ],
+            "scores": [
+              746.486993557,
+              300.702328228
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

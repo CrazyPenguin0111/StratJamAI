@@ -250,6 +250,7 @@ public static class CommandLine
         Dependencies/builds are prepared before the training clock starts.
         Enclosure training: train --config configs/enclosure.json --output runs/enclosure
         The UI runs locally; no model or GPU is required for depth-search play.
+        UI --move-ms is one budget for the AI's whole turn (50–20000 ms); hints use it per suggestion.
         --public listens on all network interfaces; --share prints a temporary public link using cloudflared.
         --share works with the default loopback server. Keep the command running to keep the link available.
         """);

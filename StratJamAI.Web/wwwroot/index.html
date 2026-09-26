@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f3ed">
+  <meta name="description" content="Play Enclosure on a 19 by 19 board against a depth-search AI.">
+  <title>Enclosure · Play against AI</title>
+  <link rel="stylesheet" href="/styles.css?v=coach-20260926">
+  <script src="/app.js?v=turn-budget-20260926" defer></script>
+  <script src="/coach-bridge.js?v=coach-20260926" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <div class="brand">
+        <svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true">
+          <path d="M8 32V11L29 8" fill="none" stroke="#2865bf" stroke-width="4" stroke-linecap="round"/>
+          <path d="M15 36L36 31V12" fill="none" stroke="#c65347" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="8" cy="32" r="3.5" fill="#2865bf"/><circle cx="36" cy="12" r="3.5" fill="#c65347"/>
+        </svg>
+        <div><h1>Enclosure<span class="brand-period">.</span></h1><p>A game of lines, territory, and timing.</p></div>
+      </div>
+      <div class="local-tag"><span></span><span id="mode-tag">Play against AI</span><span class="tag-divider">/</span> Your own game</div>
+    </header>
+
+    <div id="error" class="error-banner" role="alert" hidden></div>
+    <div id="coach-connection" class="coach-notice" hidden><span>Live coach for the original site. Play your moves in the original tab; suggestions update here.</span><a href="/" target="_blank" rel="noopener">Open a separate game ↗</a></div>
+
+    <div class="layout">
+      <section class="board-panel" aria-label="Enclosure board">
+        <div class="board-toolbar">
+          <div class="turn-info"><span id="turn-dot" class="turn-dot blue"></span><div><strong id="turn-title">Preparing the board…</strong><p id="turn-description">Loading your game.</p></div></div>
+          <span class="move-counter" id="move-counter">0 <span>/ 120</span></span>
+        </div>
+        <div class="board-wrap">
+          <svg id="board" viewBox="0 0 680 680" role="application" tabindex="0" aria-label="19 by 19 Enclosure board. Use the arrow keys to choose an intersection and Enter to select it. Escape clears a selection.">
+            <title>Enclosure board</title>
+            <desc>Choose one of your colored nodes, then a highlighted endpoint, to place a line.</desc>
+            <rect x="0" y="0" width="680" height="680" rx="14" fill="#fbf9f1"/>
+            <g id="grid" aria-hidden="true"></g>
+            <g id="territories" aria-hidden="true"></g>
+            <g id="lines" aria-hidden="true"></g>
+            <g id="nodes" aria-hidden="true"></g>
+            <g id="legal-markers" aria-hidden="true"></g>
+            <g id="preview" aria-hidden="true"></g>
+            <g id="keyboard-marker" aria-hidden="true"></g>
+            <g id="hit-targets" aria-hidden="true"></g>
+          </svg>
+        </div>
+        <div class="board-footer">
+          <span id="selection-label">Select a node to begin.</span>
+          <div class="board-legend"><span><i class="legend-fill"></i> Enclosed area</span><span><i class="legend-protected"></i> Protected line</span></div>
+        </div>
+        <div class="board-actions">
+          <button id="undo" class="button secondary" disabled><span aria-hidden="true">↶</span> Undo</button>
+          <button id="hint" class="button secondary" disabled><span aria-hidden="true">✧</span> Hint</button>
+          <button id="play-suggestion" class="button primary" hidden>Play suggestion</button>
+          <button id="pass" class="button primary" hidden>Pass — no legal lines</button>
+          <span id="hint-label" class="hint-label" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <aside class="sidebar">
+        <section class="scoreboard card" aria-label="Scores">
+          <div class="section-heading"><h2>The match</h2><span id="game-status" class="quiet-label">In progress</span></div>
+          <div id="blue-card" class="player-card blue-player">
+            <div class="player-name"><span class="player-dot blue"></span><strong>Blue</strong><span id="blue-role" class="role">You</span></div>
+            <div class="score-row"><strong id="blue-score" class="score">0</strong><span>total score</span></div>
+            <div class="area-row"><span>Enclosed now</span><strong id="blue-area">0</strong></div>
+          </div>
+          <div id="red-card" class="player-card red-player">
+            <div class="player-name"><span class="player-dot red"></span><strong>Red</strong><span id="red-role" class="role">AI</span></div>
+            <div class="score-row"><strong id="red-score" class="score">0</strong><span>total score</span></div>
+            <div class="area-row"><span>Enclosed now</span><strong id="red-area">0</strong></div>
+          </div>
+          <p class="score-note">Territory earns points each turn. Protect it to keep scoring.</p>
+        </section>
+
+        <section class="settings card" aria-labelledby="settings-heading">
+          <a class="button secondary" href="/pvp.html" style="width:100%;margin-bottom:16px;text-decoration:none">Play a friend or find an opponent ↗</a>
+          <div class="section-heading"><h2 id="settings-heading">Your opponent</h2><span id="search-context" class="quiet-label">Depth search</span></div>
+          <label class="field-label" for="game-mode">Game mode</label>
+          <select id="game-mode" class="mode-select"><option value="play">Play AI</option><option value="analysis">Analyse game</option></select>
+          <label class="coach-toggle" for="live-coach"><input id="live-coach" type="checkbox"><span><strong>Live suggestions</strong><small>Update whenever the position changes.</small></span></label>
+          <label id="seat-label" class="field-label" for="seat">Play as</label>
+          <div class="new-game-row"><select id="seat"><option value="0">Blue · first to move</option><option value="1">Red · second to move</option></select><button id="new-game" class="button primary">New game</button></div>
+          <div class="budget-heading"><label id="move-time-label" class="field-label" for="move-time">AI turn budget</label><output id="move-time-value" for="move-time">1.0 s / AI turn</output></div>
+          <input id="move-time" type="range" min="50" max="20000" step="50" value="1000">
+          <div class="range-labels"><span>Fast · 50 ms</span><span id="move-time-maximum">Deeper · 20 s / AI turn</span></div>
+          <p id="settings-note" class="settings-note">The AI plans its remaining placements together within one turn budget. Hints and live suggestions use this time for each position.</p>
+          <a class="coach-setup-link" href="/coach-setup.html">Connect the original site ↗</a>
+          <div class="search-stats" id="search-stats" aria-live="polite"><div><strong id="search-depth">—</strong><span>depth</span></div><div><strong id="search-nodes">—</strong><span>positions</span></div><div><strong id="search-time">—</strong><span>elapsed</span></div></div>
+          <p id="search-line" class="search-line" hidden></p>
+        </section>
+
+        <section class="history card" aria-labelledby="history-heading">
+          <div class="section-heading"><h2 id="history-heading">Move history</h2><span id="history-count" class="quiet-label">0 placements</span></div>
+          <ol id="history-list" aria-label="Recorded moves"><li class="empty-history">Every enclosure starts with a line.</li></ol>
+          <div class="file-actions"><button id="save" class="button text-button">↓ Save game</button><button id="load" class="button text-button">↑ Load game</button><input id="load-file" type="file" accept=".json,application/json" hidden></div>
+        </section>
+      </aside>
+    </div>
+
+    <footer class="app-footer">
+      <details><summary>How to play</summary><p>Click one of the moving player's colored nodes, then a highlighted endpoint. A line can extend up to three grid spaces along each axis. Legal moves and captures are checked automatically. Close shapes to enclose territory; your score accumulates over the game. Protected lines have a small ring at their midpoint. The turn indicator shows how many placements remain. Highest total score wins after 120 placements.</p><p><strong>Analyse game:</strong> enter moves for both colors, or load a saved game. Live suggestions update after each change; use Play suggestion to apply one. Undo removes the latest placement. In Play AI mode, Undo returns to before your latest placement, including the AI replies.</p><p><strong>Keyboard:</strong> focus the board, move with the arrow keys, and select with Enter or Space. Escape clears your selection.</p></details>
+      <span>19 × 19 <span class="footer-separator">·</span> Powered by StratJamAI</span>
+    </footer>
+    <div id="announcement" class="sr-only" role="status" aria-live="polite"></div>
+  </main>
+</body>
+</html>

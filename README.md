@@ -2,7 +2,7 @@
 
 An all-C# framework for training and evaluating strategy-game bots under a wall-clock budget. Training uses TorchSharp on an NVIDIA GPU; the exported feed-forward network runs in plain .NET without a native ML runtime.
 
-The main game is **Enclosure**, played on a 19×19 board using the current [official practice game rules](https://meaf.us/sst1/). It includes a local browser interface and a CPU alpha-beta opponent. Tic-Tac-Toe remains as a small training and regression demo. The event server's wire protocol is not implemented.
+The main game is **Enclosure**, played on a 19×19 board using the current [official practice game rules](https://meaf.us/sst1/). It includes a browser interface, online multiplayer, and a CPU alpha-beta opponent. Tic-Tac-Toe remains as a small training and regression demo. The event server's wire protocol is not implemented.
 
 ## Play Enclosure
 
@@ -16,11 +16,15 @@ This opens **http://127.0.0.1:5080**. Select one of your nodes, then a highlight
 
 Enable **Live suggestions** for automatic hints after each position changes. **Analyse game** lets you enter both players' moves while the AI coaches the side to move. To follow the original website automatically, use **Connect the original site** and its userscript; it opens a separate coaching session and follows the move history without submitting moves. See [live coaching setup and API](docs/live-coaching.md).
 
-The strategy evaluation now projects territory income through the remaining game, estimates unfinished enclosures, and gives a small bonus to boundaries backed by parallel walls. This addresses the old four-turn scoring horizon and its tendency to overlook large late enclosures. These are estimates, not a guarantee of beating the double-wall strategy; the game rules and legal captures are unchanged.
+Choose **Play together** (`/pvp.html`) to play another person. **Find an opponent** matches players with the same clock and compatible color choices; **Create a private room** gives you a six-character code and invitation link. Private rooms start when both players are ready. Defaults are **2:00 + 15 seconds per completed turn**, with **random colors**. The host can change the lobby clock, and each player can choose Blue, Red, or Random before starting. PvP has no AI moves or live hints. After the match, **Review with AI** replays the board and compares each placement with the engine's suggestion. [Multiplayer details and hosting limits](docs/multiplayer.md).
 
-The opponent uses **iterative-deepening alpha-beta search**, with a default budget of **one second per placement**. Two placements on an AI turn may take two seconds. Adjust the budget in the page, or launch with `ui --move-ms 250 --port 5081`. Use `--no-browser` to print the address without opening it. Playing needs neither a trained model nor CUDA; the web host references only the managed game core. You can also run it directly with `dotnet run --project StratJamAI.Web -c Release`.
+The strategy evaluation projects territory income through the remaining game, estimates unfinished enclosures, and values space the two players can compete for. Extra walls do not earn a passive evaluation bonus. The space estimate declines near the end so closing territory takes priority over further expansion. These are estimates, not a guarantee of beating the double-wall strategy; the game rules and legal captures are unchanged. See [strategy validation](docs/enclosure-space-strategy-validation.md).
+
+The opponent uses **iterative-deepening alpha-beta search**, with a default budget of **one second for the whole AI turn**. The slider ranges from **50 ms to 20 seconds**. The AI plans both remaining placements, then plays them together; a 20-second setting means 20 seconds total, not 20 seconds for each line. The opening single-placement turn uses the same total budget. Hints and live coaching use the selected time per suggestion. Adjust the budget in the page, or launch with `ui --move-ms 20000 --port 5081`. Use `--no-browser` to print the address without opening it. Playing needs neither a trained model nor CUDA; the web host references only the managed game core. You can also run it directly with `dotnet run --project StratJamAI.Web -c Release`.
 
 ## Let other people play
+
+For permanent hosting on a CPU VDS with your own domain, follow the [Arch Linux VDS setup guide](docs/vds-setup.md). It includes Caddy HTTPS and systemd service templates, deployment commands, and the current limits of in-memory game storage.
 
 For an Internet link without router changes:
 
@@ -30,9 +34,9 @@ dotnet run --project StratJamAI -c Release -- ui --share --port 5081
 
 Copy the printed **Public Enclosure link** and send it to other players. Keep the computer awake and the hosting command running. Ctrl+C closes its tunnel and any server it started. The sharing command uses [Cloudflare Quick Tunnels](https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/do-more-with-tunnels/trycloudflare/); its temporary HTTPS address changes when a new tunnel starts. `cloudflared` must be on PATH or in `~/.local/bin` ([official downloads](https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/downloads/)). It has been installed in `~/.local/bin` on the development machine. Quick Tunnels are for temporary sharing; a named tunnel with your own domain is appropriate for a stable address.
 
-Each browser gets its **own game**. Refreshing keeps it; different visitors cannot move, undo, import, or export one another's game. Tabs in the same browser share that browser's game. Sessions expire after two hours without API activity, and all unsaved games disappear when the server restarts. Save a game to keep it longer.
+Each browser gets its **own AI game and player identity**. PvP participants share their room's board, while only the player whose turn it is can move. Refreshing reconnects; tabs in the same browser share the same player identity. Use different browsers or private browser sessions to test both seats. Sessions expire after two hours without API activity, and all unsaved games disappear when the server restarts. Save a game to keep it longer.
 
-The defaults allow 128 browser sessions and four simultaneous searches. Additional searches wait for a slot, then receive their full thinking budget. Use `--max-searches 2` to use less CPU or `--max-sessions 256` to allow more visitors. Requests have per-session rate limits and uploads are limited to 64 KiB.
+The defaults allow 128 browser sessions and four simultaneous searches. Opponent play, hints, and game reviews share that CPU limit; reviews release their slot between placements. Additional searches wait for a slot, then receive their full thinking budget. Use `--max-searches 2` to use less CPU or `--max-sessions 256` to allow more visitors. Requests have per-session rate limits and uploads are limited to 64 KiB.
 
 For direct LAN access or your own reverse proxy/router configuration:
 
@@ -46,9 +50,11 @@ Port 5081 in these examples avoids the earlier local server on 5080. An older se
 
 Search considers every legal move and returns the last fully completed depth. It tries cached and previously successful moves first, orders the remaining candidates only as needed, and uses principal-variation search to reduce repeated work. Board counts, position hashes, and move classifications are cached or updated incrementally. It handles the same player taking consecutive placements. Large middle-game action lists limit depth; at very small budgets, it returns a legal ordered fallback. See [Enclosure rules and encoding](docs/enclosure-rules.md), [measured validation](docs/enclosure-validation.md), and the [before/after search benchmarks](docs/enclosure-search-performance.md).
 
+The defensive search also examines a bounded selection of immediate captures beyond its ordinary depth, including two captures during the same turn. It ranks cuts by the territory they remove and keeps alternative endpoints that can enable a second attack. Open territory near opposing nodes receives less speculative future income, so repeatedly repairing an exposed enclosure is less attractive. Distant construction and expansion retain their incentives. A quick ordinary search supplies a fallback before the additional tactical work. The time limit still applies; this selective extension does not exhaust every possible attack. See the [disruption replay checks](docs/enclosure-disruption-validation.md).
+
 After updating the code, stop and restart the hosting command to use the new engine. Launching `ui` again while a compatible server is already running reuses that process; it does not reload its code.
 
-Terminal play and history-based move suggestions use the same engine:
+Terminal play and history-based move suggestions use the same engine; their `--move-ms` option still sets the budget per individual move search:
 
 ```sh
 dotnet run --project StratJamAI -c Release -- play --seat blue --save game.json
@@ -115,9 +121,9 @@ dotnet run --project StratJamAI -c Release --no-build -- play-demo --model runs/
 | --- | --- |
 | `StratJamAI.Core` | Enclosure and demo rules, managed inference, alpha-beta/PUCT search, evaluation, artifacts |
 | `StratJamAI` | CLI, TorchSharp model and PPO, parallel rollouts, training supervisor, checkpoints |
-| `StratJamAI.Web` | Local browser UI and cancellable game session, without TorchSharp |
+| `StratJamAI.Web` | Browser AI games, online PvP lobbies and clocks, and post-game review, without TorchSharp |
 | `StratJamAI.Tests` | Algorithm, game-contract, export, checkpoint, and process-level budget tests |
-| `StratJamAI.Web.Tests` | UI session, cancellation, stale-result, undo, and history tests |
+| `StratJamAI.Web.Tests` | UI sessions, multiplayer clocks and membership, review jobs, cancellation, and history tests |
 
 ```mermaid
 flowchart LR

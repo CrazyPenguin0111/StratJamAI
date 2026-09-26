@@ -1,0 +1,65 @@
+.pvp-brand { color: inherit; text-decoration: none; }
+.pvp-nav { display: flex; align-items: center; gap: 5px; padding: 4px; border: 1px solid #dde1d5; border-radius: 9px; background: #edf0e6; }
+.pvp-nav a { padding: 8px 13px; color: #778271; font-size: 12px; text-decoration: none; border-radius: 6px; white-space: nowrap; }
+.pvp-nav a[aria-current] { background: #fffefa; color: #3f614f; box-shadow: 0 1px 4px #273c2210; }
+.pvp-welcome { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 28px; padding: 25px 30px; border: 1px solid #dbe2d3; border-radius: 12px; background: linear-gradient(105deg, #eaf0e3, #f3f5eb); overflow: hidden; }
+.pvp-eyebrow { color: #7a8c6c; font-size: 9px; font-weight: 650; letter-spacing: 1.6px; margin-bottom: 8px; }
+.pvp-welcome h2 { font: 38px/1.1 Georgia, serif; font-weight: 400; color: #3e5344; letter-spacing: -.9px; }
+.pvp-welcome p:last-child { color: #7b8873; font-size: 12px; margin-top: 9px; max-width: 470px; }
+.pvp-welcome-mark { position: relative; width: 130px; height: 90px; flex-shrink: 0; }
+.pvp-outline { position: absolute; width: 63px; height: 63px; border-radius: 2px; transform: rotate(-10deg); }
+.blue-outline { border: 2px solid #7e9fb7; left: 10px; top: 1px; }
+.red-outline { border: 2px solid #c08e7b; right: 9px; top: 22px; transform: rotate(8deg); }
+.pvp-mark-label { position: absolute; inset: 21px 0 0; text-align: center; color: #829078; font-size: 9px; line-height: 1.8; letter-spacing: 1px; }
+.pvp-input { width: 100%; min-width: 0; border: 1px solid #dcdfd4; border-radius: 6px; padding: 9px 10px; background: #fff; color: #435249; font-size: 12px; }
+.pvp-input::placeholder { color: #a3aa9e; }
+.pvp-input:disabled { color: #90978b; background: #f5f6f0; }
+.pvp-setup > .pvp-input, .pvp-setup > select { margin-bottom: 14px; }
+.pvp-optional { float: right; font-size: 10px; color: #a0a698; }
+.pvp-clock-settings { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; margin: 4px 0 10px; }
+.pvp-clock-settings small { display: block; color: #9aa290; font-size: 9px; margin: 4px 0 0; }
+.pvp-form-note { font-size: 10px; color: #86917b; line-height: 1.65; margin: 10px 0 13px; }
+.pvp-wide { width: 100%; }
+#quick-play { justify-content: space-between; padding: 12px 14px; margin-top: 2px; }
+.pvp-action-note { font-size: 9px; text-align: center; color: #9aa18f; line-height: 1.5; margin-top: 6px; }
+.pvp-divider { display: flex; align-items: center; gap: 10px; color: #a0a696; font-size: 9px; margin: 18px 0; }
+.pvp-divider:before, .pvp-divider:after { content: ''; flex: 1; border-top: 1px solid #e7e9e0; }
+.pvp-join-form { margin-top: 17px; }
+.pvp-join-form > div { display: flex; gap: 7px; }
+.pvp-code-input { text-transform: uppercase; font-variant-numeric: tabular-nums; letter-spacing: 1px; font-size: 11px; }
+.pvp-board-wrap { position: relative; }
+.pvp-board-placeholder { position: absolute; left: 50%; top: 48%; transform: translate(-50%, -50%); text-align: center; width: min(76%, 330px); border: 1px solid #e2e4d5; border-radius: 11px; background: #fffef5f2; padding: 23px 26px; box-shadow: 0 10px 40px #50543a0a; pointer-events: none; }
+.pvp-small-mark { display: block; font-size: 30px; color: #809275; margin-bottom: 5px; }
+.pvp-board-placeholder strong { color: #53634c; font-size: 14px; font-weight: 550; }
+.pvp-board-placeholder p { color: #9aa18c; font-size: 11px; line-height: 1.7; margin-top: 8px; }
+.pvp-pill { font-size: 9px; color: #647858; background: #edf2e7; padding: 3px 8px; border-radius: 10px; white-space: nowrap; }
+.pvp-room-code-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.pvp-room-code-row strong { color: #41593e; font-size: 25px; letter-spacing: 2px; font-weight: 500; overflow-wrap: anywhere; }
+.pvp-room-code-row .button { font-size: 10px; padding: 7px 10px; }
+.pvp-share-url { margin-top: 8px; background: #f6f8f0; color: #8b967e; font-size: 9px; padding: 7px; }
+.pvp-room-players { list-style: none; padding: 0; margin: 15px 0 8px; }
+.pvp-room-players li { display: flex; align-items: center; gap: 8px; border-top: 1px solid #e8ebe0; padding: 10px 0; font-size: 11px; }
+.pvp-member-name { flex: 1; overflow-wrap: anywhere; }
+.pvp-member-name small { display: block; color: #9aa38f; font-size: 9px; margin-top: 2px; }
+.pvp-ready-state { color: #8d9781; font-size: 9px; white-space: nowrap; }
+.pvp-ready-state.ready { color: #467054; }
+.pvp-member-dot { width: 7px; height: 7px; border-radius: 50%; background: #aab29c; flex-shrink: 0; }
+.pvp-clock-summary { font-size: 12px; color: #77856b; border-top: 1px solid #e5e9db; padding-top: 10px; font-variant-numeric: tabular-nums; }
+#room-edit { margin-top: 13px; }
+.pvp-clock { font-size: 42px; line-height: 1.2; letter-spacing: -1.5px; font-variant-numeric: tabular-nums; font-weight: 500; margin: 10px 0 12px; }
+.player-card:not(.active) .pvp-clock { opacity: .7; }
+.pvp-clock.low-time { color: #bd443b; }
+.pvp-score-details { display: flex; justify-content: space-between; border-top: 1px solid #77889a18; padding-top: 8px; font-size: 10px; color: #909b89; }
+.pvp-score-details strong { color: #5f7160; margin-left: 4px; font-weight: 550; font-variant-numeric: tabular-nums; }
+.pvp-page .player-name > strong { overflow-wrap: anywhere; }
+.pvp-page .scoreboard { order: -1; }
+.pvp-page #history-list { max-height: 205px; }
+.pvp-page a.button { text-decoration: none; }
+.pvp-danger { color: #a06758 !important; }
+.pvp-confirm { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; padding: 12px; background: #fff3e9; border: 1px solid #ead3bc; border-radius: 8px; margin-top: 13px; }
+.pvp-confirm p { flex: 1 0 100%; font-size: 12px; color: #92694f; }
+.pvp-result-note { color: #76866a; font-size: 12px; margin-top: 13px; }
+.pvp-page .app-footer a { color: #617a52; text-decoration: none; white-space: nowrap; }
+@media (max-width: 900px) { .pvp-welcome { padding: 21px 24px; } .pvp-welcome h2 { font-size: 32px; } .pvp-clock { font-size: 36px; } }
+@media (max-width: 690px) { .pvp-page .app-header { gap: 12px; flex-wrap: wrap; } .pvp-nav { margin-left: auto; } .pvp-nav a { font-size: 10px; padding: 7px 9px; } .pvp-welcome { padding: 19px; margin-bottom: 22px; } .pvp-welcome-mark { display: none; } .pvp-welcome p:last-child { font-size: 11px; } .pvp-page .sidebar { display: flex; flex-direction: column; } .pvp-page .sidebar > .card { width: 100%; } .pvp-page:not(.pvp-has-board) .layout { flex-direction: column-reverse; gap: 20px; } .pvp-page:not(.pvp-has-board) .board-panel { display: none; } .pvp-page .scoreboard { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; } .pvp-page .scoreboard .section-heading, .pvp-page .score-note { grid-column: 1 / -1; } .pvp-page .player-card { min-width: 0; padding: 11px 10px; } .pvp-clock { font-size: 37px; } .pvp-page .scoreboard { margin-bottom: 0; } .pvp-page .scoreboard .section-heading { margin-bottom: 2px; } .pvp-page .score-note { margin-top: 0; } }
+@media (max-width: 430px) { .pvp-page .app-header { align-items: flex-start; } .pvp-page .brand p { max-width: 140px; font-size: 9px; } .pvp-page .pvp-nav { flex-direction: column; padding: 3px; } .pvp-page .pvp-nav a { padding: 5px 8px; } .pvp-clock { font-size: 32px; } .pvp-welcome h2 { font-size: 31px; } .pvp-page .pvp-score-details { font-size: 9px; } .pvp-room-code-row strong { font-size: 23px; } }

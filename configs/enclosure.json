@@ -1,0 +1,17 @@
+{
+  "game": "enclosure",
+  "device": "cuda",
+  "minutes": 60,
+  "seed": 1337,
+  "environments": 64,
+  "workers": 0,
+  "rolloutDecisions": 2048,
+  "epochs": 4,
+  "minibatchSize": 64,
+  "hiddenSize": 128,
+  "actionHiddenSize": 64,
+  "bufferMemoryMiB": 512,
+  "maxEpisodeSteps": 120,
+  "evaluationPairs": 4,
+  "search": { "simulations": 256, "moveMilliseconds": 50, "exploration": 1.4, "maxDepth": 120 }
+}

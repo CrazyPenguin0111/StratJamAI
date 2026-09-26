@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Enclosure · Game review</title>
+  <link rel="stylesheet" href="/styles.css?v=pvp-review-1">
+  <link rel="stylesheet" href="/review.css?v=1">
+  <script src="/review.js?v=1" defer></script>
+</head>
+<body>
+  <main class="app review-app">
+    <header class="app-header">
+      <div class="brand"><div><h1>Game review<span class="brand-period">.</span></h1><p>Replay the match and explore AI suggestions.</p></div></div>
+      <nav class="review-links" aria-label="Game navigation"><a id="back-to-game" href="/pvp.html">Back to match</a><a href="/pvp.html">Play people</a><a href="/">Play AI</a></nav>
+    </header>
+    <div id="review-error" class="error-banner" role="alert" hidden></div>
+    <section class="card review-controls" aria-label="Review controls">
+      <div><strong id="review-status" role="status" aria-live="polite">Loading your completed match…</strong><p id="review-progress-label">Reviews are available to the two players after the match ends.</p></div>
+      <div class="review-buttons"><label for="review-budget">Per placement</label><select id="review-budget"><option value="50">50 ms</option><option value="100" selected>100 ms</option><option value="250">250 ms</option><option value="500">500 ms</option><option value="1000">1 second</option></select><button id="start-review" class="button primary" disabled>Review with AI</button><button id="cancel-review" class="button secondary" hidden>Cancel review</button></div>
+      <progress id="review-progress" max="1" value="0" aria-label="Review progress"></progress>
+    </section>
+    <div class="layout review-layout">
+      <section class="board-panel" aria-label="Historical board">
+        <div class="board-toolbar"><div><strong id="position-title">Initial position</strong><p id="position-scores" class="review-muted"></p></div><span id="position-number" class="move-counter">0 / 0</span></div>
+        <div class="board-wrap"><svg id="board" viewBox="0 0 680 680" role="img" aria-labelledby="review-board-title"><title id="review-board-title">Enclosure historical position</title><rect width="680" height="680" rx="14" fill="#fbf9f1"/><g id="review-grid"></g><g id="review-territories"></g><g id="review-lines"></g><g id="review-nodes"></g><g id="review-overlay"></g></svg></div>
+        <div class="review-board-legend"><span><i class="played-line"></i> Played placement</span><span><i class="suggested-line"></i> AI suggestion</span><label><input id="show-suggestion" type="checkbox" checked> Show suggestion</label></div>
+        <div class="review-navigation"><button id="first-position" class="button secondary" aria-label="Initial position">First</button><button id="previous-position" class="button secondary" aria-label="Previous position">Previous</button><input id="position-slider" type="range" min="0" max="0" value="0" aria-label="Historical position"><button id="next-position" class="button secondary" aria-label="Next position">Next</button><button id="last-position" class="button secondary" aria-label="Final position">Final</button></div>
+        <section class="card review-selection" aria-label="Selected move"><h2 id="selected-title">Select a position</h2><p id="selected-moves"></p><p id="selected-evaluation" class="review-muted"></p><p id="selected-search" class="review-muted"></p></section>
+      </section>
+      <aside class="sidebar">
+        <section class="card"><h2>Match summary</h2><div id="review-player-0" class="review-player blue-summary"></div><div id="review-player-1" class="review-player red-summary"></div><p class="review-muted">Matching an AI suggestion is a comparison, not an accuracy score.</p></section>
+        <section class="card review-explanation"><h2>What the estimates mean</h2><p>The AI suggests a line using the selected search time. Depth varies by position; a suggestion is not a guaranteed best move.</p><p>Static estimates range from −1 to +1 for the player making the move. Static Δ compares the positions immediately after the suggested and played placements. It is not win probability, points lost, or proof of a mistake. Equivalent moves can differ.</p><p>Reviewing never changes the completed match.</p></section>
+      </aside>
+    </div>
+    <section class="card review-moves"><div class="section-heading"><h2>Move-by-move review</h2><span id="review-row-count" class="quiet-label">No moves reviewed yet</span></div><div class="review-table-scroll"><table><thead><tr><th>Move</th><th>Player</th><th>Played</th><th>Suggested</th><th>Static Δ</th><th>Depth</th></tr></thead><tbody id="review-move-list"></tbody></table></div><p id="review-empty" class="review-muted">Start the review to see suggested alternatives. You can replay the match immediately.</p></section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,3043 @@
+{
+  "samples": 5,
+  "seed": 72891,
+  "elapsedSeconds": 58.4679319858551,
+  "hashes": {
+    "before": "9ff4b061ba8afd0c880094b670c9866a3ede87f08660fe47fb76cd4aa53b0f48",
+    "after": "daa5b44bb2655bc21c8fce35214b0090fcbbe05b25e91d7ad5d7b2aee08406a5"
+  },
+  "fixedDepth": [
+    {
+      "position": "opening",
+      "depth": 3,
+      "before": {
+        "meanMilliseconds": 77.25206,
+        "medianMilliseconds": 73.7006,
+        "p95Milliseconds": 92.9063,
+        "meanAllocatedBytes": 1163736,
+        "meanNodes": 169612,
+        "minimumDepth": 3,
+        "maximumDepth": 3
+      },
+      "after": {
+        "meanMilliseconds": 13.6381,
+        "medianMilliseconds": 14.2673,
+        "p95Milliseconds": 14.5673,
+        "meanAllocatedBytes": 328256,
+        "meanNodes": 17526,
+        "minimumDepth": 3,
+        "maximumDepth": 3
+      },
+      "meanSpeedup": 5.664429795939317,
+      "action": 128,
+      "value": -0.0643124296557098,
+      "beforePv": [
+        128,
+        6338,
+        6359
+      ],
+      "afterPv": [
+        128,
+        6338,
+        6359
+      ]
+    },
+    {
+      "position": "middle",
+      "depth": 2,
+      "before": {
+        "meanMilliseconds": 152.92314,
+        "medianMilliseconds": 152.8819,
+        "p95Milliseconds": 159.1433,
+        "meanAllocatedBytes": 3291424,
+        "meanNodes": 3583,
+        "minimumDepth": 2,
+        "maximumDepth": 2
+      },
+      "after": {
+        "meanMilliseconds": 23.51094,
+        "medianMilliseconds": 23.1527,
+        "p95Milliseconds": 26.964,
+        "meanAllocatedBytes": 326128,
+        "meanNodes": 3583,
+        "minimumDepth": 2,
+        "maximumDepth": 2
+      },
+      "meanSpeedup": 6.504339681867249,
+      "action": 971,
+      "value": -0.32255909453217935,
+      "beforePv": [
+        971,
+        6734
+      ],
+      "afterPv": [
+        971,
+        6734
+      ]
+    },
+    {
+      "position": "late",
+      "depth": 2,
+      "before": {
+        "meanMilliseconds": 322.85974,
+        "medianMilliseconds": 323.6028,
+        "p95Milliseconds": 327.6237,
+        "meanAllocatedBytes": 5497520,
+        "meanNodes": 8777,
+        "minimumDepth": 2,
+        "maximumDepth": 2
+      },
+      "after": {
+        "meanMilliseconds": 49.3053,
+        "medianMilliseconds": 48.8853,
+        "p95Milliseconds": 50.9953,
+        "meanAllocatedBytes": 326128,
+        "meanNodes": 6357,
+        "minimumDepth": 2,
+        "maximumDepth": 2
+      },
+      "meanSpeedup": 6.548175145471176,
+      "action": 5349,
+      "value": 0.5588779722672809,
+      "beforePv": [
+        5349,
+        3557
+      ],
+      "afterPv": [
+        5349,
+        3557
+      ]
+    }
+  ],
+  "timedSearch": [
+    {
+      "position": "opening",
+      "budgetMilliseconds": 5,
+      "before": {
+        "meanMilliseconds": 5.03128,
+        "medianMilliseconds": 5.0234,
+        "p95Milliseconds": 5.0619,
+        "meanAllocatedBytes": 389393.6,
+        "meanNodes": 6585.2,
+        "minimumDepth": 2,
+        "maximumDepth": 2
+      },
+      "after": {
+        "meanMilliseconds": 5.0268,
+        "medianMilliseconds": 5.0269,
+        "p95Milliseconds": 5.0319,
+        "meanAllocatedBytes": 392640,
+        "meanNodes": 5156,
+        "minimumDepth": 2,
+        "maximumDepth": 2
+      }
+    },
+    {
+      "position": "opening",
+      "budgetMilliseconds": 50,
+      "before": {
+        "meanMilliseconds": 50.03126,
+        "medianMilliseconds": 50.0311,
+        "p95Milliseconds": 50.0319,
+        "meanAllocatedBytes": 936308.8,
+        "meanNodes": 113255.8,
+        "minimumDepth": 2,
+        "maximumDepth": 2
+      },
+      "after": {
+        "meanMilliseconds": 50.03732,
+        "medianMilliseconds": 50.0377,
+        "p95Milliseconds": 50.0389,
+        "meanAllocatedBytes": 396784,
+        "meanNodes": 51222.6,
+        "minimumDepth": 4,
+        "maximumDepth": 4
+      }
+    },
+    {
+      "position": "opening",
+      "budgetMilliseconds": 1000,
+      "before": {
+        "meanMilliseconds": 1000.03644,
+        "medianMilliseconds": 1000.0356,
+        "p95Milliseconds": 1000.0405,
+        "meanAllocatedBytes": 23198545.6,
+        "meanNodes": 1837903.4,
+        "minimumDepth": 5,
+        "maximumDepth": 5
+      },
+      "after": {
+        "meanMilliseconds": 1000.05952,
+        "medianMilliseconds": 1000.061,
+        "p95Milliseconds": 1000.0634,
+        "meanAllocatedBytes": 453256,
+        "meanNodes": 3115780,
+        "minimumDepth": 5,
+        "maximumDepth": 5
+      }
+    },
+    {
+      "position": "middle",
+      "budgetMilliseconds": 5,
+      "before": {
+        "meanMilliseconds": 5.0439799999999995,
+        "medianMilliseconds": 5.0156,
+        "p95Milliseconds": 5.159,
+        "meanAllocatedBytes": 296137.6,
+        "meanNodes": 932.6,
+        "minimumDepth": 1,
+        "maximumDepth": 1
+      },
+      "after": {
+        "meanMilliseconds": 5.03488,
+        "medianMilliseconds": 5.0244,
+        "p95Milliseconds": 5.0715,
+        "meanAllocatedBytes": 343960,
+        "meanNodes": 986,
+        "minimumDepth": 1,
+        "maximumDepth": 1
+      }
+    },
+    {
+      "position": "middle",
+      "budgetMilliseconds": 50,
+      "before": {
+        "meanMilliseconds": 50.08864,
+        "medianMilliseconds": 50.0404,
+        "p95Milliseconds": 50.3072,
+        "meanAllocatedBytes": 1501772.8,
+        "meanNodes": 2467.6,
+        "minimumDepth": 1,
+        "maximumDepth": 1
+      },
+      "after": {
+        "meanMilliseconds": 50.0372,
+        "medianMilliseconds": 50.0381,
+        "p95Milliseconds": 50.0439,
+        "meanAllocatedBytes": 346320,
+        "meanNodes": 7438.8,
+        "minimumDepth": 2,
+        "maximumDepth": 2
+      }
+    },
+    {
+      "position": "middle",
+      "budgetMilliseconds": 1000,
+      "before": {
+        "meanMilliseconds": 1000.05012,
+        "medianMilliseconds": 1000.0455,
+        "p95Milliseconds": 1000.0804,
+        "meanAllocatedBytes": 3776507.2,
+        "meanNodes": 111811.8,
+        "minimumDepth": 2,
+        "maximumDepth": 2
+      },
+      "after": {
+        "meanMilliseconds": 1000.0413599999999,
+        "medianMilliseconds": 1000.0437,
+        "p95Milliseconds": 1000.0457,
+        "meanAllocatedBytes": 349720,
+        "meanNodes": 127165.8,
+        "minimumDepth": 2,
+        "maximumDepth": 2
+      }
+    },
+    {
+      "position": "late",
+      "budgetMilliseconds": 5,
+      "before": {
+        "meanMilliseconds": 5.02212,
+        "medianMilliseconds": 5.0206,
+        "p95Milliseconds": 5.0277,
+        "meanAllocatedBytes": 276104,
+        "meanNodes": 264.8,
+        "minimumDepth": 0,
+        "maximumDepth": 0
+      },
+      "after": {
+        "meanMilliseconds": 5.02064,
+        "medianMilliseconds": 5.0263,
+        "p95Milliseconds": 5.0272,
+        "meanAllocatedBytes": 325232,
+        "meanNodes": 285.6,
+        "minimumDepth": 0,
+        "maximumDepth": 0
+      }
+    },
+    {
+      "position": "late",
+      "budgetMilliseconds": 50,
+      "before": {
+        "meanMilliseconds": 50.07572,
+        "medianMilliseconds": 50.0767,
+        "p95Milliseconds": 50.1217,
+        "meanAllocatedBytes": 497448,
+        "meanNodes": 3002.4,
+        "minimumDepth": 1,
+        "maximumDepth": 1
+      },
+      "after": {
+        "meanMilliseconds": 50.044340000000005,
+        "medianMilliseconds": 50.0459,
+        "p95Milliseconds": 50.0615,
+        "meanAllocatedBytes": 329126.4,
+        "meanNodes": 6190.8,
+        "minimumDepth": 1,
+        "maximumDepth": 2
+      }
+    },
+    {
+      "position": "late",
+      "budgetMilliseconds": 1000,
+      "before": {
+        "meanMilliseconds": 1000.0868,
+        "medianMilliseconds": 1000.0451,
+        "p95Milliseconds": 1000.2462,
+        "meanAllocatedBytes": 5679793.6,
+        "meanNodes": 44431.4,
+        "minimumDepth": 2,
+        "maximumDepth": 2
+      },
+      "after": {
+        "meanMilliseconds": 1000.05954,
+        "medianMilliseconds": 1000.0508,
+        "p95Milliseconds": 1000.111,
+        "meanAllocatedBytes": 333550.4,
+        "meanNodes": 57995.8,
+        "minimumDepth": 2,
+        "maximumDepth": 2
+      }
+    }
+  ],
+  "rawSamples": [
+    {
+      "kind": "fixed",
+      "position": "opening",
+      "move": 0,
+      "legal": 69,
+      "budget": 120000,
+      "requestedDepth": 3,
+      "sample": 0,
+      "elapsed": 75.8813,
+      "bytes": 1163736,
+      "Action": 128,
+      "CompletedDepth": 3,
+      "Nodes": 169612,
+      "Value": -0.0643124296557098,
+      "PV": [
+        128,
+        6338,
+        6359
+      ],
+      "engine": "before",
+      "trial": 0
+    },
+    {
+      "kind": "fixed",
+      "position": "middle",
+      "move": 60,
+      "legal": 930,
+      "budget": 120000,
+      "requestedDepth": 2,
+      "sample": 0,
+      "elapsed": 157.4376,
+      "bytes": 3291424,
+      "Action": 971,
+      "CompletedDepth": 2,
+      "Nodes": 3583,
+      "Value": -0.32255909453217935,
+      "PV": [
+        971,
+        6734
+      ],
+      "engine": "before",
+      "trial": 0
+    },
+    {
+      "kind": "fixed",
+      "position": "late",
+      "move": 110,
+      "legal": 1096,
+      "budget": 120000,
+      "requestedDepth": 2,
+      "sample": 0,
+      "elapsed": 327.6237,
+      "bytes": 5497520,
+      "Action": 5349,
+      "CompletedDepth": 2,
+      "Nodes": 8777,
+      "Value": 0.5588779722672809,
+      "PV": [
+        5349,
+        3557
+      ],
+      "engine": "before",
+      "trial": 0
+    },
+    {
+      "kind": "budget",
+      "position": "opening",
+      "move": 0,
+      "legal": 69,
+      "budget": 5,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 5.0138,
+      "bytes": 387776,
+      "Action": 128,
+      "CompletedDepth": 2,
+      "Nodes": 6274,
+      "Value": 0,
+      "PV": [
+        128,
+        5117
+      ],
+      "engine": "before",
+      "trial": 0
+    },
+    {
+      "kind": "budget",
+      "position": "opening",
+      "move": 0,
+      "legal": 69,
+      "budget": 50,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 50.0319,
+      "bytes": 903472,
+      "Action": 128,
+      "CompletedDepth": 2,
+      "Nodes": 106813,
+      "Value": 0,
+      "PV": [
+        128,
+        5117
+      ],
+      "engine": "before",
+      "trial": 0
+    },
+    {
+      "kind": "budget",
+      "position": "opening",
+      "move": 0,
+      "legal": 69,
+      "budget": 1000,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 1000.0338,
+      "bytes": 18746488,
+      "Action": 128,
+      "CompletedDepth": 5,
+      "Nodes": 1822703,
+      "Value": 0.05226977723206455,
+      "PV": [
+        128,
+        6338,
+        6359,
+        1370,
+        146
+      ],
+      "engine": "before",
+      "trial": 0
+    },
+    {
+      "kind": "budget",
+      "position": "middle",
+      "move": 60,
+      "legal": 930,
+      "budget": 5,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 5.0123,
+      "bytes": 297440,
+      "Action": 971,
+      "CompletedDepth": 1,
+      "Nodes": 933,
+      "Value": -0.2788938111708348,
+      "PV": [
+        971
+      ],
+      "engine": "before",
+      "trial": 0
+    },
+    {
+      "kind": "budget",
+      "position": "middle",
+      "move": 60,
+      "legal": 930,
+      "budget": 50,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 50.0415,
+      "bytes": 1470528,
+      "Action": 971,
+      "CompletedDepth": 1,
+      "Nodes": 2449,
+      "Value": -0.2788938111708348,
+      "PV": [
+        971
+      ],
+      "engine": "before",
+      "trial": 0
+    },
+    {
+      "kind": "budget",
+      "position": "middle",
+      "move": 60,
+      "legal": 930,
+      "budget": 1000,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 1000.0804,
+      "bytes": 3765760,
+      "Action": 971,
+      "CompletedDepth": 2,
+      "Nodes": 109334,
+      "Value": -0.32255909453217935,
+      "PV": [
+        971,
+        6734
+      ],
+      "engine": "before",
+      "trial": 0
+    },
+    {
+      "kind": "budget",
+      "position": "late",
+      "move": 110,
+      "legal": 1096,
+      "budget": 5,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 5.018,
+      "bytes": 276104,
+      "Action": 4196,
+      "CompletedDepth": 0,
+      "Nodes": 263,
+      "Value": 0.5593236716322408,
+      "PV": [
+        4196
+      ],
+      "engine": "before",
+      "trial": 0
+    },
+    {
+      "kind": "budget",
+      "position": "late",
+      "move": 110,
+      "legal": 1096,
+      "budget": 50,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 50.0451,
+      "bytes": 478560,
+      "Action": 5350,
+      "CompletedDepth": 1,
+      "Nodes": 2995,
+      "Value": 0.6198724559681065,
+      "PV": [
+        5350
+      ],
+      "engine": "before",
+      "trial": 0
+    },
+    {
+      "kind": "budget",
+      "position": "late",
+      "move": 110,
+      "legal": 1096,
+      "budget": 1000,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 1000.0402,
+      "bytes": 5676880,
+      "Action": 5349,
+      "CompletedDepth": 2,
+      "Nodes": 43843,
+      "Value": 0.5588779722672809,
+      "PV": [
+        5349,
+        3557
+      ],
+      "engine": "before",
+      "trial": 0
+    },
+    {
+      "kind": "fixed",
+      "position": "opening",
+      "move": 0,
+      "legal": 69,
+      "budget": 120000,
+      "requestedDepth": 3,
+      "sample": 0,
+      "elapsed": 12.3655,
+      "bytes": 328256,
+      "Action": 128,
+      "CompletedDepth": 3,
+      "Nodes": 17526,
+      "Value": -0.0643124296557098,
+      "PV": [
+        128,
+        6338,
+        6359
+      ],
+      "engine": "after",
+      "trial": 0
+    },
+    {
+      "kind": "fixed",
+      "position": "middle",
+      "move": 60,
+      "legal": 930,
+      "budget": 120000,
+      "requestedDepth": 2,
+      "sample": 0,
+      "elapsed": 26.964,
+      "bytes": 326128,
+      "Action": 971,
+      "CompletedDepth": 2,
+      "Nodes": 3583,
+      "Value": -0.32255909453217935,
+      "PV": [
+        971,
+        6734
+      ],
+      "engine": "after",
+      "trial": 0
+    },
+    {
+      "kind": "fixed",
+      "position": "late",
+      "move": 110,
+      "legal": 1096,
+      "budget": 120000,
+      "requestedDepth": 2,
+      "sample": 0,
+      "elapsed": 50.9953,
+      "bytes": 326128,
+      "Action": 5349,
+      "CompletedDepth": 2,
+      "Nodes": 6357,
+      "Value": 0.5588779722672809,
+      "PV": [
+        5349,
+        3557
+      ],
+      "engine": "after",
+      "trial": 0
+    },
+    {
+      "kind": "budget",
+      "position": "opening",
+      "move": 0,
+      "legal": 69,
+      "budget": 5,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 5.0319,
+      "bytes": 392640,
+      "Action": 128,
+      "CompletedDepth": 2,
+      "Nodes": 4903,
+      "Value": 0,
+      "PV": [
+        128,
+        5117
+      ],
+      "engine": "after",
+      "trial": 0
+    },
+    {
+      "kind": "budget",
+      "position": "opening",
+      "move": 0,
+      "legal": 69,
+      "budget": 50,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 50.0389,
+      "bytes": 396784,
+      "Action": 128,
+      "CompletedDepth": 4,
+      "Nodes": 49685,
+      "Value": -0.013561643835616439,
+      "PV": [
+        128,
+        6338,
+        6359,
+        149
+      ],
+      "engine": "after",
+      "trial": 0
+    },
+    {
+      "kind": "budget",
+      "position": "opening",
+      "move": 0,
+      "legal": 69,
+      "budget": 1000,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 1000.0612,
+      "bytes": 453256,
+      "Action": 128,
+      "CompletedDepth": 5,
+      "Nodes": 3051319,
+      "Value": 0.05226977723206455,
+      "PV": [
+        128,
+        6338,
+        6359,
+        1370,
+        146
+      ],
+      "engine": "after",
+      "trial": 0
+    },
+    {
+      "kind": "budget",
+      "position": "middle",
+      "move": 60,
+      "legal": 930,
+      "budget": 5,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 5.0193,
+      "bytes": 343960,
+      "Action": 971,
+      "CompletedDepth": 1,
+      "Nodes": 995,
+      "Value": -0.2788938111708348,
+      "PV": [
+        971
+      ],
+      "engine": "after",
+      "trial": 0
+    },
+    {
+      "kind": "budget",
+      "position": "middle",
+      "move": 60,
+      "legal": 930,
+      "budget": 50,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 50.0277,
+      "bytes": 346320,
+      "Action": 971,
+      "CompletedDepth": 2,
+      "Nodes": 7687,
+      "Value": -0.32255909453217935,
+      "PV": [
+        971,
+        6734
+      ],
+      "engine": "after",
+      "trial": 0
+    },
+    {
+      "kind": "budget",
+      "position": "middle",
+      "move": 60,
+      "legal": 930,
+      "budget": 1000,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 1000.0314,
+      "bytes": 349720,
+      "Action": 971,
+      "CompletedDepth": 2,
+      "Nodes": 131236,
+      "Value": -0.32255909453217935,
+      "PV": [
+        971,
+        6734
+      ],
+      "engine": "after",
+      "trial": 0
+    },
+    {
+      "kind": "budget",
+      "position": "late",
+      "move": 110,
+      "legal": 1096,
+      "budget": 5,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 5.0272,
+      "bytes": 325232,
+      "Action": 4196,
+      "CompletedDepth": 0,
+      "Nodes": 296,
+      "Value": 0.5593236716322408,
+      "PV": [
+        4196
+      ],
+      "engine": "after",
+      "trial": 0
+    },
+    {
+      "kind": "budget",
+      "position": "late",
+      "move": 110,
+      "legal": 1096,
+      "budget": 50,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 50.0292,
+      "bytes": 329592,
+      "Action": 5349,
+      "CompletedDepth": 2,
+      "Nodes": 6440,
+      "Value": 0.5588779722672809,
+      "PV": [
+        5349,
+        3557
+      ],
+      "engine": "after",
+      "trial": 0
+    },
+    {
+      "kind": "budget",
+      "position": "late",
+      "move": 110,
+      "legal": 1096,
+      "budget": 1000,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 1000.111,
+      "bytes": 333800,
+      "Action": 5349,
+      "CompletedDepth": 2,
+      "Nodes": 59860,
+      "Value": 0.5588779722672809,
+      "PV": [
+        5349,
+        3557
+      ],
+      "engine": "after",
+      "trial": 0
+    },
+    {
+      "kind": "fixed",
+      "position": "opening",
+      "move": 0,
+      "legal": 69,
+      "budget": 120000,
+      "requestedDepth": 3,
+      "sample": 0,
+      "elapsed": 12.6049,
+      "bytes": 328256,
+      "Action": 128,
+      "CompletedDepth": 3,
+      "Nodes": 17526,
+      "Value": -0.0643124296557098,
+      "PV": [
+        128,
+        6338,
+        6359
+      ],
+      "engine": "after",
+      "trial": 1
+    },
+    {
+      "kind": "fixed",
+      "position": "middle",
+      "move": 60,
+      "legal": 930,
+      "budget": 120000,
+      "requestedDepth": 2,
+      "sample": 0,
+      "elapsed": 21.2448,
+      "bytes": 326128,
+      "Action": 971,
+      "CompletedDepth": 2,
+      "Nodes": 3583,
+      "Value": -0.32255909453217935,
+      "PV": [
+        971,
+        6734
+      ],
+      "engine": "after",
+      "trial": 1
+    },
+    {
+      "kind": "fixed",
+      "position": "late",
+      "move": 110,
+      "legal": 1096,
+      "budget": 120000,
+      "requestedDepth": 2,
+      "sample": 0,
+      "elapsed": 48.8853,
+      "bytes": 326128,
+      "Action": 5349,
+      "CompletedDepth": 2,
+      "Nodes": 6357,
+      "Value": 0.5588779722672809,
+      "PV": [
+        5349,
+        3557
+      ],
+      "engine": "after",
+      "trial": 1
+    },
+    {
+      "kind": "budget",
+      "position": "opening",
+      "move": 0,
+      "legal": 69,
+      "budget": 5,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 5.0207,
+      "bytes": 392640,
+      "Action": 128,
+      "CompletedDepth": 2,
+      "Nodes": 5025,
+      "Value": 0,
+      "PV": [
+        128,
+        5117
+      ],
+      "engine": "after",
+      "trial": 1
+    },
+    {
+      "kind": "budget",
+      "position": "opening",
+      "move": 0,
+      "legal": 69,
+      "budget": 50,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 50.0352,
+      "bytes": 396784,
+      "Action": 128,
+      "CompletedDepth": 4,
+      "Nodes": 50803,
+      "Value": -0.013561643835616439,
+      "PV": [
+        128,
+        6338,
+        6359,
+        149
+      ],
+      "engine": "after",
+      "trial": 1
+    },
+    {
+      "kind": "budget",
+      "position": "opening",
+      "move": 0,
+      "legal": 69,
+      "budget": 1000,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 1000.0588,
+      "bytes": 453256,
+      "Action": 128,
+      "CompletedDepth": 5,
+      "Nodes": 3092405,
+      "Value": 0.05226977723206455,
+      "PV": [
+        128,
+        6338,
+        6359,
+        1370,
+        146
+      ],
+      "engine": "after",
+      "trial": 1
+    },
+    {
+      "kind": "budget",
+      "position": "middle",
+      "move": 60,
+      "legal": 930,
+      "budget": 5,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 5.0238,
+      "bytes": 343960,
+      "Action": 971,
+      "CompletedDepth": 1,
+      "Nodes": 1018,
+      "Value": -0.2788938111708348,
+      "PV": [
+        971
+      ],
+      "engine": "after",
+      "trial": 1
+    },
+    {
+      "kind": "budget",
+      "position": "middle",
+      "move": 60,
+      "legal": 930,
+      "budget": 50,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 50.0376,
+      "bytes": 346320,
+      "Action": 971,
+      "CompletedDepth": 2,
+      "Nodes": 7661,
+      "Value": -0.32255909453217935,
+      "PV": [
+        971,
+        6734
+      ],
+      "engine": "after",
+      "trial": 1
+    },
+    {
+      "kind": "budget",
+      "position": "middle",
+      "move": 60,
+      "legal": 930,
+      "budget": 1000,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 1000.0437,
+      "bytes": 349720,
+      "Action": 971,
+      "CompletedDepth": 2,
+      "Nodes": 129902,
+      "Value": -0.32255909453217935,
+      "PV": [
+        971,
+        6734
+      ],
+      "engine": "after",
+      "trial": 1
+    },
+    {
+      "kind": "budget",
+      "position": "late",
+      "move": 110,
+      "legal": 1096,
+      "budget": 5,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 5.0127,
+      "bytes": 325232,
+      "Action": 4196,
+      "CompletedDepth": 0,
+      "Nodes": 289,
+      "Value": 0.5593236716322408,
+      "PV": [
+        4196
+      ],
+      "engine": "after",
+      "trial": 1
+    },
+    {
+      "kind": "budget",
+      "position": "late",
+      "move": 110,
+      "legal": 1096,
+      "budget": 50,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 50.0386,
+      "bytes": 329592,
+      "Action": 5349,
+      "CompletedDepth": 2,
+      "Nodes": 6365,
+      "Value": 0.5588779722672809,
+      "PV": [
+        5349,
+        3557
+      ],
+      "engine": "after",
+      "trial": 1
+    },
+    {
+      "kind": "budget",
+      "position": "late",
+      "move": 110,
+      "legal": 1096,
+      "budget": 1000,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 1000.0443,
+      "bytes": 333488,
+      "Action": 5349,
+      "CompletedDepth": 2,
+      "Nodes": 58160,
+      "Value": 0.5588779722672809,
+      "PV": [
+        5349,
+        3557
+      ],
+      "engine": "after",
+      "trial": 1
+    },
+    {
+      "kind": "fixed",
+      "position": "opening",
+      "move": 0,
+      "legal": 69,
+      "budget": 120000,
+      "requestedDepth": 3,
+      "sample": 0,
+      "elapsed": 71.886,
+      "bytes": 1163736,
+      "Action": 128,
+      "CompletedDepth": 3,
+      "Nodes": 169612,
+      "Value": -0.0643124296557098,
+      "PV": [
+        128,
+        6338,
+        6359
+      ],
+      "engine": "before",
+      "trial": 1
+    },
+    {
+      "kind": "fixed",
+      "position": "middle",
+      "move": 60,
+      "legal": 930,
+      "budget": 120000,
+      "requestedDepth": 2,
+      "sample": 0,
+      "elapsed": 152.8819,
+      "bytes": 3291424,
+      "Action": 971,
+      "CompletedDepth": 2,
+      "Nodes": 3583,
+      "Value": -0.32255909453217935,
+      "PV": [
+        971,
+        6734
+      ],
+      "engine": "before",
+      "trial": 1
+    },
+    {
+      "kind": "fixed",
+      "position": "late",
+      "move": 110,
+      "legal": 1096,
+      "budget": 120000,
+      "requestedDepth": 2,
+      "sample": 0,
+      "elapsed": 323.7438,
+      "bytes": 5497520,
+      "Action": 5349,
+      "CompletedDepth": 2,
+      "Nodes": 8777,
+      "Value": 0.5588779722672809,
+      "PV": [
+        5349,
+        3557
+      ],
+      "engine": "before",
+      "trial": 1
+    },
+    {
+      "kind": "budget",
+      "position": "opening",
+      "move": 0,
+      "legal": 69,
+      "budget": 5,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 5.037,
+      "bytes": 388736,
+      "Action": 128,
+      "CompletedDepth": 2,
+      "Nodes": 6476,
+      "Value": 0,
+      "PV": [
+        128,
+        5117
+      ],
+      "engine": "before",
+      "trial": 1
+    },
+    {
+      "kind": "budget",
+      "position": "opening",
+      "move": 0,
+      "legal": 69,
+      "budget": 50,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 50.0318,
+      "bytes": 932880,
+      "Action": 128,
+      "CompletedDepth": 2,
+      "Nodes": 112594,
+      "Value": 0,
+      "PV": [
+        128,
+        5117
+      ],
+      "engine": "before",
+      "trial": 1
+    },
+    {
+      "kind": "budget",
+      "position": "opening",
+      "move": 0,
+      "legal": 69,
+      "budget": 1000,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 1000.0356,
+      "bytes": 23814168,
+      "Action": 128,
+      "CompletedDepth": 5,
+      "Nodes": 1840220,
+      "Value": 0.05226977723206455,
+      "PV": [
+        128,
+        6338,
+        6359,
+        1370,
+        146
+      ],
+      "engine": "before",
+      "trial": 1
+    },
+    {
+      "kind": "budget",
+      "position": "middle",
+      "move": 60,
+      "legal": 930,
+      "budget": 5,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 5.159,
+      "bytes": 294184,
+      "Action": 971,
+      "CompletedDepth": 1,
+      "Nodes": 932,
+      "Value": -0.2788938111708348,
+      "PV": [
+        971
+      ],
+      "engine": "before",
+      "trial": 1
+    },
+    {
+      "kind": "budget",
+      "position": "middle",
+      "move": 60,
+      "legal": 930,
+      "budget": 50,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 50.0404,
+      "bytes": 1516112,
+      "Action": 971,
+      "CompletedDepth": 1,
+      "Nodes": 2477,
+      "Value": -0.2788938111708348,
+      "PV": [
+        971
+      ],
+      "engine": "before",
+      "trial": 1
+    },
+    {
+      "kind": "budget",
+      "position": "middle",
+      "move": 60,
+      "legal": 930,
+      "budget": 1000,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 1000.0455,
+      "bytes": 3765760,
+      "Action": 971,
+      "CompletedDepth": 2,
+      "Nodes": 109051,
+      "Value": -0.32255909453217935,
+      "PV": [
+        971,
+        6734
+      ],
+      "engine": "before",
+      "trial": 1
+    },
+    {
+      "kind": "budget",
+      "position": "late",
+      "move": 110,
+      "legal": 1096,
+      "budget": 5,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 5.0257,
+      "bytes": 276104,
+      "Action": 4196,
+      "CompletedDepth": 0,
+      "Nodes": 269,
+      "Value": 0.5593236716322408,
+      "PV": [
+        4196
+      ],
+      "engine": "before",
+      "trial": 1
+    },
+    {
+      "kind": "budget",
+      "position": "late",
+      "move": 110,
+      "legal": 1096,
+      "budget": 50,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 50.1217,
+      "bytes": 516288,
+      "Action": 5350,
+      "CompletedDepth": 1,
+      "Nodes": 3011,
+      "Value": 0.6198724559681065,
+      "PV": [
+        5350
+      ],
+      "engine": "before",
+      "trial": 1
+    },
+    {
+      "kind": "budget",
+      "position": "late",
+      "move": 110,
+      "legal": 1096,
+      "budget": 1000,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 1000.0582,
+      "bytes": 5681736,
+      "Action": 5349,
+      "CompletedDepth": 2,
+      "Nodes": 44786,
+      "Value": 0.5588779722672809,
+      "PV": [
+        5349,
+        3557
+      ],
+      "engine": "before",
+      "trial": 1
+    },
+    {
+      "kind": "fixed",
+      "position": "opening",
+      "move": 0,
+      "legal": 69,
+      "budget": 120000,
+      "requestedDepth": 3,
+      "sample": 0,
+      "elapsed": 73.7006,
+      "bytes": 1163736,
+      "Action": 128,
+      "CompletedDepth": 3,
+      "Nodes": 169612,
+      "Value": -0.0643124296557098,
+      "PV": [
+        128,
+        6338,
+        6359
+      ],
+      "engine": "before",
+      "trial": 2
+    },
+    {
+      "kind": "fixed",
+      "position": "middle",
+      "move": 60,
+      "legal": 930,
+      "budget": 120000,
+      "requestedDepth": 2,
+      "sample": 0,
+      "elapsed": 159.1433,
+      "bytes": 3291424,
+      "Action": 971,
+      "CompletedDepth": 2,
+      "Nodes": 3583,
+      "Value": -0.32255909453217935,
+      "PV": [
+        971,
+        6734
+      ],
+      "engine": "before",
+      "trial": 2
+    },
+    {
+      "kind": "fixed",
+      "position": "late",
+      "move": 110,
+      "legal": 1096,
+      "budget": 120000,
+      "requestedDepth": 2,
+      "sample": 0,
+      "elapsed": 323.6028,
+      "bytes": 5497520,
+      "Action": 5349,
+      "CompletedDepth": 2,
+      "Nodes": 8777,
+      "Value": 0.5588779722672809,
+      "PV": [
+        5349,
+        3557
+      ],
+      "engine": "before",
+      "trial": 2
+    },
+    {
+      "kind": "budget",
+      "position": "opening",
+      "move": 0,
+      "legal": 69,
+      "budget": 5,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 5.0203,
+      "bytes": 389680,
+      "Action": 128,
+      "CompletedDepth": 2,
+      "Nodes": 6633,
+      "Value": 0,
+      "PV": [
+        128,
+        5117
+      ],
+      "engine": "before",
+      "trial": 2
+    },
+    {
+      "kind": "budget",
+      "position": "opening",
+      "move": 0,
+      "legal": 69,
+      "budget": 50,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 50.0311,
+      "bytes": 949472,
+      "Action": 128,
+      "CompletedDepth": 2,
+      "Nodes": 115871,
+      "Value": 0,
+      "PV": [
+        128,
+        5117
+      ],
+      "engine": "before",
+      "trial": 2
+    },
+    {
+      "kind": "budget",
+      "position": "opening",
+      "move": 0,
+      "legal": 69,
+      "budget": 1000,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 1000.0385,
+      "bytes": 24562352,
+      "Action": 128,
+      "CompletedDepth": 5,
+      "Nodes": 1842454,
+      "Value": 0.05226977723206455,
+      "PV": [
+        128,
+        6338,
+        6359,
+        1370,
+        146
+      ],
+      "engine": "before",
+      "trial": 2
+    },
+    {
+      "kind": "budget",
+      "position": "middle",
+      "move": 60,
+      "legal": 930,
+      "budget": 5,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 5.0199,
+      "bytes": 297440,
+      "Action": 971,
+      "CompletedDepth": 1,
+      "Nodes": 933,
+      "Value": -0.2788938111708348,
+      "PV": [
+        971
+      ],
+      "engine": "before",
+      "trial": 2
+    },
+    {
+      "kind": "budget",
+      "position": "middle",
+      "move": 60,
+      "legal": 930,
+      "budget": 50,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 50.0333,
+      "bytes": 1529136,
+      "Action": 971,
+      "CompletedDepth": 1,
+      "Nodes": 2484,
+      "Value": -0.2788938111708348,
+      "PV": [
+        971
+      ],
+      "engine": "before",
+      "trial": 2
+    },
+    {
+      "kind": "budget",
+      "position": "middle",
+      "move": 60,
+      "legal": 930,
+      "budget": 1000,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 1000.0381,
+      "bytes": 3785896,
+      "Action": 971,
+      "CompletedDepth": 2,
+      "Nodes": 114437,
+      "Value": -0.32255909453217935,
+      "PV": [
+        971,
+        6734
+      ],
+      "engine": "before",
+      "trial": 2
+    },
+    {
+      "kind": "budget",
+      "position": "late",
+      "move": 110,
+      "legal": 1096,
+      "budget": 5,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 5.0206,
+      "bytes": 276104,
+      "Action": 4196,
+      "CompletedDepth": 0,
+      "Nodes": 262,
+      "Value": 0.5593236716322408,
+      "PV": [
+        4196
+      ],
+      "engine": "before",
+      "trial": 2
+    },
+    {
+      "kind": "budget",
+      "position": "late",
+      "move": 110,
+      "legal": 1096,
+      "budget": 50,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 50.0767,
+      "bytes": 483296,
+      "Action": 5350,
+      "CompletedDepth": 1,
+      "Nodes": 2996,
+      "Value": 0.6198724559681065,
+      "PV": [
+        5350
+      ],
+      "engine": "before",
+      "trial": 2
+    },
+    {
+      "kind": "budget",
+      "position": "late",
+      "move": 110,
+      "legal": 1096,
+      "budget": 1000,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 1000.2462,
+      "bytes": 5676880,
+      "Action": 5349,
+      "CompletedDepth": 2,
+      "Nodes": 43398,
+      "Value": 0.5588779722672809,
+      "PV": [
+        5349,
+        3557
+      ],
+      "engine": "before",
+      "trial": 2
+    },
+    {
+      "kind": "fixed",
+      "position": "opening",
+      "move": 0,
+      "legal": 69,
+      "budget": 120000,
+      "requestedDepth": 3,
+      "sample": 0,
+      "elapsed": 14.3855,
+      "bytes": 328256,
+      "Action": 128,
+      "CompletedDepth": 3,
+      "Nodes": 17526,
+      "Value": -0.0643124296557098,
+      "PV": [
+        128,
+        6338,
+        6359
+      ],
+      "engine": "after",
+      "trial": 2
+    },
+    {
+      "kind": "fixed",
+      "position": "middle",
+      "move": 60,
+      "legal": 930,
+      "budget": 120000,
+      "requestedDepth": 2,
+      "sample": 0,
+      "elapsed": 23.1527,
+      "bytes": 326128,
+      "Action": 971,
+      "CompletedDepth": 2,
+      "Nodes": 3583,
+      "Value": -0.32255909453217935,
+      "PV": [
+        971,
+        6734
+      ],
+      "engine": "after",
+      "trial": 2
+    },
+    {
+      "kind": "fixed",
+      "position": "late",
+      "move": 110,
+      "legal": 1096,
+      "budget": 120000,
+      "requestedDepth": 2,
+      "sample": 0,
+      "elapsed": 48.5834,
+      "bytes": 326128,
+      "Action": 5349,
+      "CompletedDepth": 2,
+      "Nodes": 6357,
+      "Value": 0.5588779722672809,
+      "PV": [
+        5349,
+        3557
+      ],
+      "engine": "after",
+      "trial": 2
+    },
+    {
+      "kind": "budget",
+      "position": "opening",
+      "move": 0,
+      "legal": 69,
+      "budget": 5,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 5.0232,
+      "bytes": 392640,
+      "Action": 128,
+      "CompletedDepth": 2,
+      "Nodes": 5123,
+      "Value": 0,
+      "PV": [
+        128,
+        5117
+      ],
+      "engine": "after",
+      "trial": 2
+    },
+    {
+      "kind": "budget",
+      "position": "opening",
+      "move": 0,
+      "legal": 69,
+      "budget": 50,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 50.0364,
+      "bytes": 396784,
+      "Action": 128,
+      "CompletedDepth": 4,
+      "Nodes": 51861,
+      "Value": -0.013561643835616439,
+      "PV": [
+        128,
+        6338,
+        6359,
+        149
+      ],
+      "engine": "after",
+      "trial": 2
+    },
+    {
+      "kind": "budget",
+      "position": "opening",
+      "move": 0,
+      "legal": 69,
+      "budget": 1000,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 1000.0634,
+      "bytes": 453256,
+      "Action": 128,
+      "CompletedDepth": 5,
+      "Nodes": 3139136,
+      "Value": 0.05226977723206455,
+      "PV": [
+        128,
+        6338,
+        6359,
+        1370,
+        146
+      ],
+      "engine": "after",
+      "trial": 2
+    },
+    {
+      "kind": "budget",
+      "position": "middle",
+      "move": 60,
+      "legal": 930,
+      "budget": 5,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 5.0244,
+      "bytes": 343960,
+      "Action": 971,
+      "CompletedDepth": 1,
+      "Nodes": 984,
+      "Value": -0.2788938111708348,
+      "PV": [
+        971
+      ],
+      "engine": "after",
+      "trial": 2
+    },
+    {
+      "kind": "budget",
+      "position": "middle",
+      "move": 60,
+      "legal": 930,
+      "budget": 50,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 50.0439,
+      "bytes": 346320,
+      "Action": 971,
+      "CompletedDepth": 2,
+      "Nodes": 7228,
+      "Value": -0.32255909453217935,
+      "PV": [
+        971,
+        6734
+      ],
+      "engine": "after",
+      "trial": 2
+    },
+    {
+      "kind": "budget",
+      "position": "middle",
+      "move": 60,
+      "legal": 930,
+      "budget": 1000,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 1000.0409,
+      "bytes": 349720,
+      "Action": 971,
+      "CompletedDepth": 2,
+      "Nodes": 122308,
+      "Value": -0.32255909453217935,
+      "PV": [
+        971,
+        6734
+      ],
+      "engine": "after",
+      "trial": 2
+    },
+    {
+      "kind": "budget",
+      "position": "late",
+      "move": 110,
+      "legal": 1096,
+      "budget": 5,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 5.0267,
+      "bytes": 325232,
+      "Action": 4196,
+      "CompletedDepth": 0,
+      "Nodes": 277,
+      "Value": 0.5593236716322408,
+      "PV": [
+        4196
+      ],
+      "engine": "after",
+      "trial": 2
+    },
+    {
+      "kind": "budget",
+      "position": "late",
+      "move": 110,
+      "legal": 1096,
+      "budget": 50,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 50.0465,
+      "bytes": 327264,
+      "Action": 5350,
+      "CompletedDepth": 1,
+      "Nodes": 5405,
+      "Value": 0.6198724559681065,
+      "PV": [
+        5350
+      ],
+      "engine": "after",
+      "trial": 2
+    },
+    {
+      "kind": "budget",
+      "position": "late",
+      "move": 110,
+      "legal": 1096,
+      "budget": 1000,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 1000.0403,
+      "bytes": 333488,
+      "Action": 5349,
+      "CompletedDepth": 2,
+      "Nodes": 56452,
+      "Value": 0.5588779722672809,
+      "PV": [
+        5349,
+        3557
+      ],
+      "engine": "after",
+      "trial": 2
+    },
+    {
+      "kind": "fixed",
+      "position": "opening",
+      "move": 0,
+      "legal": 69,
+      "budget": 120000,
+      "requestedDepth": 3,
+      "sample": 0,
+      "elapsed": 14.2673,
+      "bytes": 328256,
+      "Action": 128,
+      "CompletedDepth": 3,
+      "Nodes": 17526,
+      "Value": -0.0643124296557098,
+      "PV": [
+        128,
+        6338,
+        6359
+      ],
+      "engine": "after",
+      "trial": 3
+    },
+    {
+      "kind": "fixed",
+      "position": "middle",
+      "move": 60,
+      "legal": 930,
+      "budget": 120000,
+      "requestedDepth": 2,
+      "sample": 0,
+      "elapsed": 23.6673,
+      "bytes": 326128,
+      "Action": 971,
+      "CompletedDepth": 2,
+      "Nodes": 3583,
+      "Value": -0.32255909453217935,
+      "PV": [
+        971,
+        6734
+      ],
+      "engine": "after",
+      "trial": 3
+    },
+    {
+      "kind": "fixed",
+      "position": "late",
+      "move": 110,
+      "legal": 1096,
+      "budget": 120000,
+      "requestedDepth": 2,
+      "sample": 0,
+      "elapsed": 49.5703,
+      "bytes": 326128,
+      "Action": 5349,
+      "CompletedDepth": 2,
+      "Nodes": 6357,
+      "Value": 0.5588779722672809,
+      "PV": [
+        5349,
+        3557
+      ],
+      "engine": "after",
+      "trial": 3
+    },
+    {
+      "kind": "budget",
+      "position": "opening",
+      "move": 0,
+      "legal": 69,
+      "budget": 5,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 5.0313,
+      "bytes": 392640,
+      "Action": 128,
+      "CompletedDepth": 2,
+      "Nodes": 5614,
+      "Value": 0,
+      "PV": [
+        128,
+        5117
+      ],
+      "engine": "after",
+      "trial": 3
+    },
+    {
+      "kind": "budget",
+      "position": "opening",
+      "move": 0,
+      "legal": 69,
+      "budget": 50,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 50.0384,
+      "bytes": 396784,
+      "Action": 128,
+      "CompletedDepth": 4,
+      "Nodes": 52078,
+      "Value": -0.013561643835616439,
+      "PV": [
+        128,
+        6338,
+        6359,
+        149
+      ],
+      "engine": "after",
+      "trial": 3
+    },
+    {
+      "kind": "budget",
+      "position": "opening",
+      "move": 0,
+      "legal": 69,
+      "budget": 1000,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 1000.061,
+      "bytes": 453256,
+      "Action": 128,
+      "CompletedDepth": 5,
+      "Nodes": 3174303,
+      "Value": 0.05226977723206455,
+      "PV": [
+        128,
+        6338,
+        6359,
+        1370,
+        146
+      ],
+      "engine": "after",
+      "trial": 3
+    },
+    {
+      "kind": "budget",
+      "position": "middle",
+      "move": 60,
+      "legal": 930,
+      "budget": 5,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 5.0715,
+      "bytes": 343960,
+      "Action": 971,
+      "CompletedDepth": 1,
+      "Nodes": 951,
+      "Value": -0.2788938111708348,
+      "PV": [
+        971
+      ],
+      "engine": "after",
+      "trial": 3
+    },
+    {
+      "kind": "budget",
+      "position": "middle",
+      "move": 60,
+      "legal": 930,
+      "budget": 50,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 50.0381,
+      "bytes": 346320,
+      "Action": 971,
+      "CompletedDepth": 2,
+      "Nodes": 7439,
+      "Value": -0.32255909453217935,
+      "PV": [
+        971,
+        6734
+      ],
+      "engine": "after",
+      "trial": 3
+    },
+    {
+      "kind": "budget",
+      "position": "middle",
+      "move": 60,
+      "legal": 930,
+      "budget": 1000,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 1000.0451,
+      "bytes": 349720,
+      "Action": 971,
+      "CompletedDepth": 2,
+      "Nodes": 127755,
+      "Value": -0.32255909453217935,
+      "PV": [
+        971,
+        6734
+      ],
+      "engine": "after",
+      "trial": 3
+    },
+    {
+      "kind": "budget",
+      "position": "late",
+      "move": 110,
+      "legal": 1096,
+      "budget": 5,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 5.0263,
+      "bytes": 325232,
+      "Action": 4196,
+      "CompletedDepth": 0,
+      "Nodes": 283,
+      "Value": 0.5593236716322408,
+      "PV": [
+        4196
+      ],
+      "engine": "after",
+      "trial": 3
+    },
+    {
+      "kind": "budget",
+      "position": "late",
+      "move": 110,
+      "legal": 1096,
+      "budget": 50,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 50.0459,
+      "bytes": 329592,
+      "Action": 5349,
+      "CompletedDepth": 2,
+      "Nodes": 6383,
+      "Value": 0.5588779722672809,
+      "PV": [
+        5349,
+        3557
+      ],
+      "engine": "after",
+      "trial": 3
+    },
+    {
+      "kind": "budget",
+      "position": "late",
+      "move": 110,
+      "legal": 1096,
+      "budget": 1000,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 1000.0513,
+      "bytes": 333488,
+      "Action": 5349,
+      "CompletedDepth": 2,
+      "Nodes": 58889,
+      "Value": 0.5588779722672809,
+      "PV": [
+        5349,
+        3557
+      ],
+      "engine": "after",
+      "trial": 3
+    },
+    {
+      "kind": "fixed",
+      "position": "opening",
+      "move": 0,
+      "legal": 69,
+      "budget": 120000,
+      "requestedDepth": 3,
+      "sample": 0,
+      "elapsed": 92.9063,
+      "bytes": 1163736,
+      "Action": 128,
+      "CompletedDepth": 3,
+      "Nodes": 169612,
+      "Value": -0.0643124296557098,
+      "PV": [
+        128,
+        6338,
+        6359
+      ],
+      "engine": "before",
+      "trial": 3
+    },
+    {
+      "kind": "fixed",
+      "position": "middle",
+      "move": 60,
+      "legal": 930,
+      "budget": 120000,
+      "requestedDepth": 2,
+      "sample": 0,
+      "elapsed": 144.363,
+      "bytes": 3291424,
+      "Action": 971,
+      "CompletedDepth": 2,
+      "Nodes": 3583,
+      "Value": -0.32255909453217935,
+      "PV": [
+        971,
+        6734
+      ],
+      "engine": "before",
+      "trial": 3
+    },
+    {
+      "kind": "fixed",
+      "position": "late",
+      "move": 110,
+      "legal": 1096,
+      "budget": 120000,
+      "requestedDepth": 2,
+      "sample": 0,
+      "elapsed": 320.0954,
+      "bytes": 5497520,
+      "Action": 5349,
+      "CompletedDepth": 2,
+      "Nodes": 8777,
+      "Value": 0.5588779722672809,
+      "PV": [
+        5349,
+        3557
+      ],
+      "engine": "before",
+      "trial": 3
+    },
+    {
+      "kind": "budget",
+      "position": "opening",
+      "move": 0,
+      "legal": 69,
+      "budget": 5,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 5.0619,
+      "bytes": 390152,
+      "Action": 128,
+      "CompletedDepth": 2,
+      "Nodes": 6722,
+      "Value": 0,
+      "PV": [
+        128,
+        5117
+      ],
+      "engine": "before",
+      "trial": 3
+    },
+    {
+      "kind": "budget",
+      "position": "opening",
+      "move": 0,
+      "legal": 69,
+      "budget": 50,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 50.0304,
+      "bytes": 948400,
+      "Action": 128,
+      "CompletedDepth": 2,
+      "Nodes": 115638,
+      "Value": 0,
+      "PV": [
+        128,
+        5117
+      ],
+      "engine": "before",
+      "trial": 3
+    },
+    {
+      "kind": "budget",
+      "position": "opening",
+      "move": 0,
+      "legal": 69,
+      "budget": 1000,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 1000.0405,
+      "bytes": 24340752,
+      "Action": 128,
+      "CompletedDepth": 5,
+      "Nodes": 1841784,
+      "Value": 0.05226977723206455,
+      "PV": [
+        128,
+        6338,
+        6359,
+        1370,
+        146
+      ],
+      "engine": "before",
+      "trial": 3
+    },
+    {
+      "kind": "budget",
+      "position": "middle",
+      "move": 60,
+      "legal": 930,
+      "budget": 5,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 5.0156,
+      "bytes": 297440,
+      "Action": 971,
+      "CompletedDepth": 1,
+      "Nodes": 933,
+      "Value": -0.2788938111708348,
+      "PV": [
+        971
+      ],
+      "engine": "before",
+      "trial": 3
+    },
+    {
+      "kind": "budget",
+      "position": "middle",
+      "move": 60,
+      "legal": 930,
+      "budget": 50,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 50.3072,
+      "bytes": 1480296,
+      "Action": 971,
+      "CompletedDepth": 1,
+      "Nodes": 2454,
+      "Value": -0.2788938111708348,
+      "PV": [
+        971
+      ],
+      "engine": "before",
+      "trial": 3
+    },
+    {
+      "kind": "budget",
+      "position": "middle",
+      "move": 60,
+      "legal": 930,
+      "budget": 1000,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 1000.041,
+      "bytes": 3779224,
+      "Action": 971,
+      "CompletedDepth": 2,
+      "Nodes": 112319,
+      "Value": -0.32255909453217935,
+      "PV": [
+        971,
+        6734
+      ],
+      "engine": "before",
+      "trial": 3
+    },
+    {
+      "kind": "budget",
+      "position": "late",
+      "move": 110,
+      "legal": 1096,
+      "budget": 5,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 5.0277,
+      "bytes": 276104,
+      "Action": 4196,
+      "CompletedDepth": 0,
+      "Nodes": 266,
+      "Value": 0.5593236716322408,
+      "PV": [
+        4196
+      ],
+      "engine": "before",
+      "trial": 3
+    },
+    {
+      "kind": "budget",
+      "position": "late",
+      "move": 110,
+      "legal": 1096,
+      "budget": 50,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 50.0816,
+      "bytes": 506904,
+      "Action": 5350,
+      "CompletedDepth": 1,
+      "Nodes": 3006,
+      "Value": 0.6198724559681065,
+      "PV": [
+        5350
+      ],
+      "engine": "before",
+      "trial": 3
+    },
+    {
+      "kind": "budget",
+      "position": "late",
+      "move": 110,
+      "legal": 1096,
+      "budget": 1000,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 1000.0443,
+      "bytes": 5681736,
+      "Action": 5349,
+      "CompletedDepth": 2,
+      "Nodes": 44754,
+      "Value": 0.5588779722672809,
+      "PV": [
+        5349,
+        3557
+      ],
+      "engine": "before",
+      "trial": 3
+    },
+    {
+      "kind": "fixed",
+      "position": "opening",
+      "move": 0,
+      "legal": 69,
+      "budget": 120000,
+      "requestedDepth": 3,
+      "sample": 0,
+      "elapsed": 71.8861,
+      "bytes": 1163736,
+      "Action": 128,
+      "CompletedDepth": 3,
+      "Nodes": 169612,
+      "Value": -0.0643124296557098,
+      "PV": [
+        128,
+        6338,
+        6359
+      ],
+      "engine": "before",
+      "trial": 4
+    },
+    {
+      "kind": "fixed",
+      "position": "middle",
+      "move": 60,
+      "legal": 930,
+      "budget": 120000,
+      "requestedDepth": 2,
+      "sample": 0,
+      "elapsed": 150.7899,
+      "bytes": 3291424,
+      "Action": 971,
+      "CompletedDepth": 2,
+      "Nodes": 3583,
+      "Value": -0.32255909453217935,
+      "PV": [
+        971,
+        6734
+      ],
+      "engine": "before",
+      "trial": 4
+    },
+    {
+      "kind": "fixed",
+      "position": "late",
+      "move": 110,
+      "legal": 1096,
+      "budget": 120000,
+      "requestedDepth": 2,
+      "sample": 0,
+      "elapsed": 319.233,
+      "bytes": 5497520,
+      "Action": 5349,
+      "CompletedDepth": 2,
+      "Nodes": 8777,
+      "Value": 0.5588779722672809,
+      "PV": [
+        5349,
+        3557
+      ],
+      "engine": "before",
+      "trial": 4
+    },
+    {
+      "kind": "budget",
+      "position": "opening",
+      "move": 0,
+      "legal": 69,
+      "budget": 5,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 5.0234,
+      "bytes": 390624,
+      "Action": 128,
+      "CompletedDepth": 2,
+      "Nodes": 6821,
+      "Value": 0,
+      "PV": [
+        128,
+        5117
+      ],
+      "engine": "before",
+      "trial": 4
+    },
+    {
+      "kind": "budget",
+      "position": "opening",
+      "move": 0,
+      "legal": 69,
+      "budget": 50,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 50.0311,
+      "bytes": 947320,
+      "Action": 128,
+      "CompletedDepth": 2,
+      "Nodes": 115363,
+      "Value": 0,
+      "PV": [
+        128,
+        5117
+      ],
+      "engine": "before",
+      "trial": 4
+    },
+    {
+      "kind": "budget",
+      "position": "opening",
+      "move": 0,
+      "legal": 69,
+      "budget": 1000,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 1000.0338,
+      "bytes": 24528968,
+      "Action": 128,
+      "CompletedDepth": 5,
+      "Nodes": 1842356,
+      "Value": 0.05226977723206455,
+      "PV": [
+        128,
+        6338,
+        6359,
+        1370,
+        146
+      ],
+      "engine": "before",
+      "trial": 4
+    },
+    {
+      "kind": "budget",
+      "position": "middle",
+      "move": 60,
+      "legal": 930,
+      "budget": 5,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 5.0131,
+      "bytes": 294184,
+      "Action": 971,
+      "CompletedDepth": 1,
+      "Nodes": 932,
+      "Value": -0.2788938111708348,
+      "PV": [
+        971
+      ],
+      "engine": "before",
+      "trial": 4
+    },
+    {
+      "kind": "budget",
+      "position": "middle",
+      "move": 60,
+      "legal": 930,
+      "budget": 50,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 50.0208,
+      "bytes": 1512792,
+      "Action": 971,
+      "CompletedDepth": 1,
+      "Nodes": 2474,
+      "Value": -0.2788938111708348,
+      "PV": [
+        971
+      ],
+      "engine": "before",
+      "trial": 4
+    },
+    {
+      "kind": "budget",
+      "position": "middle",
+      "move": 60,
+      "legal": 930,
+      "budget": 1000,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 1000.0456,
+      "bytes": 3785896,
+      "Action": 971,
+      "CompletedDepth": 2,
+      "Nodes": 113918,
+      "Value": -0.32255909453217935,
+      "PV": [
+        971,
+        6734
+      ],
+      "engine": "before",
+      "trial": 4
+    },
+    {
+      "kind": "budget",
+      "position": "late",
+      "move": 110,
+      "legal": 1096,
+      "budget": 5,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 5.0186,
+      "bytes": 276104,
+      "Action": 4196,
+      "CompletedDepth": 0,
+      "Nodes": 264,
+      "Value": 0.5593236716322408,
+      "PV": [
+        4196
+      ],
+      "engine": "before",
+      "trial": 4
+    },
+    {
+      "kind": "budget",
+      "position": "late",
+      "move": 110,
+      "legal": 1096,
+      "budget": 50,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 50.0535,
+      "bytes": 502192,
+      "Action": 5350,
+      "CompletedDepth": 1,
+      "Nodes": 3004,
+      "Value": 0.6198724559681065,
+      "PV": [
+        5350
+      ],
+      "engine": "before",
+      "trial": 4
+    },
+    {
+      "kind": "budget",
+      "position": "late",
+      "move": 110,
+      "legal": 1096,
+      "budget": 1000,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 1000.0451,
+      "bytes": 5681736,
+      "Action": 5349,
+      "CompletedDepth": 2,
+      "Nodes": 45376,
+      "Value": 0.5588779722672809,
+      "PV": [
+        5349,
+        3557
+      ],
+      "engine": "before",
+      "trial": 4
+    },
+    {
+      "kind": "fixed",
+      "position": "opening",
+      "move": 0,
+      "legal": 69,
+      "budget": 120000,
+      "requestedDepth": 3,
+      "sample": 0,
+      "elapsed": 14.5673,
+      "bytes": 328256,
+      "Action": 128,
+      "CompletedDepth": 3,
+      "Nodes": 17526,
+      "Value": -0.0643124296557098,
+      "PV": [
+        128,
+        6338,
+        6359
+      ],
+      "engine": "after",
+      "trial": 4
+    },
+    {
+      "kind": "fixed",
+      "position": "middle",
+      "move": 60,
+      "legal": 930,
+      "budget": 120000,
+      "requestedDepth": 2,
+      "sample": 0,
+      "elapsed": 22.5259,
+      "bytes": 326128,
+      "Action": 971,
+      "CompletedDepth": 2,
+      "Nodes": 3583,
+      "Value": -0.32255909453217935,
+      "PV": [
+        971,
+        6734
+      ],
+      "engine": "after",
+      "trial": 4
+    },
+    {
+      "kind": "fixed",
+      "position": "late",
+      "move": 110,
+      "legal": 1096,
+      "budget": 120000,
+      "requestedDepth": 2,
+      "sample": 0,
+      "elapsed": 48.4922,
+      "bytes": 326128,
+      "Action": 5349,
+      "CompletedDepth": 2,
+      "Nodes": 6357,
+      "Value": 0.5588779722672809,
+      "PV": [
+        5349,
+        3557
+      ],
+      "engine": "after",
+      "trial": 4
+    },
+    {
+      "kind": "budget",
+      "position": "opening",
+      "move": 0,
+      "legal": 69,
+      "budget": 5,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 5.0269,
+      "bytes": 392640,
+      "Action": 128,
+      "CompletedDepth": 2,
+      "Nodes": 5115,
+      "Value": 0,
+      "PV": [
+        128,
+        5117
+      ],
+      "engine": "after",
+      "trial": 4
+    },
+    {
+      "kind": "budget",
+      "position": "opening",
+      "move": 0,
+      "legal": 69,
+      "budget": 50,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 50.0377,
+      "bytes": 396784,
+      "Action": 128,
+      "CompletedDepth": 4,
+      "Nodes": 51686,
+      "Value": -0.013561643835616439,
+      "PV": [
+        128,
+        6338,
+        6359,
+        149
+      ],
+      "engine": "after",
+      "trial": 4
+    },
+    {
+      "kind": "budget",
+      "position": "opening",
+      "move": 0,
+      "legal": 69,
+      "budget": 1000,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 1000.0532,
+      "bytes": 453256,
+      "Action": 128,
+      "CompletedDepth": 5,
+      "Nodes": 3121737,
+      "Value": 0.05226977723206455,
+      "PV": [
+        128,
+        6338,
+        6359,
+        1370,
+        146
+      ],
+      "engine": "after",
+      "trial": 4
+    },
+    {
+      "kind": "budget",
+      "position": "middle",
+      "move": 60,
+      "legal": 930,
+      "budget": 5,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 5.0354,
+      "bytes": 343960,
+      "Action": 971,
+      "CompletedDepth": 1,
+      "Nodes": 982,
+      "Value": -0.2788938111708348,
+      "PV": [
+        971
+      ],
+      "engine": "after",
+      "trial": 4
+    },
+    {
+      "kind": "budget",
+      "position": "middle",
+      "move": 60,
+      "legal": 930,
+      "budget": 50,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 50.0387,
+      "bytes": 346320,
+      "Action": 971,
+      "CompletedDepth": 2,
+      "Nodes": 7179,
+      "Value": -0.32255909453217935,
+      "PV": [
+        971,
+        6734
+      ],
+      "engine": "after",
+      "trial": 4
+    },
+    {
+      "kind": "budget",
+      "position": "middle",
+      "move": 60,
+      "legal": 930,
+      "budget": 1000,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 1000.0457,
+      "bytes": 349720,
+      "Action": 971,
+      "CompletedDepth": 2,
+      "Nodes": 124628,
+      "Value": -0.32255909453217935,
+      "PV": [
+        971,
+        6734
+      ],
+      "engine": "after",
+      "trial": 4
+    },
+    {
+      "kind": "budget",
+      "position": "late",
+      "move": 110,
+      "legal": 1096,
+      "budget": 5,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 5.0103,
+      "bytes": 325232,
+      "Action": 4196,
+      "CompletedDepth": 0,
+      "Nodes": 283,
+      "Value": 0.5593236716322408,
+      "PV": [
+        4196
+      ],
+      "engine": "after",
+      "trial": 4
+    },
+    {
+      "kind": "budget",
+      "position": "late",
+      "move": 110,
+      "legal": 1096,
+      "budget": 50,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 50.0615,
+      "bytes": 329592,
+      "Action": 5349,
+      "CompletedDepth": 2,
+      "Nodes": 6361,
+      "Value": 0.5588779722672809,
+      "PV": [
+        5349,
+        3557
+      ],
+      "engine": "after",
+      "trial": 4
+    },
+    {
+      "kind": "budget",
+      "position": "late",
+      "move": 110,
+      "legal": 1096,
+      "budget": 1000,
+      "requestedDepth": 120,
+      "sample": 0,
+      "elapsed": 1000.0508,
+      "bytes": 333488,
+      "Action": 5349,
+      "CompletedDepth": 2,
+      "Nodes": 56618,
+      "Value": 0.5588779722672809,
+      "PV": [
+        5349,
+        3557
+      ],
+      "engine": "after",
+      "trial": 4
+    }
+  ],
+  "createdUtc": "2026-09-26T15:45:42.970108+00:00",
+  "hardware": {
+    "cpu": "Intel Core i9-14900KF",
+    "logicalProcessors": 32,
+    "os": "CachyOS Linux x64",
+    "sdk": "10.0.112",
+    "runtime": "10.0.12"
+  },
+  "methodology": {
+    "build": "Release; Core-only console host with a copied assembly reference",
+    "fixtures": "EnclosureBenchmarks.FixedPositions(seed=72891), moves 0/60/110",
+    "warmup": "Three 100 ms searches per position before measurement in each process",
+    "pairing": "Five rounds, alternating before/after first, one sample per workload per process",
+    "fixedDepth": "Opening depth 3, middle/late depth 2, 120-second safety budget",
+    "measurement": "External Stopwatch around Search; current-thread allocated bytes; PV legality checked by replay after measurement",
+    "environment": "Public game host and unrelated desktop workloads remained running; no affinity or clock control",
+    "invariants": "All 30 fixed-depth searches return the same action and value as baseline within 1e-12; all 120 measured principal variations replay legally",
+    "nodeInterpretation": "Pruning changes the searched tree. Fixed-depth latency and equal result are primary; equal-budget node counts alone are not comparable strength measures."
+  },
+  "baselineMicrobenchmarks": [
+    {
+      "position": "opening",
+      "operation": "CopyFrom",
+      "repeats": 100000,
+      "nanoseconds": 60.436,
+      "bytes": 0
+    },
+    {
+      "position": "opening",
+      "operation": "GetSearchKey",
+      "repeats": 100000,
+      "nanoseconds": 233.427,
+      "bytes": 0
+    },
+    {
+      "position": "opening",
+      "operation": "GenerateLegalActions",
+      "repeats": 10000,
+      "nanoseconds": 581.81,
+      "bytes": 304
+    },
+    {
+      "position": "opening",
+      "operation": "AreaBothPlayers",
+      "repeats": 1000,
+      "nanoseconds": 25.6,
+      "bytes": 0
+    },
+    {
+      "position": "opening",
+      "operation": "EvaluateCachedAreas",
+      "repeats": 100000,
+      "nanoseconds": 263.626,
+      "bytes": 0
+    },
+    {
+      "position": "opening",
+      "operation": "OrderPriorityAndSort",
+      "repeats": 1000,
+      "nanoseconds": 9640.5,
+      "bytes": 0
+    },
+    {
+      "position": "opening",
+      "operation": "CopyPlayGeneratedAndArea",
+      "repeats": 10000,
+      "nanoseconds": 52.59,
+      "bytes": 0
+    },
+    {
+      "position": "middle",
+      "operation": "CopyFrom",
+      "repeats": 100000,
+      "nanoseconds": 28.581,
+      "bytes": 0
+    },
+    {
+      "position": "middle",
+      "operation": "GetSearchKey",
+      "repeats": 100000,
+      "nanoseconds": 413.133,
+      "bytes": 0
+    },
+    {
+      "position": "middle",
+      "operation": "GenerateLegalActions",
+      "repeats": 10000,
+      "nanoseconds": 6366.27,
+      "bytes": 3744
+    },
+    {
+      "position": "middle",
+      "operation": "AreaBothPlayers",
+      "repeats": 1000,
+      "nanoseconds": 88386.8,
+      "bytes": 0
+    },
+    {
+      "position": "middle",
+      "operation": "EvaluateCachedAreas",
+      "repeats": 100000,
+      "nanoseconds": 284.191,
+      "bytes": 0
+    },
+    {
+      "position": "middle",
+      "operation": "OrderPriorityAndSort",
+      "repeats": 1000,
+      "nanoseconds": 85910.4,
+      "bytes": 0
+    },
+    {
+      "position": "middle",
+      "operation": "CopyPlayGeneratedAndArea",
+      "repeats": 10000,
+      "nanoseconds": 4658.36,
+      "bytes": 0
+    },
+    {
+      "position": "late",
+      "operation": "CopyFrom",
+      "repeats": 100000,
+      "nanoseconds": 28.39,
+      "bytes": 0
+    },
+    {
+      "position": "late",
+      "operation": "GetSearchKey",
+      "repeats": 100000,
+      "nanoseconds": 514.429,
+      "bytes": 0
+    },
+    {
+      "position": "late",
+      "operation": "GenerateLegalActions",
+      "repeats": 10000,
+      "nanoseconds": 9812.29,
+      "bytes": 4408
+    },
+    {
+      "position": "late",
+      "operation": "AreaBothPlayers",
+      "repeats": 1000,
+      "nanoseconds": 26387.2,
+      "bytes": 0
+    },
+    {
+      "position": "late",
+      "operation": "EvaluateCachedAreas",
+      "repeats": 100000,
+      "nanoseconds": 318.831,
+      "bytes": 0
+    },
+    {
+      "position": "late",
+      "operation": "OrderPriorityAndSort",
+      "repeats": 1000,
+      "nanoseconds": 160098.3,
+      "bytes": 0
+    },
+    {
+      "position": "late",
+      "operation": "CopyPlayGeneratedAndArea",
+      "repeats": 10000,
+      "nanoseconds": 11773.99,
+      "bytes": 0
+    }
+  ],
+  "samplingProfile": {
+    "tool": "dotnet-trace 10.0.745401",
+    "command": "dotnet-trace collect --profile dotnet-sampled-thread-time,dotnet-common --format Speedscope --output search.nettrace -- dotnet Harness.dll profile",
+    "trace": "/tmp/stratjam-search-before/search.nettrace",
+    "speedscope": "/tmp/stratjam-search-before/search.speedscope.json",
+    "limitation": "Sampled thread wall time was dominated by GC safepoint PollGC frames and long finalizer intervals. These samples are not reported as CPU cost percentages; direct isolated-operation timings guided prioritization.",
+    "documentation": "https://learn.microsoft.com/en-us/dotnet/core/diagnostics/dotnet-trace"
+  },
+  "reproduction": {
+    "harnessProject": "tools/search-benchmark/SearchBenchmark.csproj",
+    "harnessSource": "tools/search-benchmark/Program.cs",
+    "comparisonScript": "tools/search-benchmark/compare.py",
+    "command": "python tools/search-benchmark/compare.py --before-core /path/to/before/StratJamAI.Core.dll --after-core /path/to/after/StratJamAI.Core.dll --output /tmp/enclosure-search-comparison",
+    "samplingCommand": "The sampling trace used the original local harness profile mode; timing reproduction is supplied by the repository harness."
+  },
+  "validation": {
+    "totalTests": 126,
+    "coreAndCliTests": 82,
+    "webTests": 44,
+    "status": "passed",
+    "source": "Full isolated test run reported by the coordinating agent."
+  }
+}
